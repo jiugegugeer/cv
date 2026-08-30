@@ -66,7 +66,7 @@ i18n: {
     availability: '2026.07 可入学',
     extras: ['全国大赛一等奖（2026.08）', '校级优秀本科毕业论文', '莫纳什大学硕士录取（已缴留位费）', 'PTE Academic 60（对标 IELTS 6.5）'],
     actions: [
-      { text: '下载学术 CV', action: 'download', href: '', primary: true },
+      { text: '下载学术 CV', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
       { text: '查看学术成果', action: 'link', href: '#publications', primary: false }
     ]
   },
@@ -401,7 +401,7 @@ i18n: {
     enabled: true,
     title: '下载完整学术 CV',
     description: '点击下载 PDF 版本学术简历（A4 排版，可直接用于套磁与网申）。若暂未上传 PDF，可使用「打印 / 另存为 PDF」导出当前页面；切换顶部「EN」后再导出即为英文版。',
-    pdfUrl: '',
+    pdfUrl: 'assets/files/resume-zh.pdf',
     pdfFileName: '徐其胜-学术CV.pdf',
     footnote: '最后更新：2026 年 8 月'
   },
@@ -433,7 +433,7 @@ en: {
         availability: 'Available from Jul 2026',
         extras: ['First Prize, National Undergraduate Competition (Aug 2026)', 'Outstanding Undergraduate Thesis', 'Monash Master’s offer held', 'PTE Academic 60 (equivalent to IELTS 6.5)'],
         actions: [
-          { text: 'Download CV (PDF)', action: 'download', href: '', primary: true },
+          { text: 'Download CV (PDF)', action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
           { text: 'View Publications', action: 'link', href: '#publications', primary: false }
         ]
       },
@@ -768,7 +768,7 @@ en: {
         enabled: true,
         title: 'Download Full Academic CV',
         description: 'Download the PDF version (A4 layout, ready for supervisor outreach and online applications). If no PDF is uploaded yet, use "Print / Save as PDF" to export this page.',
-        pdfUrl: '',
+        pdfUrl: 'assets/files/resume-en.pdf',
         pdfFileName: 'Qisheng-Xu-Academic-CV.pdf',
         footnote: 'Last updated: August 2026'
       },
