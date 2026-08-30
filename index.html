@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="徐其胜，福州大学安全工程学士（2026 届），校级优秀本科毕业论文（阻燃竹材热解与燃烧数值模拟），主修燃烧学/传热学/流体力学，研究方向为火灾动力学数值模拟与储能安全，第一作者专利软著 3 项、国家级竞赛奖项 2 项，直申澳洲可持续能源方向全奖博士。">
+<meta name="keywords" content="学术简历,安全工程,火灾动力学,燃烧学,传热学,流体力学,FDS,Thermakin,Pathfinder,定量风险评估,储能安全,热失控,数值模拟,MATLAB,Origin,徐其胜">
+<meta name="author" content="徐其胜">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1218" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<title>徐其胜 - 学术简历 - 安全工程 / 火灾动力学与能源安全</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/files/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/files/favicon.svg">
+<!-- PWA：可安装、离线可读 -->
+<link rel="manifest" href="assets/files/manifest.webmanifest">
+<!-- 社交分享卡（Open Graph / Twitter Card）：静态兜底，main.js 会升级为绝对地址并按语言更新文案 -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="徐其胜 · 学术简历">
+<meta property="og:title" content="徐其胜 - 学术简历 - 安全工程 / 火灾动力学与能源安全">
+<meta property="og:description" content="徐其胜，福州大学安全工程学士（2026 届），校级优秀本科毕业论文，第一作者专利软著 3 项、国家级竞赛奖项 2 项，直申澳洲可持续能源方向全奖博士。">
+<meta property="og:image" content="assets/files/og-banner.png">
+<meta property="og:image:alt" content="徐其胜 学术简历分享卡：姓名、研究方向关键词与申请意向">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="徐其胜 - 学术简历 - 火灾动力学与能源安全">
+<meta name="twitter:description" content="安全工程学士（2026 届）· 校级优秀毕业论文 · 专利软著 3 项 · 国家级竞赛奖项 2 项 · 直申澳洲全奖博士。">
+<meta name="twitter:image" content="assets/files/og-banner.png">
+<!-- 主题预设脚本：在页面渲染前确定深色/浅色与语言，避免首屏闪烁 -->
+<script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem('cv-theme');
+      var dark = savedTheme ? savedTheme === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+      var savedLang = localStorage.getItem('cv-lang');
+      document.documentElement.setAttribute('data-lang', savedLang === 'en' ? 'en' : 'zh');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-lang', 'zh');
+    }
+  })();
+</script>
+</head>
+
+<body>
+
+<!-- 键盘用户可跳过导航直达正文（无障碍要求） -->
+<a class="skip-link" href="#main">跳转到主要内容</a>
+
+<!-- 屏幕阅读器公告区：语言/主题切换等状态变化通过此处朗读 -->
+<div id="srStatus" class="sr-only" role="status" aria-live="polite"></div>
+
+<!-- 顶部阅读进度条 -->
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+</div>
+
+<!-- ===================== 顶部导航 ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top">
+      <span class="brand__avatar" id="brandAvatar" aria-hidden="true"></span>
+      <span class="brand__name" id="brandName">简历</span>
+    </a>
+
+    <!-- 移动端菜单开关 -->
+    <button class="nav-toggle" id="navToggle" type="button"
+            aria-expanded="false" aria-controls="navMenu" aria-label="打开导航菜单">
+      <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"></use></svg>
+      <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"></use></svg>
+    </button>
+
+    <nav class="nav" id="navMenu" aria-label="主导航">
+      <ul class="nav__list" id="navList"></ul>
+      <div class="nav__tools">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="切换英文版本">
+          <span class="lang-toggle__zh">中</span>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <span class="lang-toggle__en">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换深色模式">
+          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 移动端菜单的遮罩层 -->
+    <div class="nav-overlay" id="navOverlay" hidden></div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== 首屏头部 ===================== -->
+  <section class="hero" id="top" data-section="hero" aria-labelledby="hero-name">
+    <div class="container" data-slot="hero"></div>
+  </section>
+
+  <!-- ===================== 学术概览（无导航项） ===================== -->
+  <section class="overview" data-section="overview" aria-label="学术概览">
+    <div class="container" data-slot="overview"></div>
+  </section>
+
+  <!-- ===================== 教育背景 ===================== -->
+  <section class="section" id="education" data-section="education" aria-labelledby="education-heading">
+    <div class="container" data-slot="education"></div>
+  </section>
+
+  <!-- ===================== 研究兴趣 ===================== -->
+  <section class="section section--muted" id="research" data-section="research" aria-labelledby="research-heading">
+    <div class="container" data-slot="research"></div>
+  </section>
+
+  <!-- ===================== 学术成果（论文 + 专利 / 软著） ===================== -->
+  <section class="section" id="publications" data-section="publications" aria-labelledby="publications-heading">
+    <div class="container" data-slot="publications"></div>
+  </section>
+
+  <!-- ===================== 科研经历 ===================== -->
+  <section class="section section--muted" id="experience" data-section="experience" aria-labelledby="experience-heading">
+    <div class="container" data-slot="experience"></div>
+  </section>
+
+  <!-- ===================== 荣誉奖项 ===================== -->
+  <section class="section" id="awards" data-section="awards" aria-labelledby="awards-heading">
+    <div class="container" data-slot="awards"></div>
+  </section>
+
+  <!-- ===================== 研究计划 ===================== -->
+  <section class="section section--muted" id="proposal" data-section="proposal" aria-labelledby="proposal-heading">
+    <div class="container" data-slot="proposal"></div>
+  </section>
+
+  <!-- ===================== 目标导师与研究契合 ===================== -->
+  <section class="section" id="targets" data-section="targets" aria-labelledby="targets-heading">
+    <div class="container" data-slot="targets"></div>
+  </section>
+
+  <!-- ===================== 科普传播与社会影响 ===================== -->
+  <section class="section" id="outreach" data-section="outreach" aria-labelledby="outreach-heading">
+    <div class="container" data-slot="outreach"></div>
+  </section>
+
+  <!-- ===================== 学术技能 ===================== -->
+  <section class="section section--muted" id="skills" data-section="skills" aria-labelledby="skills-heading">
+    <div class="container" data-slot="skills"></div>
+  </section>
+
+  <!-- ===================== 研究自述 ===================== -->
+  <section class="section" id="statement" data-section="statement" aria-labelledby="statement-heading">
+    <div class="container" data-slot="statement"></div>
+  </section>
+
+  <!-- ===================== 推荐人 ===================== -->
+  <section class="section section--muted" id="referees" data-section="referees" aria-labelledby="referees-heading">
+    <div class="container" data-slot="referees"></div>
+  </section>
+
+  <!-- ===================== CV 下载 ===================== -->
+  <section class="section section--cta" id="resume" data-section="resume" aria-labelledby="resume-heading">
+    <div class="container" data-slot="resume"></div>
+  </section>
+
+</main>
+
+<!-- ===================== 页脚 ===================== -->
+<footer class="site-footer">
+  <div class="container" data-slot="footer"></div>
+</footer>
+
+<!-- 返回顶部 -->
+<button class="to-top" id="toTop" type="button" aria-label="返回顶部" hidden>
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<noscript>
+  <div class="noscript-tip">
+    本页面的简历内容由 JavaScript 驱动渲染，请在浏览器中启用 JavaScript 后查看。
+  </div>
+</noscript>
+
+<!-- ===================== 图标精灵（页面不依赖任何外部图标库） ===================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16.9v2.5a1.6 1.6 0 0 1-1.8 1.6 16.5 16.5 0 0 1-7.2-2.5 16.2 16.2 0 0 1-5-5A16.5 16.5 0 0 1 4.5 6.2 1.6 1.6 0 0 1 6.1 4.4h2.5a1.6 1.6 0 0 1 1.6 1.4c.1.9.3 1.7.6 2.5a1.6 1.6 0 0 1-.4 1.7l-1 1a12.8 12.8 0 0 0 5 5l1-1a1.6 1.6 0 0 1 1.7-.4c.8.3 1.6.5 2.5.6a1.6 1.6 0 0 1 1.4 1.7z"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.09.7-.22.7-.49v-1.73c-2.84.62-3.44-1.37-3.44-1.37-.47-1.18-1.14-1.5-1.14-1.5-.93-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.91 1.56 2.39 1.11 2.97.85.09-.66.36-1.11.65-1.37-2.27-.26-4.65-1.14-4.65-5.04 0-1.11.4-2.02 1.05-2.73-.11-.26-.46-1.3.1-2.7 0 0 .85-.27 2.8 1.05a9.6 9.6 0 0 1 5.1 0c1.95-1.32 2.8-1.05 2.8-1.05.56 1.4.21 2.44.1 2.7.65.71 1.05 1.62 1.05 2.73 0 3.91-2.39 4.77-4.67 5.03.37.32.7.94.7 1.9v2.82c0 .27.18.6.71.49A10.2 10.2 0 0 0 12 1.8z"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7.2 10.5V17"/><circle cx="7.2" cy="7.2" r="1.1" fill="currentColor" stroke="none"/><path d="M11.4 17v-3.6a2 2 0 0 1 4 0V17"/><path d="M11.4 10.5V17"/>
+  </symbol>
+  <symbol id="i-blog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2.8H7a2.2 2.2 0 0 0-2.2 2.2v14a2.2 2.2 0 0 0 2.2 2.2h10a2.2 2.2 0 0 0 2.2-2.2V8z"/><path d="M14 2.8V8h5.2"/><path d="M8.6 13h6.8"/><path d="M8.6 17h4.4"/>
+  </symbol>
+  <symbol id="i-website" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4"/><path d="M12 2.8a14 14 0 0 1 0 18.4a14 14 0 0 1 0-18.4z"/>
+  </symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.2L1.8 8.4 12 13.6l10.2-5.2z"/><path d="M5.6 10.6v5.4c0 1.5 2.9 2.8 6.4 2.8s6.4-1.3 6.4-2.8v-5.4"/><path d="M22.2 8.4v6.2"/>
+  </symbol>
+  <symbol id="i-orcid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/><path d="M8.6 19.4V4.6"/><circle cx="8.4" cy="8.4" r="1.3" fill="currentColor" stroke="none"/><path d="M11.6 9.4h4.4a3.6 3.6 0 0 1 0 7.2h-4.4z"/>
+  </symbol>
+  <symbol id="i-wechat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.6a8.4 8.4 0 0 1-8.6 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-4.6A8.3 8.3 0 0 1 3.7 11 8.4 8.4 0 0 1 12.4 2.8 8.4 8.4 0 0 1 21 11.6z"/><path d="M9.2 10.6h.01M14.6 10.6h.01"/>
+  </symbol>
+  <symbol id="i-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10.2c0 5.9-8 11.8-8 11.8s-8-5.9-8-11.8a8.2 8.2 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/>
+  </symbol>
+  <symbol id="i-custom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/><path d="M12 16v-4.5"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-1.8a4.2 4.2 0 0 0-4.2-4.2H8.2A4.2 4.2 0 0 0 4 19.2V21"/><circle cx="12" cy="7.5" r="4"/>
+  </symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="7" width="19" height="13.5" rx="2.5"/><path d="M16 7V5.2A2.2 2.2 0 0 0 13.8 3h-3.6A2.2 2.2 0 0 0 8 5.2V7"/><path d="M2.5 12.4h19"/>
+  </symbol>
+  <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 9.6L12 4.6 2 9.6l10 5 10-5z"/><path d="M6 11.8V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.2"/><path d="M22 9.6v5.2"/>
+  </symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.2 17.6h5.6"/><path d="M10 21.2h4"/><path d="M12 2.6a6.6 6.6 0 0 0-3.8 12v2.6h7.6v-2.6a6.6 6.6 0 0 0-3.8-12z"/>
+  </symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4.6A1.6 1.6 0 0 1 5.6 3H19v15H5.6A1.6 1.6 0 0 0 4 19.6z"/><path d="M4 19.6A1.6 1.6 0 0 0 5.6 21H19v-3"/>
+  </symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7a3 3 0 0 0 3 3"/><path d="M17 5.5h2.5V7a3 3 0 0 1-3 3"/><path d="M12 14v3.5"/><path d="M8.5 21h7l-.8-3.5h-5.4z"/>
+  </symbol>
+  <symbol id="i-certificate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3.5" width="18" height="12.5" rx="2"/><path d="M7 8.5h10M7 12h6"/><path d="M14.5 15.4v5.6l2.2-1.4 2.2 1.4v-5.6"/>
+  </symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.5 2.8v6.4L4.6 18a2.2 2.2 0 0 0 1.9 3.3h11a2.2 2.2 0 0 0 1.9-3.3l-4.9-8.8V2.8"/><path d="M8 2.8h8"/><path d="M6.9 14.6h10.2"/>
+  </symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 10.5v3a1.5 1.5 0 0 0 1.5 1.5H6l8.5 4.8V4.2L6 9H4.5A1.5 1.5 0 0 0 3 10.5z"/><path d="M17.5 9.2a4 4 0 0 1 0 5.6"/><path d="M20.4 6.4a8 8 0 0 1 0 11.2"/>
+  </symbol>
+  <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16.4 20.8v-1.8a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1.8"/><circle cx="9.2" cy="7.4" r="3.8"/><path d="M22 20.8v-1.8a4 4 0 0 0-3-3.87"/><path d="M16 3.66a4 4 0 0 1 0 7.48"/>
+  </symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.4 5.6C6.3 7 4.6 9.4 4.6 12.6v5.8h6.2v-6.2H7.9c0-2 .9-3.4 2.8-4.4z"/><path d="M19.8 5.6c-3.1 1.4-4.8 3.8-4.8 7v5.8h6.2v-6.2h-2.9c0-2 .9-3.4 2.8-4.4z"/>
+  </symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 21v-6M4 11V3M12 21v-9M12 8V3M20 21v-4M20 13V3"/><path d="M1.5 15h5M9.5 8h5M17.5 17h5"/>
+  </symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/>
+  </symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15.2v3.6a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 18.8v-3.6"/><path d="M7.4 10.4L12 15l4.6-4.6"/><path d="M12 15V3"/>
+  </symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 9V2.8h11V9"/><rect x="2.8" y="9" width="18.4" height="7.5" rx="2"/><rect x="6.5" y="14.2" width="11" height="7" rx="1.4"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 13.6V19a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 19V8.2A2.2 2.2 0 0 1 5.2 6h5.4"/><path d="M14.6 3H21v6.4"/><path d="M10.4 13.6L21 3"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4.6" width="18" height="16.4" rx="2.4"/><path d="M16 2.8v3.6M8 2.8v3.6M3 10h18"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 6.5L9 17.5l-5-5"/>
+  </symbol>
+  <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 6.5L13.2 15.3l-4.4-4.4L2 17.5"/><path d="M16.4 6.5H22v5.6"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.6l9.4 4.9L12 12.4 2.6 7.5z"/><path d="M2.6 12.4L12 17.3l9.4-4.9"/><path d="M2.6 17.2L12 22.1l9.4-4.9"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.6s7.6-3.7 7.6-9.3V5.3L12 2.4 4.4 5.3v7c0 5.6 7.6 9.3 7.6 9.3z"/><path d="M9 12l2.2 2.2L15.4 10"/>
+  </symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22c3.9 0 6.5-2.5 6.5-6 0-4.5-4-5.9-3.4-11-2.6.8-4.6 3-4.6 5.2 0 1.4.5 2.2.5 3 0 1-.8 1.6-1.6 1.6-1 0-1.7-.8-1.7-2.2-1.1 1.3-1.7 2.9-1.7 4.6 0 3.1 2.4 4.8 6 4.8z"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 6L6 18M6 6l12 12"/>
+  </symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/>
+  </symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+  </symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19.5V5"/><path d="M5.5 11.5L12 5l6.5 6.5"/>
+  </symbol>
+</svg>
+
+<script src="assets/js/resume-data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

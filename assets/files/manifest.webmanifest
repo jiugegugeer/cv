@@ -1,0 +1,19 @@
+{
+  "name": "徐其胜 · 学术简历",
+  "short_name": "学术简历",
+  "description": "安全工程学士（2026 届）· 火灾动力学与能源系统安全 · 直申澳洲可持续能源方向全奖博士",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "scope": "../",
+  "start_url": "../index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fcfbf9",
+  "theme_color": "#1b4b7a",
+  "categories": ["education", "portfolio"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# 工作日志（内部文档，不上传）
+.workbuddy/
+
+# 非网站文件
+WechatIMG3443.jpg
+个人简历 .docx
+overview.md
+
+# 生成工具文件（产物已保留，源文件不上传）
+assets/files/app-icon.html
+assets/files/og-banner.html
+assets/files/把简历PDF放在这里.txt
+
+# 依赖
+node_modules/
+
+# 日志
+*.log

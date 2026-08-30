@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="学术简历图标">
+  <rect width="64" height="64" rx="12" fill="#1b4b7a"/>
+  <path d="M32 7 L51 15 V32 C51 44.5 42.6 52.6 32 56.5 C21.4 52.6 13 44.5 13 32 V15 Z"
+        fill="none" stroke="#fcfbf9" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 19 C27.5 25.5 29.5 30 32 34.5 C34.5 30 36.5 25.5 32 19 Z" fill="#d9b45f"/>
+  <path d="M32 33 C26 37 26 43.5 32 45.5 C38 43.5 38 37 32 33 Z" fill="#e8c97a"/>
+</svg>
