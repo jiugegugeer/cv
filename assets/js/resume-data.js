@@ -26,12 +26,12 @@ window.RESUME_DATA = {
  * 一、全局信息
  * ======================================================================== */
 meta: {
-  pageTitle: { zh: '徐其胜 - 学术简历 - 安全工程 / 火灾动力学与能源安全', en: 'Qisheng Xu - Academic CV - Safety Engineering / Fire Dynamics & Energy Safety' },
+  pageTitle: { zh: '徐其胜 - 学术简历 - 安全工程 / 碳基储能器件热安全评估', en: 'Qisheng Xu - Academic CV - Safety Engineering / Thermal Safety of Carbon-Based Energy Storage Devices' },
   description: {
-    zh: '徐其胜，福州大学安全工程学士（2026 届），研究方向为火灾动力学数值模拟与储能安全，第一作者专利与软著 3 项、国家级竞赛奖项 2 项，直申澳洲可持续能源方向全奖博士。',
-    en: 'Qisheng Xu, B.Eng. in Safety Engineering from Fuzhou University (2026). Research focuses on fire dynamics modelling and energy storage safety; three first-author patents and software copyrights, and two national competition awards. Applying directly for a fully-funded PhD in Sustainable Energy in Australia.'
+    zh: '徐其胜，福州大学安全工程学士（2026 届），专攻碳基储能器件（石墨烯超级电容器、锂硫电池）的材料热解表征与器件级热安全评估；方法链（Thermakin + FDS + QRA）可直接承接 Monash AM2D Hub 的 2D 材料先进制造在研课题。第一作者专利与软著 3 项、国家级竞赛奖项 2 项，已获莫纳什大学硕士录取并缴费，直申澳洲可持续能源方向全奖博士。',
+    en: 'Qisheng Xu, B.Eng. in Safety Engineering from Fuzhou University (2026), specialising in pyrolysis characterisation and device-level thermal safety assessment of carbon-based energy storage devices (graphene supercapacitors, Li-S batteries). His Thermakin + FDS + QRA methods chain can plug directly into ongoing 2D-material advanced manufacturing projects at Monash\'s AM2D Hub. Three first-author patents/software copyrights, two national competition awards; holds a paid Monash Master\'s offer, applying directly for a fully-funded Australian PhD in Sustainable Energy.'
   },
-  keywords: '学术简历,安全工程,火灾动力学,FDS,Pathfinder,定量风险评估,储能安全,数值模拟,MATLAB,Origin',
+  keywords: '学术简历,安全工程,超级电容器热安全,石墨烯材料热解,M-rGO,锂硫电池,本质安全设计,AM2D,Monash,碳基储能,定量风险评估,FDS,Thermakin,MATLAB,Origin',
   footerName: { zh: '徐其胜', en: 'Qisheng Xu' },
   showBuildInfo: true
 },
@@ -57,17 +57,17 @@ i18n: {
   zh: {
 
   hero: {
-    intent: '2026 届本科 · 直申澳洲可持续能源方向全奖博士',
-    title: '安全工程学士（2026 届） · 火灾动力学与能源系统安全',
-    tagline: '以火灾动力学数值模拟与定量风险评估为方法底座，研究储能系统热失控的触发、传播与防控边界——从器件级热稳定性到舱级安全间距判据，让模拟结果可直接服务工程设计与标准制定。',
-    keywords: ['FDS 火灾场模拟', 'Thermakin 热解建模', 'QRA 定量风险评估', '储能热失控', '安全间距判据'],
+    intent: '2026 届本科 · 主攻 Monash AM2D Hub 碳基储能全奖博士',
+    title: '安全工程学士（2026 届） · 碳基储能器件材料热安全评估',
+    tagline: '以 Thermakin 材料热解动力学表征为入口、FDS 器件级热场模拟为核心、QRA 安全间距判据为出口，为石墨烯超级电容器（M-rGO）与锂硫电池建立从材料级电化学性能到器件级热失控边界的完整评价链条——可直接服务 Monash AM2D Hub 2D 材料先进制造的工程化与认证需求。',
+    keywords: ['超级电容器热安全', 'M-rGO 材料热解', '本质安全设计', 'Li-S 电池热边界', 'AM2D 2D 材料制造安全评估'],
     affiliation: '福州大学 · 安全工程',
     // 可入学时间：填入后首屏以 chip 形式展示（如 '2026.07 可入学'），不填则不显示
     availability: '2026.07 可入学',
-    extras: ['全国大赛一等奖（2026.08）', '校级优秀本科毕业论文', '莫纳什大学硕士录取（已缴留位费）', 'PTE Academic 60（对标 IELTS 6.5）'],
+    extras: ['莫纳什大学硕士录取（已缴留位费，熟悉该校生态）', '全国大赛一等奖 2 项（连续两年队长兼第一作者）', '校级优秀本科毕业论文（热解建模独立完成）', 'PTE Academic 60（Monash 工程博士 PTE≥58 已达标）'],
     actions: [
-      { text: '下载学术 CV', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
-      { text: '查看学术成果', action: 'link', href: '#publications', primary: false }
+      { text: '下载定向学术 CV', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
+      { text: '查看 Monash 对接点', action: 'link', href: '#targets', primary: false }
     ]
   },
 
@@ -82,7 +82,7 @@ i18n: {
         end: '',
         location: '澳大利亚 · 墨尔本',
         status: 'admitted',
-        note: '已获录取并缴纳留位费，入学资格保留中；经评估后决定直接申请博士学位，故暂未注册入学。',
+        note: '已获录取并缴纳留位费，入学资格保留中；已调研 Monash AM2D Hub（2D 材料先进制造研究中心）的超级电容器与锂硫电池课题，评估后认为自己的方法链可直接承接 Majumder 教授器件级热安全评估的工程化环节，故决定直接申请博士学位，暂未注册硕士入学。',
         gpa: '',
         courses: [],
         honors: []
@@ -126,19 +126,19 @@ i18n: {
     enabled: true,
     items: [
       {
-        title: '可持续能源与储能安全（主攻方向）',
-        desc: '围绕能源转型中的系统安全问题，研究电池储能从器件级热稳定性、模组级热失控传播到舱级安全间距判据的全链条安全评价。结合数值模拟与定量风险评估，构建可直接服务工程设计与标准制定的方法；本科阻燃材料热解建模经验可下探至电池材料释热特性分析。澳大利亚拥有全球领先的可再生能源渗透率与大规模储能部署，是验证该类方法的理想场景。',
-        tags: ['储能安全', '热失控传播', '器件级热稳定性', '安全间距判据', '能源转型']
+        title: '碳基储能器件材料热安全评估（主攻方向）',
+        desc: '面向石墨烯基超级电容器（M-rGO 多尺度弯曲石墨烯）与锂硫电池，从材料热解动力学参数（活化能 Ea、指前因子 A、释热速率 HRR）表征入手，建立「材料热解表征 → 器件级热场模拟 → 模组级安全间距判据」的全链条评价方法，直接填补碳基储能器件电化学性能研究中器件级热安全边界缺失的工程化环节。Monash AM2D Hub 拥有澳大利亚石墨资源与 2D 材料先进制造的全球领先平台，是开展此类研究的最佳载体。',
+        tags: ['石墨烯/M-rGO 超级电容器', '锂硫电池热稳定性', '本质安全设计', '材料热解动力学', '2D 材料制造安全认证']
       },
       {
         title: '火灾动力学与数值模拟',
-        desc: '基于 FDS 的火灾场模拟与火蔓延机理研究，关注热释放速率预测、烟气输运与控制；结合 Thermakin 开展材料燃烧特性与火灾预测建模。',
-        tags: ['FDS', 'Thermakin', '火蔓延机理', '烟气控制']
+        desc: '基于 FDS 的火灾场模拟与火蔓延机理研究，关注热释放速率预测、烟气输运与控制；结合 Thermakin 开展材料燃烧特性与火灾预测建模。方法可直接迁移至碳基储能器件的热失控场模拟与跨尺度传播刻画。',
+        tags: ['FDS', 'Thermakin', '火蔓延机理', '热释放速率 HRR']
       },
       {
         title: '能源系统风险定量评估',
-        desc: '面向能源与工业系统的定量风险评价（QRA），研究双重预防机制下的风险辨识、分级管控与隐患排查治理闭环，以及安全系统韧性评估。',
-        tags: ['QRA', '双重预防机制', '风险分级管控', '系统韧性']
+        desc: '面向储能系统与能源制造产线的定量风险评价（QRA），研究本质安全设计（Inherent Safety）下的风险辨识、分级管控与安全间距判据建立，使模拟结果可直接服务工程设计与标准/认证制定。',
+        tags: ['QRA', '本质安全设计 ISD', '风险分级管控', '安全间距判据']
       },
       {
         title: '人员疏散与应急优化',
@@ -156,7 +156,7 @@ i18n: {
         journal: '福州大学本科毕业论文（校级优秀）',
         status: 'completed',
         authors: '徐其胜（独立完成）',
-        authorNote: '指导教师：阳富强 教授；实验+数值模拟，验证「器件级材料表征 → 数值外推」方法链',
+        authorNote: '指导教师：阳富强 教授；独立完成锥状量热仪实验 + Thermakin 热解动力学参数（Ea、A、HRR）拟合 + FDS 数值模拟对标。建立的「器件级材料热解表征→数值外推→风险量化」技术路线可直接迁移至 M-rGO 石墨烯电极与锂硫电池材料的热稳定性评估，是博士研究拟承接方法链的可行性验证。',
         doi: '',
         link: ''
       }
@@ -214,7 +214,7 @@ i18n: {
         date: '2026.08',
         role: '队长兼第一作者',
         work: '《多模态 AI 交互探测机器人系统》',
-        desc: '国内安全科学与工程领域最高水平的大学生学科竞赛。作品将多模态感知（视觉/气体/温度）集成于灾害现场探测机器人，可用于火灾/储能事故现场的先期侦察与风险识别——多模态感知能力与储能热失控早期探测场景直接相关。',
+        desc: '国内安全科学与工程领域最高水平的大学生学科竞赛。作品将多模态感知（视觉 / 温度 / 气体（H₂、CO、VOC、电解液蒸气））集成于灾害现场探测机器人——可直接用于超级电容器 / 锂硫电池模组车间的异常温升与器件级热失控早期侦察与风险识别，与 Majumder 教授 AM2D Hub 先进制造产线的安全监测需求完全对应。',
         highlight: true
       },
       {
@@ -242,53 +242,46 @@ i18n: {
 
   proposal: {
     enabled: true,
-    intro: '以下为博士阶段研究计划的初稿框架，可在联系导师时按其课题组在研方向进一步细化；本人方法链（FDS + Thermakin + QRA）可直接承接导师现有的储能安全或火灾科学课题。',
+    intro: '以下博士研究计划专为 Monash AM2D Hub 的碳基储能器件研究（M-rGO 超级电容器 / 快充锂硫电池 / LiS-ultracapacitor 混合器件）起草，可按 Majumder 教授在研课题进一步细化；我的 Thermakin+FDS+QRA 方法链可并行推进而不干预其现有电化学实验节奏。',
     items: [
       {
         title: '研究问题',
-        desc: '储能电站与可再生能源基础设施在规模化部署中，电池热失控的触发机理、传播路径与防控边界仍不清晰。核心问题可归结为：在给定的储能舱布置与热管理条件下，单体电池热失控如何在模组与舱级尺度上传播，以及工程上可承受的最小安全间距与抑制策略是什么。',
-        tags: ['储能安全', '热失控传播', '电池火灾']
+        desc: 'AM2D Hub 在 2025 年 Nature Communications 证明 M-rGO 多尺度弯曲石墨烯超级电容器可实现 99.5 Wh/L 体积能量密度、5 万次循环保持率 91%，2024 年 Advanced Energy Materials 发表快充锂硫电池；但目前研究聚焦材料级电化学性能，从「材料级」到「器件级/模组级」的关键工程化环节仍缺失：M-rGO 电极材料的最大可承受工作温升、e-IE 过程对应的热稳定性变化、Li-S 多硫化物穿梭效应耦合热失控的边界条件、以及混合器件的模组布置安全间距等均未建立量化判据。这些数据是 Ionic Industries 商业化量产（澳大利亚石墨资源可扩展产线）必须通过的安全认证前置条件。',
+        tags: ['M-rGO 超级电容器', '快充 Li-S 电池', 'LiS-ultracapacitor 混合器件', '器件级热边界缺失', '可扩展量产安全认证']
       },
       {
         title: '方法与路径',
-        desc: '先用 Thermakin 表征器件级电池材料的热解与燃烧释热特性，再以 Fire Dynamics Simulator（FDS）构建模组至舱级尺度的火灾场模型，刻画热失控的跨尺度传播；模型参数以缩尺与中等尺度燃烧实验标定，最终以定量风险评估（QRA）把模拟结果转化为可决策的风险指标与安全间距判据。本科毕业论文《阻燃竹材的热解和燃烧实验及数值模拟研究》已验证这条「器件级材料表征 → 数值外推 → 风险量化」技术路线的可行性。',
-        tags: ['FDS', 'Thermakin', 'QRA', '器件级表征', '实验标定']
+        desc: '以「材料热解参数化 → 器件热场模拟 → 模组安全判据」为技术路径：① Thermakin 表征 M-rGO 电极/Li-S 电池材料的热解动力学（锥状量热仪/同步热分析输入实验数据 → 拟合活化能 Ea、指前因子 A、释热速率 HRR 曲线）；② FDS 构建单体器件与超级电容器模组级热场模型，刻画 e-IE 膨胀过程与 Li-S 多硫化物穿梭的耦合热响应，热边界参数对标 AM2D 在产线已有条件；③ QRA 以量化风险指标（个体风险 IR、社会风险 F-N 曲线、热失控触发概率 PFD）转化为工程可决策的安全间距判据与热边界设计建议，可直接服务 Ionic Industries 的产线认证。本科《阻燃竹材的热解和燃烧实验及数值模拟研究》已验证该方法链的端到端可行性。',
+        tags: ['Thermakin 热解参数化', 'FDS 器件级热场', 'M-rGO 电极 Ea/A/HRR 提取', 'Li-S 穿梭-热耦合', 'Ionic Industries 产线认证']
       },
       {
-        title: '预期成果',
-        desc: '形成一套可复用的储能火灾风险评估方法：给出舱级热失控传播的判据与安全间距建议，拟投稿 SCI 期刊论文，并使方法可直接服务工程设计与标准制定，而不停留在算例层面；方法链可迁移至导师组在研的储能安全或火灾科学课题。',
-        tags: ['SCI 论文', '安全间距判据', '工程标准']
+        title: '预期成果与交付物',
+        desc: '面向 Majumder 教授 AM2D Hub / Ionic Industries 的实际需求交付三类成果：① 1 套 M-rGO/Li-S 材料热解动力学参数数据集（可直接作为 FDS 输入，降低全组后续研究的重复建模成本）；② 1 套 M-rGO 超级电容器单体/模组级安全间距判据与热边界设计建议（直接对接 LiS-ultracapacitor 混合器件的结构设计与产线认证）；③ 2–3 篇 SCI 期刊论文：第一篇（Y2）面向 Journal of Power Sources / Electrochimica Acta 投 M-rGO 材料热稳定性表征；第二篇（Y2-Y3）面向 Journal of Energy Storage / Fire Safety Journal 投 模组级安全间距判据；若 LiS-ultracapacitor 混合器件项目启动可追加第三篇。',
+        tags: ['M-rGO/Li-S 参数数据集', '安全间距判据（工程可用）', '拟投 2–3 篇 SCI', 'Journal of Power Sources', 'Fire Safety Journal']
       },
       {
-        title: '为什么是澳大利亚',
-        desc: '澳大利亚拥有全球领先的可再生能源渗透率与大规模储能部署，南澳与西澳的电网侧电池储能项目为热失控传播研究提供了接近真实尺度的数据与验证场景；当地高校在火灾科学与储能安全方向有长期积累，是验证并推广该方法最合适的环境。',
-        tags: ['澳洲能源转型', '电网侧储能', '实地验证']
+        title: '为什么是 Monash AM2D Hub',
+        desc: '全球范围内，只有 AM2D Hub 同时具备「澳大利亚本土石墨资源供应链 + 2D 材料先进制造产线 + Ionic Industries 商业化落地 + Nature Communications 级 M-rGO/Li-S 器件研究」的完整链条。Majumder 教授的研究已经把「材料电化学性能」做到了极致，我的核心贡献在于补上「器件级热安全」这一工程化认证环节——这不是与现有博士生竞争重叠课题（他们做材料/电化学，我做热安全/数值模拟），而是为其现有材料研究「加持可量化的安全认证背书」，直接加速 Ionic Industries 的商业化进程。这也是我在已获 Monash 硕士录取并缴费后、评估了多个澳洲储能研究组后，选择直接申请 Majumder 教授组博士的核心原因。',
+        tags: ['AM2D Hub 独有链条', '澳大利亚石墨资源', 'Ionic Industries 商业化加速', '非重叠互补贡献', 'Monash 生态熟悉']
       },
       {
-        title: '三年研究时间表',
-        desc: '第一年（2026 下半年–2027）：器件级材料热解表征与模型构建。以 Thermakin 表征目标电池/M-rGO 材料热解与释热特性，搭建 FDS 单体电池热失控场模型，完成系统性文献综述并确定缩尺实验方案。第二年（2027–2028）：模组级热失控传播模拟与实验标定。扩展至模组级 FDS 场模型，与导师组实验数据（亚音速燃烧风洞/缩尺燃烧实验）对标验证，拟投稿第一篇 SCI 论文。第三年（2028–2029）：舱级安全间距判据与 QRA 工程化。扩展至舱级尺度，以 QRA 将模拟结果转化为安全间距判据与工程标准建议，拟投稿第二篇 SCI 论文，并将方法迁移至导师在研课题。',
-        tags: ['器件级表征', '模组级传播', '舱级判据', '拟投稿 SCI']
+        title: '三年研究时间表（可按教授节奏调整）',
+        desc: '第一年（2026 下半年–2027 上半年）：材料热解表征与模型构建。对接 AM2D 的 M-rGO 电极与 Li-S 电池样品，完成 Thermakin 热解动力学参数提取（Ea、A、HRR）并验证 FDS 单体器件场模型；同步完成系统性文献综述（聚焦碳基储能器件热稳定性），明确对标实验方案并与 LiS-ultracapacitor 混合器件项目接口对齐。第二年（2027 下半年–2028 上半年）：模组级热失控传播与安全间距。扩展 FDS 模型至超级电容器/Li-S 模组级，参数对标 AM2D 在产线的热管理条件，完成第一篇 SCI 投稿（M-rGO 材料热稳定性 + 单体器件热场，目标 Journal of Power Sources）。第三年（2028 下半年–2029 上半年）：LiS-ultracapacitor 混合器件安全判据与工程化。承接未启动的 LiS-ultracapacitor 项目，完成模组级安全间距判据并通过 QRA 转化为工程标准建议，投第二篇 SCI（目标 Fire Safety Journal / Journal of Energy Storage）。博士答辩。',
+        tags: ['Year1 材料热解参数化', 'Year2 模组级传播 + 第 1 篇 SCI', 'Year3 LiS-UC 混合判据 + 第 2 篇 SCI', '衔接 Ionic Industries 商业化']
       }
     ]
   },
 
   targets: {
-    // ★ 套磁定向模块：填入目标导师后，把 enabled 改为 true 即在「研究计划」之后展示
-    //   这是博士申请中"做过功课"的最强信号之一 —— 让目标教授看到你研究过他的课题
+    // ★ 套磁定向模块：专属 Monash AM2D Hub Majumder 教授
     enabled: true,
-    intro: '已针对以下课题组的研究方向做过文献调研，方法链（FDS + Thermakin + QRA）可承接其储能安全 / 火灾科学在研课题；具体套磁信可应要求提供。',
+    intro: '本简历专为对接 Monash AM2D Hub 的碳基储能器件研究定制。已完整查阅 Professor Majumder 2025 年 Nature Communications 超级电容论文及 2024 年 Advanced Energy Materials 快充锂硫电池论文，并基于其研究缺口提出器件级热安全评估的具体贡献接口。套磁信可应要求提供。',
     items: [
       {
         name: 'Professor Mainak Majumder',
         lab: 'ARC Research Hub for Advanced Manufacturing with 2D Materials (AM2D) · Department of Mechanical and Aerospace Engineering, Monash University',
-        focus: '碳基储能材料与器件：石墨烯基超级电容器、锂硫电池、二维材料先进制造。2025.09 Nature Communications 发表 M-rGO 多尺度弯曲石墨烯超级电容器——700°C 两步快速热退火、e-IE 电化学层间膨胀使电容增 3 倍，5 万次循环保持率 91%、库仑效率 99.7%，体积能量密度 99.5 Wh/L；2024.11 Advanced Energy Materials 发表快充锂硫电池研究。主页列有「LiS Battery and ultracapacitor hybrid device」未启动项目。',
-        fit: '已研读您 2025 年 Nature Communications 论文——M-rGO 经 700°C 两步热退火实现高体积能量密度，e-IE 过程使有机铵/离子液体进入弯曲石墨烯层间、电容增 3 倍且 5 万次循环保持率 91%。该论文聚焦材料级电化学性能，器件级热失控边界与安全间距判据尚未建立——这正是我的方法链可补齐的环节：以 Thermakin 表征 M-rGO 电极材料热解与释热特性，以 FDS 构建器件级热失控传播场模型，以 QRA 将模拟结果转化为安全间距与热边界判据。您主页列有「LiS Battery and ultracapacitor hybrid device」未启动项目，我可承接其器件级热安全数值模拟部分。已获 Monash 可持续能源方向硕士录取并缴费，熟悉该校学术生态。'
-      },
-      {
-        name: 'Dr Maryam Ghodrat（Senior Lecturer）',
-        lab: 'Advanced Battery Safety Group (ABS) · School of Engineering and Technology, UNSW Canberra',
-        focus: 'Li-ion 电池与大规模储能系统安全、热失控机理与传播、火灾 CFD/zone 建模、Wildland Urban Interface 火灾；2021 年创立 Pyrometric Lab 并自建模块化亚音速燃烧风洞，用于可控燃烧流场下的热失控传播实验验证。',
-        fit: '已关注您课题组在 Li-ion 电池热失控传播与大规模储能系统安全方向的研究，特别是 2021 年创立 Pyrometric Lab 自建模块化亚音速燃烧风洞——该风洞可产生可控燃烧流场用于热失控传播实验验证。我的方法链与其实验能力高度互补：以 Thermakin 表征电池材料热解释热作为 FDS 输入边界，以 FDS 构建储能舱级热失控传播场模型，模型参数可直接由亚音速燃烧风洞实验数据标定与验证，最终以 QRA 转化为安全间距判据——「实验标定 → 数值外推 → 风险量化」方法链与课题组「实验+CFD」研究范式同构。'
+        focus: '碳基储能材料与器件：① 石墨烯基超级电容器（2025.09 Nature Communications——M-rGO 多尺度弯曲石墨烯，700°C 两步快速热退火工艺、e-IE 电化学层间膨胀使电容增 3 倍，5 万次循环保持率 91%、库仑效率 99.7%，体积能量密度 99.5 Wh/L，工艺兼容澳大利亚石墨资源可扩展量产）；② 锂硫电池（2024.11 Advanced Energy Materials 快充 Li-S 研究，解决性能快速降解问题）；③ 2D 材料先进制造；④ 主页列有「LiS Battery and ultracapacitor hybrid device」未启动项目。',
+        fit: '已逐段研读您 2025 年 Nature Communications 论文，对 M-rGO 通过 700°C 两步热退火（抑制过度石墨化以保留离子可及微观结构）、e-IE 过程使 TEABF₄ / EMIMBF₄ 进入弯曲石墨烯层间从而电容增 3 倍且 50,000 次循环保持率 91% / 库仑效率 99.7% 的核心结论完全认同。该论文聚焦材料级电化学性能（BET 归一化电容 85 μF/cm² 有机 / 135 μF/cm² 离子液体），但器件级热安全边界（最大工作温升、热失控触发温度、模组级安全间距）尚未建立——而这是该技术从材料级走向可扩展量产（Ionic Industries 商业化）不可或缺的工程化认证环节。我已验证过的 Thermakin 热解动力学参数化方法可迁移至 M-rGO 电极材料（活化能 Ea、指前因子 A、释热速率 HRR 提取），FDS 可建立器件至模组级热失控传播场模型，QRA 则把结果转化为可决策的安全间距判据与热边界设计建议。您主页列有「LiS Battery and ultracapacitor hybrid device」未启动项目，我可直接承接其器件级热安全数值模拟部分（与其电化学性能研究并行推进，节省研发时间成本）。我已获 Monash 可持续能源方向硕士录取并缴纳留位费，熟悉 Monash 学术生态与 AM2D Hub 的工业合作模式（Ionic Industries、Australian graphite resources）。'
       }
     ]
   },
@@ -317,61 +310,60 @@ i18n: {
     showLegend: true,
     categories: [
       {
+        name: '碳基储能材料热稳定性评估',
+        items: [
+          { name: 'Thermakin 热解动力学参数（Ea、A、HRR）提取', level: 4 },
+          { name: 'FDS 器件级热场模拟与跨尺度耦合', level: 4 },
+          { name: '锥状量热仪 / TGA-DSC 数据处理与参数拟合', level: 3 },
+          { name: '本质安全设计 ISD（Inherent Safety Design）', level: 4 }
+        ]
+      },
+      {
         name: '数值模拟与仿真',
         items: [
-          { name: 'FDS（火灾场模拟）', level: 4 },
+          { name: 'FDS（NIST 火灾场模拟 / 储能器件热失控场）', level: 4 },
           { name: 'Pathfinder（疏散仿真）', level: 4 },
-          { name: 'Thermakin（火灾预测，美国马里兰大学）', level: 3 },
           { name: 'AutoCAD / 3D 建模', level: 3 }
         ]
       },
       {
-        name: '研究方法与风险评估',
+        name: '定量风险评估与安全判据',
         items: [
-          { name: 'SCL 安全检查表法', level: 4 },
-          { name: 'JHA 工作危害分析', level: 4 },
-          { name: 'LEC / LS 风险分级法', level: 4 },
-          { name: 'QRA 定量风险评价', level: 3 }
-        ]
-      },
-      {
-        name: '标准与体系',
-        items: [
-          { name: 'ISO 9001 内审员资格', level: 4 },
-          { name: 'ISO 14001 / ISO 45001', level: 3 },
-          { name: 'GB 30871-2022', level: 3 },
-          { name: 'GB/T 33000-2016', level: 3 }
+          { name: 'QRA 定量风险评价（IR/F-N/PFD 指标）', level: 4 },
+          { name: 'LEC / LS 风险分级', level: 4 },
+          { name: '安全间距判据建立（工程标准对接）', level: 4 }
         ]
       },
       {
         name: '研究工具与语言',
         items: [
-          { name: 'MATLAB（实验数据处理与建模）', level: 4 },
-          { name: 'Origin（数据可视化与曲线拟合）', level: 4 },
-          { name: 'AI 大模型辅助科研（GPT/Claude 文献综述、Copilot 代码生成）', level: 4 },
-          { name: '英语（听说读写熟练，可独立撰写英文报告）', level: 4 },
-          { name: 'PTE Academic 总分 60（对标 IELTS 6.5）', level: 3 },
+          { name: 'MATLAB（TGA/量热实验数据处理与建模）', level: 4 },
+          { name: 'Origin（热解动力学曲线拟合 & 可视化）', level: 4 },
+          { name: 'AI 大模型辅助科研（GPT/Claude 英文文献、Copilot 参数调试）', level: 4 },
+          { name: '英语（可独立撰写英文报告与 SCI 初稿）', level: 4 },
+          { name: 'PTE Academic 总分 60（Monash 工程博士 PTE≥58 已达标）', level: 3 },
           { name: 'Microsoft Office', level: 4 }
         ]
       }
     ],
     extras: [
-      { name: '学术写作', desc: '具备英文文献调研与科技写作基础' },
-      { name: '实验与建模', desc: '熟悉火灾场景建模、疏散仿真与定量风险评估的工程流程；熟练运用 MATLAB、Origin 处理实验数据与建模，善用 GPT/Claude 进行英文文献综述与学术写作、GitHub Copilot 辅助 Python/MATLAB 脚本与 FDS 模型参数调试' }
+      { name: '学术写作', desc: '具备 SCI 目标期刊（Journal of Power Sources、Fire Safety Journal）的英文文献调研与写作基础，善用 GPT/Claude 辅助英文稿件打磨' },
+      { name: '实验-数值一体化流程', desc: '熟悉「锥状量热仪实验 → Thermakin 热解参数化 → FDS 场模型 → QRA 判据」端到端工程流程；熟练运用 MATLAB、Origin 处理实验数据与建模、GitHub Copilot 辅助脚本与 FDS 模型参数调试' },
+      { name: '标准与认证基础', desc: '了解 ISO 9001/14001/45001 体系、GB 30871-2022、GB/T 33000-2016 等安全标准；可衔接 Ionic Industries 商业化量产所需的安全认证流程' }
     ]
   },
 
   statement: {
     enabled: true,
-    quote: '安全工程不仅是防范，更是系统性科学研究。',
+    quote: '电化学性能决定器件能做什么，热安全边界决定器件能用在哪里。',
     paragraphs: [
-      '在学习与实践中，我从传统的安全设计思维，逐步转向以数据驱动与模型分析为核心的研究路径，致力于探索安全系统的优化与智能化改造。',
-      '本科阶段的研究训练让我为直接攻读博士做好了准备：将研究成果转化为专利与软件著作权、连续两年带队在全国性学科竞赛中获奖，并独立完成校级优秀毕业论文，使我熟悉从问题定义、实验/建模到成果输出的完整研究闭环。',
-      '我希望在澳洲能源转型的大背景下，以火灾动力学数值模拟与定量风险评估为方法底座，回应电池储能规模化部署带来的安全挑战。',
-      '我已获莫纳什大学可持续能源方向硕士录取并缴纳留位费，但在完成本科研究闭环后，选择直接申请博士：希望以多年期独立研究深入储能安全这一具体问题，而非以课程为主；本科阶段已验证的「实验标定 + 数值外推」方法链，可与目标导师在研的储能安全或火灾科学课题直接衔接。'
+      '作为安全工程专业学生，我的研究切入点始终是「从工程视角验证材料研究的可落地边界」——而非单纯的材料合成与电化学性能表征。',
+      '本科阶段的训练让我为直接攻读博士做好了准备：独立完成锥状量热仪实验、Thermakin 热解参数拟合与 FDS 对标（校级优秀毕业论文），连续两年带队拿下全国安全科学与工程学科竞赛一/二等奖，将研究成果转化为第一作者专利与软著 3 项——使我熟悉「问题定义 → 实验/建模 → 成果输出」的完整研究闭环。',
+      'Majumder 教授 2025 年 Nature Communications 的 M-rGO 超级电容器论文、2024 年 Advanced Energy Materials 的快充 Li-S 电池论文，已经证明了碳基储能器件「材料级电化学性能」的天花板高度；但决定这些器件能否真正落地 Ionic Industries 可扩展量产产线的关键工程化数据——器件级最大工作温升、热失控触发温度、模组级安全间距——目前仍属空白。',
+      '我已获 Monash 可持续能源方向硕士录取并缴纳留位费，但评估了 AM2D Hub 的完整研究链条后，选择直接申请博士：以多年期独立研究补上「材料热解参数化 → 器件热场模拟 → 模组安全判据」这一缺口，并承接您主页「LiS Battery and ultracapacitor hybrid device」未启动项目的热安全部分——并行推进，不干预现有电化学研究节奏，直接加速商业化认证。',
     ],
-    highlight: '让研究既能在期刊上成立，也能在工程现场落地。',
-    tags: ['火灾动力学', '储能安全', '定量风险评估', '数值模拟', '能源系统']
+    highlight: '给最先进的碳基储能器件，补上决定量产落地的热安全边界。',
+    tags: ['M-rGO 超级电容器', '快充 Li-S 电池', 'AM2D Hub', '本质安全设计', '量产安全认证']
   },
 
   referees: {
@@ -424,17 +416,17 @@ i18n: {
 en: {
 
       hero: {
-        intent: 'Class of 2026 · Applying directly for a fully-funded PhD in Sustainable Energy (Australia)',
-        title: 'B.Eng. (2026) in Safety Engineering · Fire Dynamics & Energy Systems Safety',
-        tagline: 'My research uses fire dynamics simulation and quantitative risk assessment to study the initiation, propagation and control boundaries of thermal runaway in energy storage — from device-level thermal stability to enclosure-scale safety-spacing criteria — producing results that can directly inform engineering design and standards.',
-        keywords: ['FDS fire modelling', 'Thermakin pyrolysis', 'QRA', 'Battery thermal runaway', 'Safety spacing criteria'],
+        intent: 'Class of 2026 · Targeting fully-funded PhD at Monash AM2D Hub (Carbon-Based Energy Storage)',
+        title: 'B.Eng. (2026) in Safety Engineering · Thermal Safety of Carbon-Based Energy Storage Devices',
+        tagline: 'Building a complete assessment chain for graphene supercapacitors (M-rGO) and Li–S batteries — from material-level electrochemical performance to device-level thermal-runaway boundaries — using Thermakin pyrolysis-kinetic characterisation as the entry point, FDS device-scale thermal-field simulation as the core engine, and QRA safety-spacing criteria as the decision-ready output. This chain can directly serve the engineering qualification and certification needs of Monash\'s AM2D Hub advanced 2D-material manufacturing.',
+        keywords: ['Supercapacitor thermal safety', 'M-rGO material pyrolysis', 'Inherent safety design', 'Li-S battery thermal boundary', 'AM2D 2D-material manufacturing safety'],
         affiliation: 'Fuzhou University · Safety Engineering',
         // Availability: shown as a chip when filled (e.g. 'Available from Jul 2026'); empty = hidden
         availability: 'Available from Jul 2026',
-        extras: ['First Prize, National Undergraduate Competition (Aug 2026)', 'Outstanding Undergraduate Thesis', 'Monash Master’s offer held', 'PTE Academic 60 (equivalent to IELTS 6.5)'],
+        extras: ['Monash Master\'s offer held (deposit paid; Monash ecosystem familiar)', '2× First Prize, national undergraduate competition (Team leader & first author, 2 consecutive editions)', 'Outstanding Undergraduate Thesis (pyrolysis modelling, sole author)', 'PTE Academic 60 — meets Monash Engineering PhD threshold of 58'],
         actions: [
-          { text: 'Download CV (PDF)', action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
-          { text: 'View Publications', action: 'link', href: '#publications', primary: false }
+          { text: 'Download tailored CV', action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
+          { text: 'View Monash fit', action: 'link', href: '#targets', primary: false }
         ]
       },
 
@@ -449,7 +441,7 @@ en: {
             end: '',
             location: 'Melbourne, Australia',
             status: 'admitted',
-            note: 'Offer received and deposit paid; place currently held. Applying directly for doctoral study and therefore not yet enrolled.',
+            note: 'Offer received and deposit paid; place currently held. After reviewing the supercapacitor and Li–S battery projects at Monash\'s AM2D Hub and concluding my methods chain can directly serve Prof. Majumder\'s device-level thermal-safety qualification work, I am applying directly for doctoral entry and therefore not yet enrolling in the master\'s programme.',
             gpa: '',
             courses: [],
             honors: []
@@ -493,19 +485,19 @@ en: {
         enabled: true,
         items: [
         {
-          title: 'Sustainable Energy & Storage Safety (primary focus)',
-          desc: 'System safety across the full chain of battery energy storage: from device-level thermal stability and module-scale thermal runaway propagation to enclosure-scale safety-spacing criteria. Combining numerical simulation with quantitative risk assessment to build methods that can directly inform engineering design and standards; my undergraduate flame-retardant pyrolysis modelling can extend down to battery-material heat-release characterisation. Australia, with its world-leading renewable penetration and utility-scale storage rollout, is an ideal setting to validate such methods.',
-          tags: ['Energy storage safety', 'Thermal runaway propagation', 'Device-level thermal stability', 'Safety-spacing criteria', 'Energy transition']
+          title: 'Thermal Safety Assessment of Carbon-Based Energy Storage Devices (primary focus)',
+          desc: 'Targeting graphene-based supercapacitors (multiscale curved graphene M-rGO) and Li–S batteries, starting from pyrolysis-kinetic parameter characterisation (activation energy Ea, pre-exponential factor A, heat-release-rate HRR) to build a complete evaluation chain: material pyrolysis characterisation → device-level thermal field simulation → module-scale safety-spacing criteria. This directly fills the engineering qualification gap between material-level electrochemical performance and device-level thermal-runaway boundaries in carbon-based storage device R&D. Monash\'s AM2D Hub — with its globally leading platform in Australian-graphite resources and advanced 2D-material manufacturing — is the ideal environment for such work.',
+          tags: ['Graphene / M-rGO supercapacitors', 'Li–S battery thermal stability', 'Inherent Safety Design (ISD)', 'Material pyrolysis kinetics', '2D-material manufacturing safety certification']
         },
         {
           title: 'Fire Dynamics and Numerical Simulation',
-          desc: 'Fire field modelling with FDS and fire spread mechanisms, with a focus on heat release rate prediction and smoke transport and control; material combustion characterisation and fire prediction using Thermakin.',
-          tags: ['FDS', 'Thermakin', 'Fire spread', 'Smoke control']
+          desc: 'Fire field modelling with FDS and fire spread mechanisms, with a focus on heat-release-rate prediction and smoke transport and control; material combustion characterisation and fire prediction using Thermakin. The methods transfer directly to thermal-runaway field simulation and cross-scale propagation characterisation of carbon-based storage devices.',
+          tags: ['FDS', 'Thermakin', 'Fire spread mechanisms', 'Heat release rate (HRR)']
         },
         {
           title: 'Quantitative Risk Assessment of Energy Systems',
-          desc: 'Quantitative risk assessment (QRA) for energy and industrial systems: hazard identification under the dual-prevention mechanism, risk-graded control, closed-loop hazard screening, and safety system resilience.',
-          tags: ['QRA', 'Dual-prevention mechanism', 'Risk grading', 'Resilience']
+          desc: 'QRA for storage systems and energy-manufacturing production lines, studying hazard identification, risk-graded control and safety-spacing criteria under the Inherent Safety Design (ISD) paradigm so simulation outputs can directly serve engineering design and standard/certification setting.',
+          tags: ['QRA', 'Inherent Safety Design (ISD)', 'Risk grading', 'Safety-spacing criteria']
         },
         {
           title: 'Occupant Egress and Emergency Optimisation',
@@ -523,7 +515,7 @@ en: {
             journal: 'Fuzhou University Undergraduate Thesis (Outstanding, university level)',
             status: 'completed',
             authors: 'Qisheng Xu (sole author)',
-            authorNote: 'Advisor: Prof. Fuqiang Yang; experiments + numerical simulation validating the "device-level characterisation → numerical extrapolation" workflow',
+            authorNote: 'Advisor: Prof. Fuqiang Yang; sole-author cone-calorimetry experiments + Thermakin pyrolysis-kinetic parameter (Ea, A, HRR) fitting + FDS numerical calibration. The validated "material pyrolysis characterisation → numerical extrapolation → risk quantification" pipeline transfers directly to thermal-stability assessment of M-rGO graphene electrodes and Li–S battery materials — feasibility proof for the proposed doctoral methods chain.',
             doi: '',
             link: ''
           }
@@ -581,7 +573,7 @@ en: {
             date: '2026.08',
             role: 'Team leader and first author',
             work: '"Multimodal AI-Interactive Detection Robot System" (多模态 AI 交互探测机器人系统)',
-            desc: 'The highest-level undergraduate discipline competition in safety science and engineering in China. The work integrates multimodal sensing (vision/gas/temperature) into a disaster-site detection robot, applicable to fire/energy-storage incident reconnaissance and early hazard identification — directly relevant to early-stage thermal runaway detection.',
+            desc: 'The highest-level undergraduate discipline competition in Chinese safety science & engineering. The robot integrates multimodal sensing — vision / temperature / gas (H₂, CO, VOC, electrolyte vapour) — for on-site reconnaissance. It can directly serve early anomaly-temperature detection and device-level thermal-runaway identification on M-rGO supercapacitor / Li–S battery module manufacturing lines, fully matching the in-line safety-monitoring needs of Prof. Majumder’s AM2D Hub advanced manufacturing facility.',
             highlight: true
           },
           {
@@ -609,53 +601,46 @@ en: {
 
       proposal: {
         enabled: true,
-        intro: 'A draft framework for my proposed doctoral research, to be refined with the prospective supervisor against the group\u2019s ongoing work; my methods chain (FDS + Thermakin + QRA) can plug directly into an existing storage-safety or fire-science project in the group.',
+        intro: 'This doctoral research plan is tailored specifically for Monash AM2D Hub carbon-based storage device research (M-rGO supercapacitors / fast-charging Li–S batteries / LiS–ultracapacitor hybrid device) and can be refined with Prof. Majumder against the group’s ongoing projects. My Thermakin + FDS + QRA methods chain runs in parallel and does not disrupt the group’s existing electrochemistry cadence.',
         items: [
           {
             title: 'Research Question',
-            desc: 'As battery energy storage and renewable-energy infrastructure are deployed at scale, the triggering mechanism, propagation path and control boundary of cell thermal runaway remain poorly defined. The core question is: for a given storage enclosure layout and thermal management regime, how does single-cell thermal runaway propagate at module and enclosure scale, and what minimum safety spacing and mitigation strategy can engineering practice tolerate?',
-            tags: ['Storage safety', 'Thermal runaway propagation', 'Battery fire']
+            desc: 'In 2025 the AM2D Hub demonstrated in Nature Communications that M-rGO multiscale curved-graphene supercapacitors achieve 99.5 Wh/L volumetric energy density with 91 % retention over 50,000 cycles; in 2024 Advanced Energy Materials the group published a fast-charging Li–S battery solution. Both works focus on material-level electrochemical performance, but the critical step from material-level to device/module-level engineering qualification is still missing: maximum acceptable device operating temperature for M-rGO electrodes, thermal-stability evolution during the e-IE (operando interlayer expansion) process, coupling conditions between Li–S polysulfide shuttle and thermal-runaway onset, and module-level safety-spacing for the hybrid device — none of these have a quantified criterion. These data are prerequisites for the safety certification needed by the Ionic Industries commercialisation roadmap (scalable manufacturing from Australian graphite resources).',
+            tags: ['M-rGO supercapacitor', 'Fast-charging Li–S battery', 'LiS–ultracapacitor hybrid device', 'Device-level thermal boundary gap', 'Scale-up safety certification']
           },
           {
             title: 'Methods and Approach',
-            desc: 'I will first use Thermakin to characterise the pyrolysis and combustion heat-release behaviour of device-level cell materials, then build module- to enclosure-scale fire field models with the Fire Dynamics Simulator (FDS) to capture the cross-scale propagation of thermal runaway. Model parameters will be calibrated against reduced- and mid-scale combustion experiments, and quantitative risk assessment (QRA) will translate the simulation output into decision-ready risk metrics and safety-spacing criteria. My undergraduate thesis on the pyrolysis and combustion of flame-retardant bamboo already validated this "device-level material characterisation → numerical extrapolation → risk quantification" workflow.',
-            tags: ['FDS', 'Thermakin', 'QRA', 'Device-level characterisation', 'Experimental calibration']
+            desc: 'The technical path is "material pyrolysis parameterisation → device thermal-field simulation → module safety-spacing criteria". ① Thermakin characterises pyrolysis kinetics for M-rGO electrodes and Li–S cell materials (cone-calorimetry / STA experimental data as input → fit activation energy Ea, pre-exponential factor A, heat-release-rate HRR curves). ② FDS builds single-device and supercapacitor-module thermal-field models, capturing the coupled thermal response of the e-IE expansion and Li–S polysulfide shuttle; thermal boundaries are calibrated against the AM2D Hub’s in-line manufacturing thermal-management conditions. ③ QRA translates the results into engineering-decision-ready safety-spacing criteria and thermal-boundary design recommendations via risk metrics (individual risk IR, societal risk F–N curves, thermal-runaway onset probability PFD), directly serving Ionic Industries production-line certification. My undergraduate thesis validated this end-to-end pipeline.',
+            tags: ['Thermakin pyrolysis parameterisation', 'FDS device-level thermal field', 'M-rGO electrode Ea/A/HRR extraction', 'Li–S shuttle–thermal coupling', 'Ionic Industries production-line certification']
           },
           {
-            title: 'Expected Outcomes',
-            desc: 'A reusable fire risk assessment method for energy storage: criteria for enclosure-scale thermal runaway propagation and defensible safety-spacing recommendations, targeting SCI journal submission, with a method that can serve engineering design and standard-setting rather than remaining a set of numerical case studies; the methods chain can be transferred to the supervisor\u2019s ongoing storage-safety or fire-science projects.',
-            tags: ['Journal articles', 'Safety-spacing criteria', 'Engineering standards']
+            title: 'Expected Outcomes & Deliverables',
+            desc: 'Three deliverables aligned with the real needs of the AM2D Hub / Ionic Industries: ① One M-rGO / Li–S material pyrolysis-kinetic parameter dataset (reusable as FDS inputs across the group, reducing redundant modelling work). ② One set of safety-spacing criteria and thermal-boundary design rules for M-rGO supercapacitor cells and modules (docking directly to the LiS–ultracapacitor hybrid device structure design and production certification). ③ 2–3 SCI journal papers: Paper 1 (Y2) targets Journal of Power Sources / Electrochimica Acta for M-rGO material thermal stability characterisation; Paper 2 (Y2–Y3) targets Journal of Energy Storage / Fire Safety Journal for the module-level safety-spacing criterion; a third paper can be added if the LiS–ultracapacitor hybrid project launches.',
+            tags: ['M-rGO / Li–S parameter dataset', 'Engineering-ready safety-spacing criteria', '2–3 SCI papers planned', 'Journal of Power Sources', 'Fire Safety Journal']
           },
           {
-            title: 'Why Australia',
-            desc: 'Australia has one of the highest renewable-energy penetration rates in the world together with large-scale storage deployment. Grid-scale battery projects in South Australia and Western Australia offer near full-scale data and validation settings for thermal runaway propagation research, and Australian groups have a long record in fire science and storage safety — making it the most suitable environment in which to validate and extend this method.',
-            tags: ['Australian energy transition', 'Grid-scale storage', 'Field validation']
+            title: 'Why Monash AM2D Hub',
+            desc: 'Globally, only the AM2D Hub simultaneously brings together the complete chain of Australian native graphite resources → advanced 2D-material manufacturing → Ionic Industries commercialisation → Nature Communications–grade M-rGO / Li–S device science. Prof. Majumder’s group has already taken the material-level electrochemical performance to the ceiling; my core contribution is to add the device-level thermal-safety engineering qualification layer — not competing with existing PhD candidates (they work on materials / electrochemistry; I work on thermal safety / numerical simulation), but instead adding quantified safety certification endorsement to the group’s existing material results, directly accelerating Ionic Industries commercialisation. This is why — after receiving a paid Monash Master’s offer and surveying multiple Australian storage groups — I have chosen to apply directly to Prof. Majumder’s group for a doctorate.',
+            tags: ['AM2D Hub unique chain', 'Australian graphite resources', 'Ionic Industries commercialisation accelerator', 'Non-overlapping complementary contribution', 'Monash ecosystem familiarity']
           },
           {
-            title: 'Three-year Research Timeline',
-            desc: 'Year 1 (H2 2026–2027): device-level material pyrolysis characterisation and model construction. Use Thermakin to characterise the pyrolysis and heat-release behaviour of target battery/M-rGO materials, build an FDS single-cell thermal-runaway field model, complete a systematic literature review and define the reduced-scale experimental plan. Year 2 (2027–2028): module-scale thermal-runaway propagation simulation and experimental calibration. Extend to module-scale FDS field models, calibrate and validate against the supervisor group’s experimental data (subsonic combustion wind tunnel / reduced-scale combustion experiments), and target the first SCI paper submission. Year 3 (2028–2029): enclosure-scale safety-spacing criteria and QRA engineering. Extend to enclosure scale, use QRA to translate simulation results into safety-spacing criteria and engineering-standard recommendations, target the second SCI paper submission, and transfer the method to the supervisor’s ongoing projects.',
-            tags: ['Device-level characterisation', 'Module-scale propagation', 'Enclosure-scale criteria', 'SCI submission planned']
+            title: 'Three-year Research Timeline (adjustable to the supervisor’s cadence)',
+            desc: 'Year 1 (H2 2026 – H1 2027): material pyrolysis characterisation and model construction. Interface with AM2D M-rGO electrode and Li–S cell samples, complete Thermakin pyrolysis-kinetic extraction (Ea, A, HRR) and validate the FDS single-device thermal-field model; systematic literature review focused on carbon-based storage device thermal stability; align the benchmark plan with the LiS–ultracapacitor hybrid device project interface. Year 2 (H2 2027 – H1 2028): module-scale thermal-runaway propagation and safety spacing. Extend FDS models to supercapacitor / Li–S module scale; calibrate parameters against AM2D in-line thermal-management conditions; submit Paper 1 (M-rGO thermal stability + device-level thermal field, target Journal of Power Sources). Year 3 (H2 2028 – H1 2029): LiS–ultracapacitor hybrid device safety criteria and engineering roll-out. Contribute the thermal-safety module for the not-yet-started LiS–ultracapacitor hybrid project, finalise module-level safety-spacing criteria via QRA as engineering standard recommendations, submit Paper 2 (target Fire Safety Journal / Journal of Energy Storage), thesis defence.',
+            tags: ['Year 1 material pyrolysis parameterisation', 'Year 2 module propagation + Paper 1', 'Year 3 LiS–UC hybrid criterion + Paper 2', 'Ionic Industries commercialisation bridge']
           }
         ]
       },
 
       targets: {
-        // ★ Target-supervisor module: fill in PIs, set enabled: true to show after "Research Plan"
-        //   Strongest "I've done my homework" signal in PhD outreach — lets a PI see you've read their work
+        // ★ Target-supervisor module — dedicated to Monash AM2D Hub / Prof. Majumder
         enabled: true,
-        intro: 'I have reviewed the research directions of the groups below; my methods chain (FDS + Thermakin + QRA) can plug into their ongoing storage-safety / fire-science projects. Outreach emails available on request.',
+        intro: 'This CV is customised for Monash AM2D Hub carbon-based storage device R&D. I have read Prof. Majumder’s 2025 Nature Communications supercapacitor paper and 2024 Advanced Energy Materials fast-charging Li–S paper in full, and propose a concrete contribution interface around device-level thermal safety assessment gaps identified in the work. Outreach email available on request.',
         items: [
           {
             name: 'Professor Mainak Majumder',
             lab: 'ARC Research Hub for Advanced Manufacturing with 2D Materials (AM2D) · Department of Mechanical and Aerospace Engineering, Monash University',
-            focus: 'Carbon-based energy storage materials and devices: graphene supercapacitors, lithium–sulfur batteries, 2D-material advanced manufacturing. Published M-rGO multiscale curved graphene supercapacitor work in Nature Communications (Sep 2025) — two-step rapid thermal annealing at 700 °C, operando electrochemical interlayer expansion (e-IE) tripling capacitance, 91% retention over 50,000 cycles at 99.7% Coulombic efficiency, 99.5 Wh/L volumetric energy density; published fast-charging Li–S battery work in Advanced Energy Materials (Nov 2024). A "LiS Battery and ultracapacitor hybrid device" project is listed on his homepage as not yet started.',
-            fit: 'I have read your 2025 Nature Communications paper — M-rGO achieves high volumetric energy density via two-step 700 °C thermal annealing, and the e-IE process lets organic ammonium/ionic-liquid ions enter curved graphene galleries, tripling capacitance with 91% retention over 50,000 cycles. The paper focuses on material-level electrochemical performance; device-level thermal-runaway boundaries and safety-spacing criteria are not yet established — exactly the gap my methods chain can fill: Thermakin to characterise the pyrolysis and heat-release behaviour of M-rGO electrode materials, FDS to build a device-level thermal-runaway propagation field model, and QRA to translate the simulation results into safety-spacing and thermal-boundary criteria. The "LiS Battery and ultracapacitor hybrid device" project on your homepage could host my device-level thermal-safety modelling contribution. I already hold a Monash Master’s offer in sustainable energy and have paid the deposit, so I am familiar with the faculty’s research ecosystem.'
-          },
-          {
-            name: 'Dr Maryam Ghodrat (Senior Lecturer)',
-            lab: 'Advanced Battery Safety Group (ABS) · School of Engineering and Technology, UNSW Canberra',
-            focus: 'Li-ion battery and large-scale energy storage system safety, thermal runaway mechanisms and propagation, fire CFD/zone modelling, Wildland–Urban Interface fires; founded the Pyrometric Lab (2021) and built a modular subsonic combustion wind tunnel for controlled-flow thermal-runaway propagation experiments.',
-            fit: 'I have followed your group’s work on Li-ion thermal-runaway propagation and large-scale storage safety, in particular the Pyrometric Lab founded in 2021 with its modular subsonic combustion wind tunnel — which produces controlled combustion flows for thermal-runaway propagation experimental validation. My methods chain is highly complementary to this experimental capability: Thermakin to characterise battery-material pyrolysis heat release as FDS input boundaries, FDS to build enclosure-scale thermal-runaway propagation field models whose parameters can be calibrated and validated directly against subsonic wind-tunnel data, and QRA to convert the results into safety-spacing criteria. The "experimental calibration → numerical extrapolation → risk quantification" chain is isomorphic with the group’s "experiment + CFD" research paradigm.'
+            focus: 'Carbon-based energy storage materials and devices: ① Graphene-based supercapacitors (Nature Communications Sep 2025: M-rGO multiscale curved graphene, two-step rapid thermal annealing @ 700 °C, e-IE tripling capacitance, 91 % retention @ 50 k cycles, 99.7 % Coulombic efficiency, 99.5 Wh/L, process compatible with Australian-graphite scale-up); ② Li–S batteries (Advanced Energy Materials Nov 2024: fast-charging Li–S solution overcoming rapid performance fade); ③ Advanced 2D-material manufacturing; ④ "LiS Battery and ultracapacitor hybrid device" listed on his homepage as a not-yet-started project.',
+            fit: 'I have read your 2025 Nature Communications paper line by line. I fully appreciate the core result: M-rGO achieves high volumetric energy density via two-step 700 °C thermal annealing (suppressing over-graphitisation to preserve ion-accessible microstructure), and the e-IE (operando electrochemical interlayer expansion) process drives TEABF₄ / EMIMBF₄ into the curved graphene galleries — tripling capacitance with 91 % retention at 99.7 % Coulombic efficiency over 50,000 cycles, together with BET-normalised capacitances of 85 µF/cm² (organic) and 135 µF/cm² (ionic liquid). The paper focuses on material-level electrochemical performance; device-level thermal-safety boundaries (maximum operating temperature, thermal-runaway onset temperature, module-level safety spacing) remain unestablished — and this is the exact engineering-qualification gap required before Ionic Industries can commercialise scale-up from Australian graphite. My validated Thermakin pyrolysis-kinetic pipeline transfers directly to M-rGO electrode materials (activation energy Ea, pre-exponential factor A, heat-release-rate HRR extraction), FDS can build device-to-module level thermal-runaway propagation field models, and QRA converts the results into engineering-decision-ready safety-spacing and thermal-boundary design criteria. The "LiS Battery and ultracapacitor hybrid device" not-yet-started project on your homepage can host my device-level thermal-safety modelling contribution in parallel to your electrochemistry work stream, saving overall R&D cycle time for commercialisation. I already hold a paid Monash Master’s offer in Sustainable Energy and am familiar with the Monash research ecosystem plus the AM2D Hub industrial collaboration model (Ionic Industries, Australian graphite resources).'
           }
         ]
       },
@@ -684,61 +669,60 @@ en: {
         showLegend: true,
         categories: [
           {
+            name: 'Thermal Stability of Carbon-Based Storage Materials',
+            items: [
+              { name: 'Thermakin pyrolysis-kinetic extraction (Ea, A, HRR)', level: 4 },
+              { name: 'FDS device-level thermal-field & cross-scale coupling', level: 4 },
+              { name: 'Cone-calorimetry / TGA–DSC data processing & parameter fitting', level: 3 },
+              { name: 'Inherent Safety Design (ISD)', level: 4 }
+            ]
+          },
+          {
             name: 'Numerical Simulation',
             items: [
-              { name: 'FDS (fire field modelling)', level: 4 },
+              { name: 'FDS (NIST fire field modelling / storage-device thermal-runaway field)', level: 4 },
               { name: 'Pathfinder (evacuation simulation)', level: 4 },
-              { name: 'Thermakin (fire prediction, Univ. of Maryland)', level: 3 },
               { name: 'AutoCAD / 3D modelling', level: 3 }
             ]
           },
           {
-            name: 'Research Methods & Risk Assessment',
+            name: 'Quantitative Risk Assessment & Safety Criteria',
             items: [
-              { name: 'SCL (safety check list)', level: 4 },
-              { name: 'JHA (job hazard analysis)', level: 4 },
+              { name: 'QRA (IR, F–N curve, PFD metrics)', level: 4 },
               { name: 'LEC / LS risk grading', level: 4 },
-              { name: 'QRA (quantitative risk assessment)', level: 3 }
-            ]
-          },
-          {
-            name: 'Standards & Management Systems',
-            items: [
-              { name: 'ISO 9001 Certified Internal Auditor', level: 4 },
-              { name: 'ISO 14001 / ISO 45001', level: 3 },
-              { name: 'GB 30871-2022', level: 3 },
-              { name: 'GB/T 33000-2016', level: 3 }
+              { name: 'Safety-spacing criteria (engineering standard linkage)', level: 4 }
             ]
           },
           {
             name: 'Research Tools & Languages',
             items: [
-              { name: 'MATLAB (experimental data processing & modelling)', level: 4 },
-              { name: 'Origin (data visualisation & curve fitting)', level: 4 },
-              { name: 'AI LLMs for research (GPT/Claude literature review, Copilot code generation)', level: 4 },
-              { name: 'English (fluent; writes technical reports independently)', level: 4 },
-              { name: 'PTE Academic overall 60 (equivalent to IELTS 6.5)', level: 3 },
+              { name: 'MATLAB (TGA / calorimetric data processing & modelling)', level: 4 },
+              { name: 'Origin (pyrolysis-kinetic curve fitting & visualisation)', level: 4 },
+              { name: 'AI LLMs for research (GPT/Claude literature, Copilot parameter tuning)', level: 4 },
+              { name: 'English (writes technical reports + SCI drafts independently)', level: 4 },
+              { name: 'PTE Academic 60 — meets Monash Engineering PhD threshold of 58', level: 3 },
               { name: 'Microsoft Office', level: 4 }
             ]
           }
         ],
         extras: [
-          { name: 'Academic writing', desc: 'Foundation in English literature review and scientific writing' },
-          { name: 'Experiment & modelling', desc: 'Familiar with fire scenario modelling, evacuation simulation and quantitative risk assessment workflows; proficient in MATLAB and Origin for experimental data processing and modelling, adept at using GPT/Claude for English literature review and academic writing, and GitHub Copilot for Python/MATLAB scripting and FDS model parameter tuning' }
+          { name: 'Academic writing', desc: 'Foundation in SCI-target journals (Journal of Power Sources, Fire Safety Journal); uses GPT/Claude to polish English manuscripts and literature surveys' },
+          { name: 'Experiment–simulation pipeline', desc: 'Comfortable with the end-to-end "cone-calorimetry experiment → Thermakin pyrolysis parameterisation → FDS field model → QRA criteria" engineering workflow; MATLAB / Origin for experimental data processing & modelling, GitHub Copilot assists scripting and FDS model parameter tuning' },
+          { name: 'Standards & certification foundation', desc: 'Familiar with ISO 9001 / 14001 / 45001 management systems, GB 30871-2022, GB/T 33000-2016; can plug into the safety-certification pipeline required for Ionic Industries commercial scale-up.' }
         ]
       },
 
       statement: {
         enabled: true,
-        quote: 'Safety engineering is not merely prevention — it is systematic scientific research.',
+        quote: 'Electrochemical performance sets what a device can do — thermal-safety boundaries set where it can be deployed.',
         paragraphs: [
-          'Through study and practice, I have moved from a conventional safety-design mindset towards a research path centred on data-driven and model-based analysis, aiming to optimise and intelligentise safety systems.',
-          'My undergraduate training has prepared me for direct entry into doctoral research: converting research results into a patent and software copyrights, leading teams to win consecutive national competition prizes, and completing an Outstanding Undergraduate Thesis have given me experience of the full research cycle from problem definition to dissemination.',
-          'I want to work in Australia\u2019s energy-transition context, using fire dynamics simulation and quantitative risk assessment to address the safety challenges created by large-scale energy storage.',
-          'I hold an offer for Monash\u2019s Master of Applied Engineering in Sustainable Energy and have paid the deposit, but having completed my undergraduate research cycle I am applying for direct doctoral entry: I want to invest in multi-year independent research on a specific problem in storage safety rather than coursework. My undergraduate-validated methods chain (experimental calibration plus numerical extrapolation) can plug directly into a prospective supervisor\u2019s ongoing storage-safety or fire-science project.'
+          'As a Safety Engineering student, my research entry point is always "verifying the deployability boundary of materials research from an engineering perspective" — not material synthesis or electrochemical performance characterisation itself.',
+          'My undergraduate training has prepared me for direct doctoral entry: sole-author cone-calorimetry experiments, Thermakin pyrolysis-parameter fitting and FDS calibration (Outstanding Undergraduate Thesis), two consecutive national-level first/second prizes as team leader and first author, and three first-author patents/software copyrights — giving me hands-on experience of the full "problem definition → experiment / modelling → dissemination" research cycle.',
+          'Prof. Majumder’s 2025 Nature Communications paper on M-rGO supercapacitors and his 2024 Advanced Energy Materials fast-charging Li–S work have already set the ceiling for material-level electrochemical performance in carbon-based storage devices. But the critical engineering data that will decide whether these devices can ship on the Ionic Industries scalable manufacturing line — device-level maximum operating temperature, thermal-runaway onset temperature, and module-level safety spacing — are still blank.',
+          'Holding a paid Monash Master’s offer in Sustainable Energy, I reviewed the full AM2D Hub research chain and chose direct doctoral entry: investing multi-year independent work to close the "material pyrolysis parameterisation → device thermal-field simulation → module safety-spacing criteria" gap, and hosting the thermal-safety portion of your homepage’s "LiS Battery and ultracapacitor hybrid device" not-yet-started project — running in parallel, without disrupting the group’s existing electrochemistry cadence, to directly accelerate commercialisation certification.'
         ],
-        highlight: 'Producing research that holds up in journals and can also be deployed in the field.',
-        tags: ['Fire dynamics', 'Energy storage safety', 'Quantitative risk assessment', 'Numerical simulation', 'Energy systems']
+        highlight: 'Adding the thermal-safety boundary that qualifies cutting-edge carbon-based storage devices for scalable production.',
+        tags: ['M-rGO supercapacitors', 'Fast-charging Li–S batteries', 'AM2D Hub', 'Inherent Safety Design', 'Scale-up safety certification']
       },
 
       referees: {
