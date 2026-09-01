@@ -53,9 +53,9 @@ zh: {
 
 /* 1 · Hero（8:2 布局 · tagline ≤20 词 · 2×3 stats，accent ≤ 3） */
 hero: {
-  intent: '2026 届本科 · 申请 Monash AM2D Hub 博士（Majumder 教授课题组）',
+  intent: '2026 届本科 · 诚挚申请 Monash AM2D Hub 博士（Majumder 教授课题组）',
   title: '安全工程学士（2026） · 碳基储能器件级热安全评估',
-  tagline: '针对 M-rGO 2025 与快充 Li–S 2024 的器件级热安全空白，提供 Thermakin–FDS–QRA 方法链，补齐 Ionic Industries 产线安全认证前置数据。',
+  tagline: '针对 M-rGO 2025 与快充 Li–S 2024 的器件级热安全空白，期盼以 Thermakin–FDS–QRA 方法链，为 Ionic Industries 产线安全认证补齐前置数据。',
   keywords: ['M-rGO 700℃ e-IE 热解', '器件级热场 FDS', 'Li–S 安全间距判据', '本质安全 ISD', 'Ionic 产线认证'],
   affiliation: '福州大学 · 环境与安全工程学院 · 安全工程',
   availability: '2026.07 可入组（Monash 硕士留位费已缴，可随时转为 PhD）',
@@ -82,7 +82,7 @@ hero: {
 /* 2 · Research Fit（3 行 × 4 列 对齐表；Research + Targets 合并） */
 fit: {
   enabled: true,
-  intro: '本简历专为 Majumder 教授定制：仔细阅读 2025 年 Nature Communications（M-rGO）与 2024 年 Advanced Energy Materials（快充 Li–S）后，基于其研究缺口，提出 3 条可落地的贡献接口。',
+  intro: '本简历专为 Majumder 教授定制。拜读 2025 年 Nature Communications（M-rGO）与 2024 年 Advanced Energy Materials（快充 Li–S）后，深感器件级热安全评估正是我能贡献的方向，基于研究缺口提出 3 条可落地的贡献接口。',
   rows: [
     {
       dimension:  '材料层 · Material',
@@ -131,7 +131,7 @@ validation: {
 /* 4 · PhD Proposal（4 Block 线性 + 6 Milestones 时间表，删除原 5-block Bento 多余 Timeline） */
 proposal: {
   enabled: true,
-  intro: '本计划面向 Majumder 教授与 AM2D Hub 工业合作模型起草；方法链运行与现有电化学/材料研究完全解耦，可并行推进不占用课题组实验资源，可按教授在研节奏进一步细化。',
+  intro: '本计划面向 Majumder 教授与 AM2D Hub 工业合作模型诚恳起草；方法链运行与现有电化学/材料研究完全解耦，可并行推进不占用课题组实验资源，可按教授在研节奏进一步细化。',
   blocks: [
     {
       title: '① 研究问题 · Research Question',
@@ -268,10 +268,10 @@ skills: {
 statement: {
   enabled: true,
   paragraphs: [
-    '01 动机 Mot。作为安全工程专业学生，我的研究切入点始终是「从工程视角验证材料研究的可量产边界」——我不从事材料合成与电化学性能表征本身，而是回答「这个电池/超级电容在 Ionic 产线上能用到什么程度」的问题。',
+    '01 动机 Mot。作为安全工程专业学生，我始终关注的是「从工程视角验证材料研究的可量产边界」——我的角色不是材料合成与电化学性能表征本身，而是回答「这个电池/超级电容在 Ionic 产线上能用到什么程度」的问题。',
     '02 空白 Gap。Majumder 教授 2025 年 Nature Communications 与 2024 年 Advanced Energy Materials 已把材料电化学性能做到国际天花板，但 M-rGO 工作温升上限、e-IE 热稳定性演变、Li–S 穿梭-热耦合、LiS-UC Hybrid 安全间距——这四项决定量产的热边界判据目前仍为空白。',
     '03 方法 Appr。我的独立毕设已验证 Thermakin→FDS→QRA 三段式的端到端精度（HRR 峰偏差 ≤ 8%；三模型 Ea R² ≥ 0.98；安全间距判据 1 套交付）；连续两届担任全国安全学科竞赛队长+第一作者；第一作者专利/软著 3 项——这意味着我熟悉「问题定义→实验/建模→成果产出」完整闭环。',
-    '04 Monash 选择。在获 Monash 硕士录取并缴留位费之后，我调研了多个澳洲储能研究组，最终选择申请 Majumder 教授课题组——原因在于 AM2D Hub 完整的澳大利亚石墨→2D 制造→Ionic 商业化链条。我的研究与现有博士生的电化学课题互补，可贡献您主页 LiS-UC Hybrid 项目的热安全模块，并行推进、助力产线安全认证。'
+    '04 Monash 选择。在获 Monash 硕士录取并缴留位费之后，我调研了多个澳洲储能研究组，最终选择申请 Majumder 教授课题组——不仅因为 AM2D Hub 完整的澳大利亚石墨→2D 制造→Ionic 商业化链条，更因为拜读 M-rGO 论文后确信，自己的 Thermakin–FDS–QRA 方法链能为您团队补上器件级热安全这一环。我的研究与现有博士生的电化学课题互补，可贡献您主页 LiS-UC Hybrid 项目的热安全模块，并行推进、助力产线安全认证。'
   ],
   highlight: '给最先进的碳基储能器件，补上量产落地所需的器件级热安全边界。',
   tags: ['M-rGO 超级电容器', '快充 Li–S 电池', 'LiS-UC Hybrid', '本质安全设计 ISD', 'Ionic 产线认证']
@@ -307,7 +307,7 @@ referees: {
 resume: {
   enabled: true,
   title:       '申请对接材料',
-  description: '下载 PDF 版本学术简历（A4 排版，可直接用于套磁与网申）。未上传 PDF 时可使用「打印 / 另存为 PDF」导出当前页面；切换顶部「EN」后导出即为英文版。成绩单、排名证明、PTE 语言成绩可下载或应要求提供。',
+  description: '下载 PDF 版本学术简历（A4 排版，可直接用于套磁与网申），欢迎审阅。未上传 PDF 时可使用「打印 / 另存为 PDF」导出当前页面；切换顶部「EN」后导出即为英文版。成绩单、排名证明、PTE 语言成绩可下载或应要求提供。',
   pdfUrl:      'assets/files/resume-zh.pdf',
   pdfFileName: '徐其胜-Monash-AM2D-PhD-CV.pdf',
   transcriptUrl: 'assets/files/transcript-zh.pdf',
@@ -333,7 +333,7 @@ nav: [
 
 /* 13 · Footer（两行：① Monash Master admin note ② ORCID/Email/©/Last updated） */
 footer: {
-  adminNote:   '已获 Monash University 应用工程硕士（可持续能源方向）录取并缴纳留位费；确认与 AM2D Hub 研究方向高度契合后转为 PhD 申请，暂未入学硕士。',
+  adminNote:   '已获 Monash University 应用工程硕士（可持续能源方向）录取并缴纳留位费；拜读 Majumder 教授论文后确认研究方向高度契合，转为 PhD 申请，暂未入学硕士。',
   contactLine: 'ORCID 0009-0006-1858-0287 · Email jiugegugeer@outlook.com · © 2026 Qisheng Xu · Last updated 2026-08'
 }
 
@@ -346,9 +346,9 @@ en: {
 
 /* 1 · Hero */
 hero: {
-  intent: 'Class of 2026 · Applying for PhD with Prof. Majumder, Monash AM2D Hub',
+  intent: 'Class of 2026 · Seeking PhD with Prof. Majumder at Monash AM2D Hub',
   title: 'B.Eng. Safety Engineering (2026) · Device-Level Thermal Safety of Carbon Storage Devices',
-  tagline: 'Delivering a Thermakin–FDS–QRA device-level thermal-safety pipeline to close the gaps in M-rGO 2025 and fast-charging Li–S 2024 work, supplying the safety-certification prerequisite data for Ionic Industries production.',
+  tagline: 'Committed to delivering a Thermakin–FDS–QRA device-level thermal-safety pipeline to close the gaps in M-rGO 2025 and fast-charging Li–S 2024 work, helping supply the safety-certification prerequisite data for Ionic Industries production.',
   keywords: ['M-rGO 700℃ e-IE pyrolysis', 'FDS device thermal field', 'Li–S spacing criteria', 'Inherent Safety ISD', 'Ionic production cert'],
   affiliation: 'Fuzhou University · College of Environment & Safety Engineering · Safety Engineering',
   availability: 'Available Jul 2026 · Monash Master deposit paid (can switch to PhD admin at any time)',
@@ -375,7 +375,7 @@ hero: {
 /* 2 · Research Fit */
 fit: {
   enabled: true,
-  intro: 'Prepared for Prof. Majumder. After close reading of the 2025 Nature Communications (M-rGO) and 2024 Advanced Energy Materials (fast-charging Li–S) papers, three concrete contribution interfaces are proposed below.',
+  intro: 'Prepared for Prof. Majumder. After carefully studying the 2025 Nature Communications (M-rGO) and 2024 Advanced Energy Materials (fast-charging Li–S) papers, I became convinced that device-level thermal safety is exactly where I can contribute to your group. Three concrete contribution interfaces are proposed below.',
   rows: [
     {
       dimension:  'Material',
@@ -429,7 +429,7 @@ proposal: {
     {
       title: '① Research Question',
       desc:  'Prof. Majumder\'s 2025 Nature Communications demonstrates that M-rGO multiscale-curved graphene — via two-step 700℃ rapid thermal annealing plus operando e-IE interlayer expansion — achieves 99.5 Wh/L volumetric energy density, 91% capacitance retention at 50 000 cycles, 99.7 % Coulombic efficiency; the 2024 Advanced Energy Materials work delivers a fast-charging Li–S solution. Both papers focus on material-level electrochemical performance. The following four engineering-qualification boundaries are still unquantified: ① maximum safe operating temperature for M-rGO electrodes; ② how thermal stability evolves through the e-IE process; ③ onset conditions for Li–S polysulfide-shuttle × thermal-runaway coupling; ④ module-level safety spacing for the future LiS-UC hybrid device. These four quantified criteria are exactly the certification prerequisites for Ionic Industries\' Australian-graphite → AM2D manufacturing → scalable production roadmap.',
-      tags:  ['M-rGO 700℃ two-step anneal', 'operando e-IE expansion', 'Li–S shuttle×thermal coupling', 'LiS-UC Hybrid not started', 'Ionic production cert']
+      tags:  ['M-rGO 700℃ two-step anneal', 'operando e-IE expansion', 'Li–S shuttle×thermal coupling', 'LiS-UC Hybrid upcoming', 'Ionic production cert']
     },
     {
       title: '② Method & Approach',
@@ -560,10 +560,10 @@ skills: {
 statement: {
   enabled: true,
   paragraphs: [
-    '01 Motivation. As a Safety Engineering student my entry point is always the same: I do not synthesise new materials or characterise electrochemical performance. I quantify the deployability boundary that answers, "At what scale can this cell / supercapacitor actually ship on an Ionic Industries production line?"',
+    '01 Motivation. As a Safety Engineering student, my focus is on a different question than material synthesis or electrochemical performance: I quantify the deployability boundary that answers, "At what scale can this cell / supercapacitor actually ship on an Ionic Industries production line?"',
     '02 Gap. Prof. Majumder\'s 2025 Nature Communications and 2024 Advanced Energy Materials work have already pushed the material-level electrochemical ceiling to the international frontier. But the four thermal-boundary criteria that actually govern scalable production — M-rGO device operating-temperature ceiling, e-IE thermal-stability evolution, Li–S polysulfide-shuttle × thermal-runaway coupling, LiS-UC Hybrid module spacing — are still blank.',
     '03 Approach. My sole-author thesis has already validated the three-stage Thermakin → FDS → QRA pipeline end-to-end (HRR peak dev ≤ 8 %; 3-model Ea R² ≥ 0.98; one spacing-criterion deliverable accepted by faculty review). Two consecutive national-competition first-author leadership positions and three first-author patents/copyrights have already given me hands-on command of the full "problem definition → experiment / modelling → dissemination" research cycle.',
-    '04 Why Monash. After accepting and paying the deposit for a Monash Master of Applied Engineering (Sustainable Energy) offer I reviewed multiple Australian storage groups and chose to apply to Prof. Majumder and AM2D. The reason is simple: only AM2D brings together the complete Australian graphite → 2D manufacturing → Ionic commercialisation chain. My work complements existing PhD electrochemistry projects; I can contribute the thermal-safety module for the LiS-UC Hybrid project, running in parallel to support production-line safety certification.'
+    '04 Why Monash. After accepting and paying the deposit for a Monash Master of Applied Engineering (Sustainable Energy) offer, I studied several Australian storage groups and chose to apply to Prof. Majumder and AM2D — not only because of the complete Australian graphite → 2D manufacturing → Ionic commercialisation chain, but also because reading the M-rGO paper convinced me that my Thermakin–FDS–QRA pipeline can fill the device-level thermal-safety gap for your team. My work complements existing PhD electrochemistry projects; I can contribute the thermal-safety module for the LiS-UC Hybrid project, running in parallel to support production-line safety certification.'
   ],
   highlight: 'Adding the device-level thermal-safety boundary that qualifies cutting-edge carbon storage for scalable manufacturing.',
   tags: ['M-rGO supercapacitors', 'Fast-charging Li–S batteries', 'LiS-UC Hybrid', 'Inherent Safety Design (ISD)', 'Ionic Industries certification']
@@ -599,7 +599,7 @@ referees: {
 resume: {
   enabled: true,
   title:       'Application Documents',
-  description: 'Download the PDF CV (A4 formatted; supervisor email and formal application ready). If no PDF is uploaded yet, use "Print / Save as PDF" to export this page; switch to EN at top-right before exporting for an English-language PDF. Transcript, ranking certificate and PTE report available for download or on request.',
+  description: 'Download the PDF CV (A4 formatted; supervisor email and formal application ready). You are also welcome to use "Print / Save as PDF" to export this page; switch to EN at top-right before exporting for an English-language PDF. Transcript, ranking certificate and PTE report available for download or on request.',
   pdfUrl:      'assets/files/resume-en.pdf',
   pdfFileName: 'Qisheng-Xu-Monash-AM2D-PhD-CV.pdf',
   transcriptUrl: 'assets/files/transcript-en.pdf',
@@ -625,7 +625,7 @@ nav: [
 
 /* 13 · Footer */
 footer: {
-  adminNote:   'Held a paid Monash University Master of Applied Engineering (Sustainable Energy) offer; after reviewing the full AM2D research chain I am applying directly for PhD entry and have not enrolled in the Master.',
+  adminNote:   'Held a paid Monash University Master of Applied Engineering (Sustainable Energy) offer; after reading Prof. Majumder\'s papers and confirming strong research alignment, I switched to PhD application and have not enrolled in the Master.',
   contactLine: 'ORCID 0009-0006-1858-0287 · Email jiugegugeer@outlook.com · © 2026 Qisheng Xu · Last updated 2026-08'
 }
 
