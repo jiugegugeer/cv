@@ -53,9 +53,9 @@ zh: {
 
 /* 1 · Hero（8:2 布局 · tagline ≤20 词 · 2×3 stats，accent ≤ 3） */
 hero: {
-  intent: '2026 届本科 · 直申 Monash AM2D Hub 全奖博士（仅投递 Majumder 教授）',
+  intent: '2026 届本科 · 申请 Monash AM2D Hub 博士（Majumder 教授课题组）',
   title: '安全工程学士（2026） · 碳基储能器件级热安全评估',
-  tagline: '针对 M-rGO 2025 与快充 Li–S 2024 的器件级热安全空白，提供可迁移的 Thermakin–FDS–QRA 方法链，加速 Ionic Industries 量产认证。',
+  tagline: '针对 M-rGO 2025 与快充 Li–S 2024 的器件级热安全空白，提供 Thermakin–FDS–QRA 方法链，补齐 Ionic Industries 产线安全认证前置数据。',
   keywords: ['M-rGO 700℃ e-IE 热解', '器件级热场 FDS', 'Li–S 安全间距判据', '本质安全 ISD', 'Ionic 产线认证'],
   affiliation: '福州大学 · 环境与安全工程学院 · 安全工程',
   availability: '2026.07 可入组（Monash 硕士留位费已缴，可随时转为 PhD）',
@@ -63,7 +63,7 @@ hero: {
     { label: '申请目标', value: 'Monash PhD (Full)', note: 'AM2D / Majumder', accent: true },
     { label: '方法链',   value: 'Thermakin·FDS·QRA', note: '毕设独立验证通过' },
     { label: '语言达标', value: 'PTE 60（单项 ≥ 58 · 符合 Monash PhD 要求）', note: '≥ Monash Eng 58 ✅' },
-    { label: 'Monash',   value: '硕士 Offer 已缴费', note: '熟悉 Monash 生态', accent: true },
+    { label: 'Monash',   value: '硕士已录取', note: '了解博士申请流程', accent: true },
     { label: '第一作者', value: '3 项 IP',           note: '1 专利 + 2 软著' },
     { label: '方法验证', value: '校级优秀毕设',       note: '独立：实验→建模→判据', accent: true }
   ],
@@ -71,7 +71,7 @@ hero: {
     '独立完成 Thermakin + FDS 端到端对标（HRR 峰偏差 ≤ 8%）',
     '连续两年全国安全学科竞赛队长 + 第一作者（一等奖 + 二等奖）',
     'M-rGO 2025 Nat Comms 全文精读 · 识别 4 项器件级热边界空白',
-    '仅投递 Majumder 教授 · 非泛申 · 可承接 LiS-UC Hybrid 未启动课题'
+    '专注申请 Majumder 教授课题组 · 可贡献 LiS-UC Hybrid 热安全模块'
   ],
   actions: [
     { text: '申请对接 · 下载 CV（PDF）', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
@@ -82,7 +82,7 @@ hero: {
 /* 2 · Research Fit（3 行 × 4 列 对齐表；Research + Targets 合并） */
 fit: {
   enabled: true,
-  intro: '本简历专为 Majumder 教授定制：逐段研读 2025 年 Nature Communications（M-rGO）与 2024 年 Advanced Energy Materials（快充 Li–S）后，基于其研究缺口，提出 3 条可直接落地的贡献接口。',
+  intro: '本简历专为 Majumder 教授定制：仔细阅读 2025 年 Nature Communications（M-rGO）与 2024 年 Advanced Energy Materials（快充 Li–S）后，基于其研究缺口，提出 3 条可落地的贡献接口。',
   rows: [
     {
       dimension:  '材料层 · Material',
@@ -108,7 +108,7 @@ fit: {
 /* 3 · Thesis Validation（3 项定量验证指标 · 方法链可落地证明） */
 validation: {
   enabled: true,
-  intro: '以下 3 项数据全部来自本科毕设《阻燃竹材的热解和燃烧实验及数值模拟研究》（独立完成，校级优秀），证明「Thermakin → FDS → QRA」方法链精度与完整性可直接迁移至 M-rGO / Li–S 器件。',
+  intro: '以下 3 项数据全部来自本科毕设《阻燃竹材的热解和燃烧实验及数值模拟研究》（独立完成，校级优秀），为「Thermakin → FDS → QRA」方法链迁移至 M-rGO / Li–S 器件提供可行性参考。',
   metrics: [
     {
       value: '≤ 8 %',  unit: 'deviation',
@@ -145,8 +145,8 @@ proposal: {
     },
     {
       title: '③ 与 AM2D Hub 的契合 · Alignment with AM2D',
-      desc:  '互补非竞争：现有博士生聚焦材料合成与电化学表征，我专注器件级热安全与数值模拟——两者不抢样品、不抢时间表。尤其适合承接您主页「LiS Battery and Ultracapacitor Hybrid Device」未启动课题的热安全模块：可与您已有 Hybrid 电化学团队并行推进，由其提供器件样品与性能曲线，我独立完成 Thermakin 参数提取 + FDS 热场建模 + QRA 安全间距判据，直接加速整个项目的工程化认证进度。此外本人已获 Monash 可持续能源方向硕士录取并缴纳留位费，熟悉 Monash 博士申请流程、AM2D Hub 与 Ionic Industries 的工业合作模式，可在无签证/入学行政障碍下尽快启动科研工作。',
-      tags:  ['互补非重叠贡献', 'LiS-UC Hybrid 承接', '并行不干预实验节奏', '熟悉 Monash 生态', '零行政启动周期']
+      desc:  '与现有博士生课题互补：材料合成与电化学表征由现有团队负责，我专注器件级热安全与数值模拟，资源需求不重叠。可为您主页「LiS Battery and Ultracapacitor Hybrid Device」项目贡献热安全模块：与已有 Hybrid 电化学团队并行推进，由其提供器件样品与性能曲线，我独立完成 Thermakin 参数提取 + FDS 热场建模 + QRA 安全间距判据，助力整个项目的工程化认证进度。此外本人已获 Monash 可持续能源方向硕士录取并缴纳留位费，了解 Monash 博士申请流程及 AM2D Hub 与 Ionic Industries 的工业合作模式，可尽快启动科研工作。',
+      tags:  ['互补非重叠贡献', 'LiS-UC Hybrid 热安全模块', '并行推进', '了解 Monash 流程', '快速启动']
     },
     {
       title: '④ 预期交付物 · Deliverables',
@@ -271,7 +271,7 @@ statement: {
     '01 动机 Mot。作为安全工程专业学生，我的研究切入点始终是「从工程视角验证材料研究的可量产边界」——我不从事材料合成与电化学性能表征本身，而是回答「这个电池/超级电容在 Ionic 产线上能用到什么程度」的问题。',
     '02 空白 Gap。Majumder 教授 2025 年 Nature Communications 与 2024 年 Advanced Energy Materials 已把材料电化学性能做到国际天花板，但 M-rGO 工作温升上限、e-IE 热稳定性演变、Li–S 穿梭-热耦合、LiS-UC Hybrid 安全间距——这四项决定量产的热边界判据目前仍为空白。',
     '03 方法 Appr。我的独立毕设已验证 Thermakin→FDS→QRA 三段式的端到端精度（HRR 峰偏差 ≤ 8%；三模型 Ea R² ≥ 0.98；安全间距判据 1 套交付）；连续两届担任全国安全学科竞赛队长+第一作者；第一作者专利/软著 3 项——这意味着我熟悉「问题定义→实验/建模→成果产出」完整闭环。',
-    '04 Monash 选择。在获 Monash 硕士录取并缴留位费之后，我调研了多个澳洲储能研究组，最终仅投递 Majumder 教授——原因只在于 AM2D Hub 完整的澳大利亚石墨→2D 制造→Ionic 商业化链条。我的研究不会与现有博士生的电化学课题重叠，反而可专门承接您主页 LiS-UC Hybrid 未启动课题的热安全模块，并行推进、直接加速商业认证。'
+    '04 Monash 选择。在获 Monash 硕士录取并缴留位费之后，我调研了多个澳洲储能研究组，最终选择申请 Majumder 教授课题组——原因在于 AM2D Hub 完整的澳大利亚石墨→2D 制造→Ionic 商业化链条。我的研究与现有博士生的电化学课题互补，可贡献您主页 LiS-UC Hybrid 项目的热安全模块，并行推进、助力产线安全认证。'
   ],
   highlight: '给最先进的碳基储能器件，补上量产落地所需的器件级热安全边界。',
   tags: ['M-rGO 超级电容器', '快充 Li–S 电池', 'LiS-UC Hybrid', '本质安全设计 ISD', 'Ionic 产线认证']
@@ -333,7 +333,7 @@ nav: [
 
 /* 13 · Footer（两行：① Monash Master admin note ② ORCID/Email/©/Last updated） */
 footer: {
-  adminNote:   '已获 Monash University 应用工程硕士（可持续能源方向）录取并缴纳留位费；评估 AM2D Hub 完整课题后决定直申 PhD，暂未入学硕士。',
+  adminNote:   '已获 Monash University 应用工程硕士（可持续能源方向）录取并缴纳留位费；确认与 AM2D Hub 研究方向高度契合后转为 PhD 申请，暂未入学硕士。',
   contactLine: 'ORCID 0009-0006-1858-0287 · Email jiugegugeer@outlook.com · © 2026 Qisheng Xu · Last updated 2026-08'
 }
 
@@ -346,9 +346,9 @@ en: {
 
 /* 1 · Hero */
 hero: {
-  intent: 'Class of 2026 · Applying exclusively for a fully-funded PhD with Prof. Majumder, Monash AM2D Hub',
+  intent: 'Class of 2026 · Applying for PhD with Prof. Majumder, Monash AM2D Hub',
   title: 'B.Eng. Safety Engineering (2026) · Device-Level Thermal Safety of Carbon Storage Devices',
-  tagline: 'Delivering a transferable Thermakin–FDS–QRA device-level thermal-safety pipeline to close the gaps in M-rGO 2025 and fast-charging Li–S 2024 work, accelerating Ionic Industries manufacturing certification.',
+  tagline: 'Delivering a Thermakin–FDS–QRA device-level thermal-safety pipeline to close the gaps in M-rGO 2025 and fast-charging Li–S 2024 work, supplying the safety-certification prerequisite data for Ionic Industries production.',
   keywords: ['M-rGO 700℃ e-IE pyrolysis', 'FDS device thermal field', 'Li–S spacing criteria', 'Inherent Safety ISD', 'Ionic production cert'],
   affiliation: 'Fuzhou University · College of Environment & Safety Engineering · Safety Engineering',
   availability: 'Available Jul 2026 · Monash Master deposit paid (can switch to PhD admin at any time)',
@@ -356,7 +356,7 @@ hero: {
     { label: 'Target',       value: 'Monash PhD (Funded)', note: 'AM2D / Prof. Majumder', accent: true },
     { label: 'Method chain', value: 'Thermakin·FDS·QRA',   note: 'Sole-author thesis validated' },
     { label: 'English',      value: 'PTE 60 (Skills ≥ 58 · Meets Monash PhD)', note: '≥ Monash Eng PhD 58 ✅' },
-    { label: 'Monash',       value: 'Master deposit paid', note: 'Monash ecosystem familiar', accent: true },
+    { label: 'Monash',       value: 'Master admitted', note: 'Familiar with PhD admin process', accent: true },
     { label: '1st-author IP', value: '3 pieces',           note: '1 patent + 2 copyright' },
     { label: 'Validation',   value: 'Outstanding Thesis',  note: 'Expt→Model→Criteria (solo)', accent: true }
   ],
@@ -364,7 +364,7 @@ hero: {
     'Sole-author Thermakin + FDS benchmarked (HRR peak deviation ≤ 8%)',
     'Team leader + first author, 2× consecutive national safety-competition awards (1st & 2nd)',
     'Line-by-line reading of M-rGO 2025 Nat Comms; 4 device-level thermal gaps identified',
-    'Not mass-applying — dedicated to Prof. Majumder; ready to host the LiS-UC Hybrid thermal module'
+    'Focused on Prof. Majumder\'s group; available to contribute to the LiS-UC Hybrid thermal-safety module'
   ],
   actions: [
     { text: 'Open CV (PDF) · Apply',     action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
@@ -375,7 +375,7 @@ hero: {
 /* 2 · Research Fit */
 fit: {
   enabled: true,
-  intro: 'Prepared exclusively for Prof. Majumder. After reading the 2025 Nature Communications (M-rGO) and 2024 Advanced Energy Materials (fast-charging Li–S) papers line by line, three concrete, immediately deployable contribution interfaces are proposed below.',
+  intro: 'Prepared for Prof. Majumder. After close reading of the 2025 Nature Communications (M-rGO) and 2024 Advanced Energy Materials (fast-charging Li–S) papers, three concrete contribution interfaces are proposed below.',
   rows: [
     {
       dimension:  'Material',
@@ -401,7 +401,7 @@ fit: {
 /* 3 · Thesis Validation */
 validation: {
   enabled: true,
-  intro: 'All three metrics below come from my sole-author undergraduate thesis "Pyrolysis and Combustion Experiments and Numerical Simulation of Flame-Retardant Bamboo" (Outstanding, university level). They prove the Thermakin → FDS → QRA pipeline is accurate, complete and transferable to M-rGO / Li–S devices.',
+  intro: 'All three metrics below come from my sole-author undergraduate thesis "Pyrolysis and Combustion Experiments and Numerical Simulation of Flame-Retardant Bamboo" (Outstanding, university level). They provide a feasibility basis for transferring the Thermakin → FDS → QRA pipeline to M-rGO / Li–S devices.',
   metrics: [
     {
       value: '≤ 8 %',  unit: 'deviation',
@@ -438,8 +438,8 @@ proposal: {
     },
     {
       title: '③ Alignment with AM2D Hub',
-      desc:  'Complementary, not competitive: existing PhD candidates focus on material synthesis and electrochemistry; I focus on device-level thermal safety and numerical simulation. We never compete for samples or schedule. This is particularly suited to hosting the thermal-safety module for your homepage\'s "LiS Battery and Ultracapacitor Hybrid Device" not-yet-started project: their electrochemistry team supplies device samples and performance curves; I independently deliver Thermakin parameters, FDS thermal fields and QRA spacing criteria, directly accelerating the engineering-certification timeline for the entire project. Finally, I already hold a paid Monash Master of Applied Engineering (Sustainable Energy) offer and am therefore intimately familiar with Monash PhD-administration, the AM2D Hub governance and the Ionic Industries industrial-collaboration model — zero admin startup friction.',
-      tags:  ['Complementary non-overlapping contribution', 'Hosts LiS-UC Hybrid thermal module', 'Parallel execution, no schedule conflict', 'Monash ecosystem familiar', 'Zero admin onboarding friction']
+      desc:  'Complementary contribution: existing PhD candidates focus on material synthesis and electrochemistry; I focus on device-level thermal safety and numerical simulation. Our resource needs do not overlap. I can contribute the thermal-safety module for the "LiS Battery and Ultracapacitor Hybrid Device" project on your group page: their electrochemistry team supplies device samples and performance curves; I independently deliver Thermakin parameters, FDS thermal fields and QRA spacing criteria, supporting the engineering-certification timeline for the entire project. Additionally, I already hold a Monash Master of Applied Engineering (Sustainable Energy) offer (deposit paid) and am familiar with the Monash PhD administration, the AM2D Hub governance and the Ionic Industries industrial-collaboration model — minimal admin onboarding needed.',
+      tags:  ['Complementary non-overlapping contribution', 'LiS-UC Hybrid thermal-safety module', 'Parallel execution', 'Familiar with Monash process', 'Fast onboarding']
     },
     {
       title: '④ Deliverables',
@@ -563,7 +563,7 @@ statement: {
     '01 Motivation. As a Safety Engineering student my entry point is always the same: I do not synthesise new materials or characterise electrochemical performance. I quantify the deployability boundary that answers, "At what scale can this cell / supercapacitor actually ship on an Ionic Industries production line?"',
     '02 Gap. Prof. Majumder\'s 2025 Nature Communications and 2024 Advanced Energy Materials work have already pushed the material-level electrochemical ceiling to the international frontier. But the four thermal-boundary criteria that actually govern scalable production — M-rGO device operating-temperature ceiling, e-IE thermal-stability evolution, Li–S polysulfide-shuttle × thermal-runaway coupling, LiS-UC Hybrid module spacing — are still blank.',
     '03 Approach. My sole-author thesis has already validated the three-stage Thermakin → FDS → QRA pipeline end-to-end (HRR peak dev ≤ 8 %; 3-model Ea R² ≥ 0.98; one spacing-criterion deliverable accepted by faculty review). Two consecutive national-competition first-author leadership positions and three first-author patents/copyrights have already given me hands-on command of the full "problem definition → experiment / modelling → dissemination" research cycle.',
-    '04 Why Monash (and only Monash). After accepting and paying the deposit for a Monash Master of Applied Engineering (Sustainable Energy) offer I reviewed multiple Australian storage groups; I am applying to Prof. Majumder and AM2D exclusively. The reason is simple: only AM2D brings together the complete Australian graphite → 2D manufacturing → Ionic commercialisation chain. My work never overlaps with existing PhD electrochemistry projects — instead it can specifically host the thermal-safety module for your homepage\'s not-yet-started LiS-UC Hybrid project, run in parallel, and directly accelerate production certification.'
+    '04 Why Monash. After accepting and paying the deposit for a Monash Master of Applied Engineering (Sustainable Energy) offer I reviewed multiple Australian storage groups and chose to apply to Prof. Majumder and AM2D. The reason is simple: only AM2D brings together the complete Australian graphite → 2D manufacturing → Ionic commercialisation chain. My work complements existing PhD electrochemistry projects; I can contribute the thermal-safety module for the LiS-UC Hybrid project, running in parallel to support production-line safety certification.'
   ],
   highlight: 'Adding the device-level thermal-safety boundary that qualifies cutting-edge carbon storage for scalable manufacturing.',
   tags: ['M-rGO supercapacitors', 'Fast-charging Li–S batteries', 'LiS-UC Hybrid', 'Inherent Safety Design (ISD)', 'Ionic Industries certification']
