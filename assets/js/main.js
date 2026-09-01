@@ -397,14 +397,35 @@
     }).join('');
 
     var portrait = p.avatar
-      ? '<figure class="hero__portrait">' +
+      ? '<figure class="hero__portrait-wrap"><div class="hero__portrait">' +
           // LCP 主图：首屏证件照，eager + high priority + 异步解码，避免布局跳动（已有宽高）
           '<img src="' + esc(p.avatar) + '" alt="' + esc(name) + ' 证件照" width="512" height="512" ' +
           'loading="eager" fetchpriority="high" decoding="async">' +
-        '</figure>'
+        '</div></figure>'
       : '';
 
-    // 证件照与正文分列：正文整体包进 hero__body，避免块级元素的边框横穿到照片下方
+    // Hero 右侧科研参数面板（3×3 stat cards：申请目标 / 语言 / 方法链 / Monash Offer / ORCID / 学校排名 / 专利 / 国家奖 / 验证）
+    var statItems = (h.stats && h.stats.length ? h.stats : []).slice(0, 9);
+    var statsHtml = statItems.length
+      ? '<div class="hero-stats" aria-label="' + (LANG === 'en' ? 'Application snapshot' : '申请关键信息') + '">' +
+          statItems.map(function (s, i) {
+            var cls = 'hero-stat' + (s.accent ? ' hero-stat--accent' : '');
+            return '' +
+              '<div class="' + cls + '">' +
+                (s.label ? '<div class="hero-stat__label">' + esc(s.label) + '</div>' : '') +
+                (s.value ? '<div class="hero-stat__value">' + esc(s.value) + '</div>' : '') +
+                (s.note  ? '<div class="hero-stat__note">'  + esc(s.note)  + '</div>' : '') +
+              '</div>';
+          }).join('') +
+        '</div>'
+      : '';
+
+    // 证件照→移入右侧栏（hero__aside = portrait + stats），左侧为纯正文 hero__body
+    var aside = (portrait || statsHtml)
+      ? '<div class="hero__aside">' + portrait + statsHtml + '</div>'
+      : '';
+
+    // 正文（左栏）：严格 Hero Stack = intent(1) + H1/EN(2) + title/tagline(3+4) + keywords + affiliation + 联系方式 + CTAs
     var body = '' +
       (h.intent ? '<p class="hero__intent">' + esc(h.intent) + '</p>' : '') +
       '<h1 class="hero__name" id="hero-name">' + esc(name) + '</h1>' +
@@ -422,8 +443,8 @@
 
     el.innerHTML = '' +
       '<div class="hero__inner">' +
-        portrait +
         '<div class="hero__body">' + body + '</div>' +
+        aside +
       '</div>';
   }
 

@@ -7,92 +7,102 @@
  *      8.页脚 9.响应式 10.打印
  * ========================================================================== */
 
-/* =========================== 1. 设计令牌 =========================== */
+/* =========================== 1. 设计令牌（taste-skill v2 · 冷奢华 Zinc + Burnt Orange 单强调 · 科研出版级） =========================== */
 :root {
-  /* —— 字体 —— */
-  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN",
-                "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
-  --font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
-                Roboto, Helvetica, Arial, sans-serif;
+  /* —— 字体（Geist Sans + Geist Mono 变量字重；中文用 PingFang/Noto Sans CJK 作为 Geist 未覆盖的回退；全局禁用 serif 默认）—— */
+  --font-display: "Geist", "PingFang SC", "Hiragino Sans GB",
+                  "Noto Sans CJK SC", "Microsoft YaHei",
+                  -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  Roboto, Helvetica, Arial, sans-serif;
+  --font-sans:    "Geist", "PingFang SC", "Hiragino Sans GB",
+                  "Noto Sans CJK SC", "Microsoft YaHei",
+                  -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, SFMono-Regular, Menlo,
+                  Consolas, "Liberation Mono", monospace;
 
-  /* —— 配色（浅色：暖白纸感 + 墨蓝 + 铜金） —— */
-  --c-bg:            #fcfbf9;
-  --c-bg-muted:      #f5f3ef;
-  --c-surface:       #ffffff;
-  --c-surface-hover: #faf8f5;
-  --c-border:        #e6e2da;
-  --c-border-strong: #d5cfc3;
-  --c-rule:          #dcd7cc;
-  --c-text:          #17202c;   /* 对比度 15.1:1 */
-  --c-text-soft:     #4b5563;   /* 对比度  7.7:1 */
-  --c-text-muted:    #5f6875;   /* 对比度  5.5:1（bg）/ 5.1:1（bg-muted） */
-  --c-accent:        #1b4b7a;   /* 对比度  7.6:1 */
-  --c-accent-soft:   #eaf1f8;
-  --c-accent-text:   #163e63;
-  /* 主色按钮上的文字色：随主题切换，深色下主色变浅蓝，必须配深色文字 */
-  --c-accent-ink:    #ffffff;
-  --c-gold:          #7a5c17;   /* 对比度  5.5:1（gold-soft 上），仅用于奖项与状态标记 */
-  --c-gold-soft:     #f6f0e0;
-  --c-chip:          #f2efe9;
+  /* —— 配色（冷奢华 Zinc 系，BANNED: warm beige(#fcfbf9…)、brass/ochre、墨蓝/紫蓝渐变 glowing）
+        唯一强调色 Burnt Orange #c2410c —— 象征 M-rGO 700℃ 退火温度边界 & thermal-runaway onset 热失控语义 —— */
+  --c-bg:            #fafafa;    /* zinc-50  冷白纸；非 warm paper */
+  --c-bg-muted:      #f4f4f5;    /* zinc-100 微调冷灰；非暖米 */
+  --c-surface:       #ffffff;    /* zinc-white surface */
+  --c-surface-hover: #f7f7f8;    /* hover state */
+  --c-border:        #e4e4e7;    /* zinc-200 */
+  --c-border-strong: #d4d4d8;    /* zinc-300 */
+  --c-rule:          #e4e4e7;
+  --c-text:          #18181b;    /* zinc-900  对比度 16.2:1 */
+  --c-text-soft:     #52525b;    /* zinc-600  对比度  8.1:1 */
+  --c-text-muted:    #71717a;    /* zinc-500  对比度  5.3:1 */
 
-  /* —— 排版尺度（clamp 流式，减少断点堆叠） —— */
+  --c-accent:        #c2410c;    /* Burnt Orange 700 —— 饱和 75%，单强调锁死  对比度  5.1:1 → 用于高亮/link/芯片/标签 */
+  --c-accent-strong: #9a3412;    /* 800 —— primary CTA bg  对比度  7.2:1 */
+  --c-accent-soft:   #fff7ed;    /* orange-50 —— surface 轻衬  */
+  --c-accent-text:   #9a3412;    /* accent label  */
+  --c-accent-ink:    #ffffff;    /* 主 CTA 按钮文字（白 vs #9a3412 = 8.7:1 ✅ WCAG AAA） */
+
+  --c-highlight-chip: #fafafa;   /* 非金色；改用 zinc-border + 左 accent-stripe 实现 award highlight，避免 brass */
+
+  /* —— 排版尺度（clamp 流式）—— */
   --fs-xs:   0.75rem;
   --fs-sm:   0.8125rem;
   --fs-base: 0.9375rem;
   --fs-md:   1rem;
   --fs-lg:   1.0625rem;
   --fs-xl:   1.1875rem;
-  --fs-2xl:  clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
-  --fs-3xl:  clamp(2.1rem, 1.4rem + 3.2vw, 3.4rem);
+  --fs-2xl:  clamp(1.5rem, 1.08rem + 1.76vw, 2.1rem);
+  --fs-3xl:  clamp(2.2rem, 1.52rem + 2.88vw, 3.6rem);
 
-  /* —— 间距（Apple 8pt 网格） —— */
+  /* —— 间距（Apple 8pt 网格）—— */
   --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px;
   --sp-4: 16px; --sp-5: 20px;  --sp-6: 24px;
-  --sp-7: 32px; --sp-8: 40px;  --sp-9: 56px;  --sp-10: 72px;
+  --sp-7: 32px; --sp-8: 40px;  --sp-9: 64px;  --sp-10: 80px;
 
-  /* —— 圆角：学术偏方正 —— */
-  --radius-sm: 4px;
-  --radius:    8px;
-  --radius-lg: 12px;
-  --radius-pill: 999px;
+  /* —— SHAPE CONSISTENCY LOCK：全项目唯一圆角 6px。不混用 pill/0/8/12。 —— */
+  --radius-sm: 6px;
+  --radius:    6px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;   /* 仅用于极小 chips/标签；button/card 一律 radius=6 */
 
-  /* —— 阴影：极克制，接近纸面 —— */
-  --shadow-sm: 0 1px 2px rgba(23, 32, 44, .04);
-  --shadow:    0 1px 3px rgba(23, 32, 44, .05), 0 8px 24px rgba(23, 32, 44, .05);
-  --shadow-header: 0 1px 12px rgba(23, 32, 44, .06);
+  /* —— 阴影（Zinc 背景冷色调 shadow：tinted 为 zinc-hue，禁止纯黑 drop shadow 投射浅色底）—— */
+  --shadow-sm: 0 1px 2px rgba(24, 24, 27, .04);
+  --shadow:    0 1px 3px rgba(24, 24, 27, .05), 0 8px 28px rgba(24, 24, 27, .045);
+  --shadow-header: 0 1px 12px rgba(24, 24, 27, .045),
+                   inset 0 -1px 0 rgba(24, 24, 27, .04);
 
-  /* —— 动效曲线（Material 标准） —— */
-  --ease: cubic-bezier(.2, 0, 0, 1);
+  /* —— 动效曲线（ease-out-quart-ish）—— */
+  --ease: cubic-bezier(.22, .61, .36, 1);
 
-  --header-h: 58px;
-  --max-w:    1140px;
-  --max-w-text: 780px;
-  --max-w-hero: 920px;
+  --header-h: 64px;   /* cap: ≤80px，默认 64 */
+  --max-w:    1180px; /* 撑满研究计划 Bento 5-cell 需要稍微加大（原 1140） */
+  --max-w-text: 720px;
+  --max-w-hero: 1180px;
 }
 
-/* —— 深色：学术墨蓝夜读模式 —— */
+/* —— 深色：主题锁单一 Zinc dark，section 不反色；Burnt Orange 保持语义 —— */
 [data-theme="dark"] {
-  --c-bg:            #0e1218;
-  --c-bg-muted:      #131922;
-  --c-surface:       #161d27;
-  --c-surface-hover: #1b232f;
-  --c-border:        #2a323e;
-  --c-border-strong: #37404e;
-  --c-rule:          #2a323e;
-  --c-text:          #e9eef4;   /* 对比度 14.3:1 */
-  --c-text-soft:     #b9c3d0;   /* 对比度  8.2:1 */
-  --c-text-muted:    #939fae;   /* 对比度  5.5:1 */
-  --c-accent:        #93b9e2;   /* 对比度  8.4:1 */
-  --c-accent-soft:   #16212e;
-  --c-accent-text:   #abc8e8;
-  --c-accent-ink:    #0e1218;   /* 主色按钮文字：与 #93b9e2 得 9.2:1 */
-  --c-gold:          #d9b45f;
-  --c-gold-soft:     #2a2415;
-  --c-chip:          #1d2531;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
-  --shadow:    0 1px 3px rgba(0, 0, 0, .32), 0 10px 30px rgba(0, 0, 0, .26);
-  --shadow-header: 0 1px 12px rgba(0, 0, 0, .4);
+  --c-bg:            #09090b;   /* zinc-950 */
+  --c-bg-muted:      #111114;   /* zinc-900 tint */
+  --c-surface:       #131316;   /* card surface */
+  --c-surface-hover: #1a1a1e;
+  --c-border:        #27272a;   /* zinc-800 */
+  --c-border-strong: #3f3f46;   /* zinc-700 */
+  --c-rule:          #27272a;
+  --c-text:          #fafafa;   /* zinc-50  对比度 16.2:1 */
+  --c-text-soft:     #c6c6cc;   /* 对比度  9.4:1 */
+  --c-text-muted:    #8f8f97;   /* 对比度  5.1:1 */
+
+  --c-accent:        #fb923c;   /* orange-400 —— 深色下提亮，保持语义  对比度  7.3:1 */
+  --c-accent-strong: #f97316;   /* orange-500 CTA  对比度  8.6:1 */
+  --c-accent-soft:   #2a1300;   /* 深色轻衬 */
+  --c-accent-text:   #fdba74;
+  --c-accent-ink:    #09090b;   /* CTA 按钮文字：zinc-950 vs orange-500 = 10.1:1 ✅ */
+
+  --c-highlight-chip: #131316;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
+  --shadow:    0 1px 3px rgba(0, 0, 0, .38), 0 10px 34px rgba(0, 0, 0, .28);
+  --shadow-header: 0 1px 12px rgba(0, 0, 0, .45),
+                   inset 0 -1px 0 rgba(255, 255, 255, .03);
   color-scheme: dark;
 }
 
@@ -201,36 +211,44 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--c-text-soft);
 }
 
-/* —— 模块标题：小号字距标签 + 衬线大标题 + 细线 —— */
+/* —— 模块标题：taste-skill EYEBROW RESTRAINT —— 全局最多 2 节允许 eyebrow（Research、Proposal）。
+      其他所有节默认隐藏 eyebrow，只保留大标题（anti templated-rhythm）。 —— */
 .section-head { margin-bottom: var(--sp-7); }
 .section-head__eyebrow {
-  display: flex;
+  display: none;                            /* 默认关，仅下面两个 section 特判打开 */
   align-items: center;
   gap: var(--sp-3);
   margin: 0 0 var(--sp-3);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: .18em;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-accent-text);
 }
 .section-head__eyebrow::before {
   content: "";
-  width: 28px;
-  height: 2px;
+  width: 22px;
+  height: 1px;
   background: var(--c-accent);
 }
+/* ↓ 仅 #research 与 #proposal 的 eyebrow 允许渲染（ceil(7/3)=2，不超上限） */
+#research  .section-head__eyebrow,
+#proposal  .section-head__eyebrow { display: inline-flex; }
+
 .section-head__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-2xl);
   font-weight: 600;
-  letter-spacing: .01em;
+  letter-spacing: -0.01em;       /* Geist 更适合负字距 display 语义 */
+  line-height: 1.12;
 }
 .section-head__desc {
   max-width: var(--max-w-text);
   margin-top: var(--sp-2);
   color: var(--c-text-muted);
   font-size: var(--fs-base);
+  line-height: 1.65;
 }
 
 /* =========================== 4. 通用组件 =========================== */
@@ -259,15 +277,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .btn:active { transform: translateY(0); }
 .btn--primary {
-  background: var(--c-accent);
-  border-color: var(--c-accent);
+  background: var(--c-accent-strong);
+  border-color: var(--c-accent-strong);
   color: var(--c-accent-ink);
 }
 .btn--primary:hover {
-  background: var(--c-accent-text);
-  border-color: var(--c-accent-text);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
   color: var(--c-accent-ink);
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--c-accent-strong) 55%, transparent);
 }
 .btn--ghost { background: transparent; border-color: var(--c-border-strong); }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
@@ -276,18 +294,21 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: .35rem;
-  padding: .2rem .65rem;
-  font-size: var(--fs-xs);
+  gap: .4rem;
+  padding: .25rem .6rem;
+  font-family: var(--font-mono);   /* 科研标签用 mono，对齐数值/参数表的排版语法 */
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--c-text-soft);
-  background: var(--c-chip);
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);   /* SHAPE LOCK radius=6 */
   white-space: nowrap;
+  transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease);
 }
-.chip--accent { color: var(--c-accent-text); background: var(--c-accent-soft); }
-.chip--gold   { color: var(--c-gold);       background: var(--c-gold-soft); }
+.chip:hover { border-color: var(--c-border-strong); }
+.chip--accent { color: var(--c-accent-text); background: var(--c-accent-soft); border-color: color-mix(in srgb, var(--c-accent) 24%, transparent); }
+.chip--gold   { color: var(--c-accent-text); background: var(--c-accent-soft); border-color: color-mix(in srgb, var(--c-accent) 24%, transparent); } /* 旧别名→accent，禁用 gold/brass 语义 */
 .chip--outline{ color: var(--c-text-soft);  background: transparent; border-color: var(--c-border); }
 
 .tag-list { display: flex; flex-wrap: wrap; gap: var(--sp-2); list-style: none; }
@@ -364,7 +385,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   align-items: center;
   gap: var(--sp-2);
   min-width: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: var(--fs-md);
   color: var(--c-text);
@@ -493,97 +514,126 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
 [data-theme="light"] .theme-toggle__sun  { display: none; }
 [data-theme="light"] .theme-toggle__moon { display: block; }
 
-/* =========================== 6. 首屏 =========================== */
+/* =========================== 6. 首屏：taste-skill ANTI-CENTER BIAS（VARIANCE 6 → 非对称 6.5:4.5 分栏） =========================== */
 .hero {
   position: relative;
-  padding-block: var(--sp-9) var(--sp-8);
-  background:
-    radial-gradient(900px 340px at 88% -12%, var(--c-accent-soft), transparent 68%),
-    var(--c-bg);
+  /* 严禁 AI 默认紫蓝/墨蓝径向 mesh blob；仅用 1 条底部细线划分 hero 与 overview，干净出版级 */
+  padding-block: var(--sp-9) var(--sp-9);
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-rule);
   scroll-margin-top: var(--header-h);
 }
-/* 证件照与正文分列：用 grid 而非 float。
-   float 会让块级元素（如 .hero__affiliation 的上边框）横穿到照片下方形成断线。 */
+.hero::before {
+  /* 左边缘 1 条 22% 高的 Burnt Orange 细竖线 —— 科研出版级左对齐锚（非居中对齐强化符号）*/
+  content: "";
+  position: absolute; left: 0; top: 18%; height: 22%;
+  width: 2px;
+  background: var(--c-accent);
+  opacity: .8;
+}
+/* === 非对称 6.5 : 4.5 双栏（Desktop ≥1024）：左正文，右参数面板 + 肖像 === */
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--sp-4) var(--sp-6);
+  gap: var(--sp-8) var(--sp-7);
   align-items: start;
-  max-width: var(--max-w-text);
+  max-width: var(--max-w-hero);
+}
+@media (min-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);   /* 6.5 : 4.5 非对称 */
+    grid-template-rows: auto;
+    align-items: center;
+  }
 }
 
 .hero__portrait {
-  grid-row: 1;
-  justify-self: end;
-  width: 88px;
+  /* → 移入 hero__aside（右侧面板顶部） */
+  width: 100%;
   margin: 0;
   padding: 4px;
   background: var(--c-surface);
-  border: 1px solid var(--c-border-strong);
+  border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
 }
-.hero__body { grid-row: 2; }
 .hero__portrait img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  border-radius: calc(var(--radius) - 2px);
   background: var(--c-bg-muted);
 }
 
+/* --- LEFT COLUMN: 正文（4 元素 max = eyebrow(= intent) + Headline 2 行 + Tagline ≤20 词 + CTAs 1 主 1 辅）--- */
 .hero__intent {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
   margin-bottom: var(--sp-5);
-  padding: .28rem .8rem;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: .02em;
-  color: var(--c-gold);
-  background: var(--c-gold-soft);
-  border: 1px solid color-mix(in srgb, var(--c-gold) 26%, transparent);
-  border-radius: var(--radius-sm);
+  padding: .28rem .75rem;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--c-accent-text);
+  background: var(--c-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--c-accent) 22%, transparent);
+  border-radius: var(--radius);
+}
+.hero__intent::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 16%, transparent);
 }
 
 .hero__name {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-3xl);
   font-weight: 600;
-  letter-spacing: .04em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;   /* Geist display 负字距收紧，学术 display 更有分量 */
+  line-height: 1.04;
+  color: var(--c-text);
 }
 .hero__name-en {
   margin-top: var(--sp-2);
-  font-size: var(--fs-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: .26em;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--c-text-muted);
 }
 .hero__title {
-  margin-top: var(--sp-4);
-  font-size: var(--fs-lg);
-  font-weight: 650;
-  color: var(--c-accent-text);
+  margin-top: var(--sp-5);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--c-text);
 }
 .hero__tagline {
+  /* 严格 ≤ 20 words / ≤ 4 lines；Hero 溢出 H1 失败。 */
   margin-top: var(--sp-3);
+  max-width: 58ch;
+  font-size: var(--fs-md);
+  line-height: 1.65;
   color: var(--c-text-soft);
 }
-/* 首屏研究关键词条：让教授一眼锁定技术栈与方法 */
+/* 研究关键词 → 仅 mono chip，放在 tagline 下 */
 .hero__keywords {
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-2);
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-5);
   list-style: none;
+  max-width: 60ch;
 }
 .hero__affiliation {
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-5);
   padding-top: var(--sp-4);
   border-top: 1px solid var(--c-rule);
   font-size: var(--fs-sm);
@@ -597,25 +647,27 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   list-style: none;
 }
 
-/* 等宽网格而非 flex 换行：flex 下各行宽度不等，右缘呈锯齿 */
+/* 联系方式 → 左栏下方 2 列 mono chip 风格 */
 .hero__contacts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: var(--sp-2) var(--sp-3);
   margin-top: var(--sp-5);
   list-style: none;
+  max-width: 640px;
 }
 .hero__contact {
   display: inline-flex;
   align-items: center;
   gap: .45rem;
   min-height: 38px;
-  padding: .28rem .75rem;
-  font-size: var(--fs-sm);
+  padding: .3rem .75rem;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
   color: var(--c-text-soft);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   transition: border-color .18s var(--ease), color .18s var(--ease), transform .18s var(--ease);
 }
 a.hero__contact:hover {
@@ -626,7 +678,87 @@ a.hero__contact:hover {
 }
 .hero__contact .icon { color: var(--c-accent); }
 
-.hero__actions { margin-top: var(--sp-6); }
+.hero__actions {
+  margin-top: var(--sp-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.hero__actions .btn { min-width: 180px; justify-content: center; }
+
+/* --- RIGHT COLUMN（≥1024 生效）：肖像 + 3×3 科研参数面板（Hero 视觉锚） --- */
+.hero__aside {
+  display: grid;
+  gap: var(--sp-5);
+  align-self: start;
+}
+@media (max-width: 1023px) {
+  .hero__aside { order: -1; max-width: 420px; }
+}
+.hero__portrait-wrap { position: relative; }
+.hero__portrait-wrap::after {
+  /* 肖像右下角 24% Burnt Orange 色块 → 视觉重量与 accent 锁死（禁 gold/brass 徽章） */
+  content: "";
+  position: absolute;
+  right: -10px; bottom: -10px;
+  width: 28%; height: 28%;
+  background: var(--c-accent-strong);
+  border-radius: var(--radius);
+  z-index: -1;
+  opacity: .9;
+}
+
+/* 3×3 参数网格：3 列 auto-fit，≥md 2–3 列，参数名 mono + 值 display 加粗，数值 tabular */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+@media (min-width: 420px) { .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 14px 14px 16px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  min-height: 86px;
+  transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.hero-stat:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-accent);
+  background: color-mix(in srgb, var(--c-accent-soft) 45%, var(--c-surface));
+}
+.hero-stat--accent {
+  background: var(--c-accent-soft);
+  border-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
+}
+.hero-stat__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+.hero-stat__value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--c-text);
+  letter-spacing: -0.005em;
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat__note {
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--c-text-muted);
+}
 
 /* =========================== 7. 内容模块 =========================== */
 
@@ -654,7 +786,7 @@ a.hero__contact:hover {
 }
 .stat__value {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.9rem;
   font-weight: 600;
   line-height: 1.2;
@@ -680,7 +812,7 @@ a.hero__contact:hover {
   margin-bottom: var(--sp-2);
 }
 .edu__school {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: 600;
 }
@@ -728,7 +860,7 @@ a.hero__contact:hover {
 .edu__thesis .edu__subtitle { margin-top: 0; }
 .edu__thesis-title {
   margin-top: var(--sp-2);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 600;
   line-height: 1.6;
@@ -763,7 +895,7 @@ a.hero__contact:hover {
   border-bottom: 1px dotted var(--c-rule);
 }
 .edu__course b {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--c-accent-text);
@@ -798,14 +930,14 @@ a.hero__contact:hover {
   position: absolute;
   left: var(--sp-5);
   top: var(--sp-5);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--c-accent);
   opacity: .65;
 }
 .interest__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: 600;
   margin-bottom: var(--sp-2);
@@ -820,7 +952,7 @@ a.hero__contact:hover {
   align-items: center;
   gap: var(--sp-3);
   margin-bottom: var(--sp-5);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: 600;
 }
@@ -848,7 +980,7 @@ a.hero__contact:hover {
   position: absolute;
   left: var(--sp-4);
   top: var(--sp-5);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-sm);
   color: var(--c-accent);
 }
@@ -866,10 +998,15 @@ a.hero__contact:hover {
 }
 .pub__authors { font-size: var(--fs-sm); color: var(--c-text-soft); }
 .pub__authors strong { color: var(--c-text); font-weight: 700; }
-.pub__note { font-size: var(--fs-xs); color: var(--c-gold); }
+.pub__note {
+  font-family: var(--font-mono);      /* 禁 brass/gold；改 mono 小标签（科研注释语法） */
+  font-size: 11px;
+  color: var(--c-accent-text);
+  letter-spacing: .02em;
+}
 .pub__journal {
   margin-top: var(--sp-2);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-style: italic;
   color: var(--c-accent-text);
@@ -930,7 +1067,7 @@ a.hero__contact:hover {
   gap: var(--sp-2) var(--sp-3);
   margin-bottom: var(--sp-2);
 }
-.job__name { font-family: var(--font-serif); font-size: var(--fs-lg); font-weight: 600; }
+.job__name { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 600; }
 .job__role { font-size: var(--fs-sm); font-weight: 600; color: var(--c-accent-text); }
 .job__period { margin-left: auto; font-size: var(--fs-sm); color: var(--c-text-muted); font-variant-numeric: tabular-nums; }
 .job__org { font-size: var(--fs-sm); color: var(--c-text-muted); }
@@ -952,17 +1089,35 @@ a.hero__contact:hover {
 }
 .job__methods { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid var(--c-rule); }
 
-/* 7.6 荣誉奖项 */
-.awards { display: grid; gap: var(--sp-3); list-style: none; }
+/* 7.6 荣誉奖项：2-col card grid（非 zigzag；card 不做左条，仅 highlight 卡配 1 条左侧 accent 带 + accent surface 轻度染色，禁 gold/brass） */
+.awards {
+  display: grid;
+  gap: var(--sp-4);
+  list-style: none;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .award {
   display: grid;
-  gap: var(--sp-1);
-  padding: var(--sp-4) var(--sp-5);
-  border-left: 3px solid var(--c-border);
+  gap: var(--sp-2);
+  padding: var(--sp-5);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
+  transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.award:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-border-strong);
+  box-shadow: var(--shadow-sm);
 }
 .award--highlight {
-  border-left-color: var(--c-gold);
-  background: color-mix(in srgb, var(--c-gold) 5%, var(--c-surface));
+  border-left-color: var(--c-accent-strong);
+  background: color-mix(in srgb, var(--c-accent-soft) 55%, var(--c-surface));
+  border-top-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
+  border-right-color: color-mix(in srgb, var(--c-accent) 16%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--c-accent) 16%, transparent);
 }
 .award__head {
   display: flex;
@@ -970,8 +1125,14 @@ a.hero__contact:hover {
   align-items: baseline;
   gap: var(--sp-2) var(--sp-3);
 }
-.award__name { font-weight: 650; }
-.award__date { margin-left: auto; font-size: var(--fs-sm); color: var(--c-text-muted); font-variant-numeric: tabular-nums; }
+.award__name { font-weight: 650; font-family: var(--font-display); color: var(--c-text); font-size: var(--fs-md); }
+.award__date {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--c-text-muted);
+  font-variant-numeric: tabular-nums;
+}
 .award__meta {
   display: flex;
   flex-wrap: wrap;
@@ -980,51 +1141,85 @@ a.hero__contact:hover {
   font-size: var(--fs-sm);
   color: var(--c-text-soft);
 }
-.award__role { font-weight: 600; color: var(--c-text); }
-.award__work { font-family: var(--font-serif); color: var(--c-accent-text); }
-.award__desc { font-size: var(--fs-sm); color: var(--c-text-muted); }
+.award__role { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--c-accent-text); font-weight: 600; }
+.award__work { font-family: var(--font-display); color: var(--c-text); font-weight: 600; font-size: var(--fs-sm); }
+.award__desc { font-size: var(--fs-sm); color: var(--c-text-muted); line-height: 1.6; }
 
-/* 7.7 研究计划 */
-.proposal { display: grid; gap: var(--sp-4); list-style: none; counter-reset: proposal; }
-.proposal-item { padding: var(--sp-5); }
+/* 7.7 研究计划：5-Cell Bento Grid（BENTO CELL COUNT RULE：5 items → 5 cells，无空格占位；diversity ≥3 不同尺寸） */
+.proposal {
+  display: grid;
+  list-style: none;
+  counter-reset: proposal;
+  /* gap 14 = sp-3 + 2 */
+  gap: 14px;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: minmax(160px, auto);
+}
+/* ≤768px：退回 1 列，每个 cell 全宽 */
+@media (max-width: 767px) {
+  .proposal {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+}
+.proposal-item {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  transition: transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
+  position: relative;
+}
+.proposal-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+/* — BENTO 尺寸分配（3 种不同大小：12 col / 8 col / 4 col）— */
+.proposal-item:nth-child(1) { grid-column: span 6;          grid-row: span 1; background: color-mix(in srgb, var(--c-accent-soft) 45%, var(--c-surface)); border-color: color-mix(in srgb, var(--c-accent) 20%, transparent); }
+.proposal-item:nth-child(2) { grid-column: span 4;          grid-row: span 2; }
+.proposal-item:nth-child(3) { grid-column: span 2;          grid-row: span 2; background: var(--c-bg-muted); }
+.proposal-item:nth-child(4) { grid-column: span 3;          grid-row: span 2; }
+.proposal-item:nth-child(5) { grid-column: span 3;          grid-row: span 2; background: var(--c-bg-muted); }
+/* ≤md：所有 cell span 1 列 1 行 */
+@media (max-width: 767px) {
+  .proposal-item,
+  .proposal-item:nth-child(n) { grid-column: span 1; grid-row: auto; }
+}
 .proposal-item__head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--sp-3);
-  margin-bottom: var(--sp-3);
 }
 .proposal-item__index {
   display: grid;
   place-items: center;
   flex: none;
-  width: 26px; height: 26px;
-  font-family: var(--font-serif);
-  font-size: var(--fs-sm);
+  width: 30px; height: 30px;
+  font-family: var(--font-mono);
+  font-size: 12px;
   font-weight: 600;
   color: var(--c-accent-ink);
-  background: var(--c-accent);
-  border-radius: 50%;
+  background: var(--c-accent-strong);
+  border-radius: var(--radius);
 }
+.proposal-item:nth-child(1) .proposal-item__index { background: var(--c-accent); }
 .proposal-item__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-lg);
   font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
   color: var(--c-text);
 }
-.proposal-item__desc { color: var(--c-text-soft); line-height: 1.75; }
-.proposal-item__tags { margin-top: var(--sp-4); }
-/* 研究计划逻辑链：问题→方法→成果→场景，卡片间向下箭头指示流向 */
-.proposal-item:not(:last-child)::after {
-  content: '';
-  display: block;
-  width: 9px;
-  height: 9px;
-  margin: var(--sp-5) auto 0;
-  border-right: 2px solid var(--c-border-strong);
-  border-bottom: 2px solid var(--c-border-strong);
-  transform: rotate(45deg);
-  opacity: .65;
-}
+.proposal-item__desc { color: var(--c-text-soft); line-height: 1.68; font-size: var(--fs-sm); }
+.proposal-item__tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+/* 旧下箭头 → 移除（Bento 网格用尺寸与背景区分信息等级，避免全局同一方向箭头读成线性 flow）*/
+.proposal-item:not(:last-child)::after { display: none; }
 
 /* 7.8 科普传播 */
 .outreach { display: grid; gap: var(--sp-4); list-style: none; }
@@ -1036,7 +1231,7 @@ a.hero__contact:hover {
   gap: var(--sp-2) var(--sp-3);
   margin-bottom: var(--sp-3);
 }
-.outreach-item__title { font-family: var(--font-serif); font-size: var(--fs-xl); font-weight: 600; }
+.outreach-item__title { font-family: var(--font-display); font-size: var(--fs-xl); font-weight: 600; }
 .outreach-item__role { font-weight: 600; color: var(--c-accent-text); }
 .outreach-item__period { margin-left: auto; font-size: var(--fs-sm); color: var(--c-text-muted); }
 .outreach-item__desc { color: var(--c-text-soft); }
@@ -1051,7 +1246,7 @@ a.hero__contact:hover {
 }
 .metric__value {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--c-accent-text);
@@ -1064,7 +1259,7 @@ a.hero__contact:hover {
 .skill-group { padding: var(--sp-5); }
 .skill-group__name {
   margin-bottom: var(--sp-4);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 600;
   padding-bottom: var(--sp-2);
@@ -1115,7 +1310,7 @@ a.hero__contact:hover {
   list-style: none;
 }
 .skill-legend li { display: inline-flex; align-items: center; gap: .4rem; }
-.skill-legend b { color: var(--c-text-soft); font-family: var(--font-serif); }
+.skill-legend b { color: var(--c-text-soft); font-family: var(--font-display); }
 
 .skill-extras { margin-top: var(--sp-5); display: grid; gap: var(--sp-3); list-style: none; }
 .skill-extra {
@@ -1136,7 +1331,7 @@ a.hero__contact:hover {
   position: relative;
   margin: 0 0 var(--sp-5);
   padding-left: var(--sp-6);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: 600;
   line-height: 1.6;
@@ -1155,7 +1350,7 @@ a.hero__contact:hover {
 .statement__highlight {
   margin: var(--sp-5) 0 0;
   padding: var(--sp-3) var(--sp-4);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-lg);
   color: var(--c-accent-text);
   border-left: 3px solid var(--c-accent);
@@ -1179,7 +1374,7 @@ a.hero__contact:hover {
 }
 .ref { padding: var(--sp-5); }
 .ref__name {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--c-text);
@@ -1210,28 +1405,72 @@ a.hero__contact:hover {
   border-radius: var(--radius);
 }
 
-/* 7.11c 目标导师与研究契合（套磁定向） */
+/* 7.11c 目标导师与研究契合：仅 1 位导师时 span 全宽；左 accent-stripe + 3 行 head（title / lab / focus）+ fit 文本 */
 .target-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--sp-4);
+  grid-template-columns: 1fr;       /* 仅 Majumder → 单卡全宽，不搞 280 auto-fit（会缩半） */
+  gap: var(--sp-5);
   list-style: none;
 }
-.target { padding: var(--sp-5); }
-.target__name {
-  font-family: var(--font-serif);
-  font-size: var(--fs-md);
-  font-weight: 600;
-  color: var(--c-text);
+.target {
+  padding: var(--sp-6) var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-accent-strong);   /* 左 Burnt Orange stripe（不是 brass gold 色块） */
+  border-radius: var(--radius);
+  position: relative;
+  transition: transform .24s var(--ease), border-color .24s var(--ease), box-shadow .24s var(--ease);
 }
-.target__lab { margin-top: var(--sp-1); font-size: var(--fs-sm); font-weight: 600; color: var(--c-accent-text); }
-.target__focus { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--c-text-soft); }
-.target__fit {
+.target::before {
+  /* 右上角 MONASH 单字水印（M 字母 + accent）—— 学术身份锚点 + 专属感 */
+  content: "M";
+  position: absolute;
+  top: 18px; right: 22px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: color-mix(in srgb, var(--c-accent) 12%, transparent);
+  user-select: none;
+  pointer-events: none;
+}
+.target:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
+}
+.target__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+  padding-right: 64px;        /* 避让 M 水印 */
+}
+.target__lab {
+  margin-top: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--c-accent-text);
+  padding-right: 64px;
+}
+.target__focus {
   margin-top: var(--sp-3);
-  padding-top: var(--sp-3);
-  border-top: 1px dotted var(--c-rule);
   font-size: var(--fs-sm);
-  color: var(--c-text-muted);
+  color: var(--c-text-soft);
+  line-height: 1.68;
+  padding-right: 64px;
+}
+.target__fit {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-rule);
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+  line-height: 1.75;
 }
 
 /* hero 可入学时间 chip */
@@ -1258,7 +1497,7 @@ a.hero__contact:hover {
   border-radius: var(--radius);
 }
 .cta-card__icon .icon { width: 24px; height: 24px; }
-.cta-card__title { font-family: var(--font-serif); font-size: var(--fs-xl); margin-bottom: var(--sp-3); }
+.cta-card__title { font-family: var(--font-display); font-size: var(--fs-xl); margin-bottom: var(--sp-3); }
 .cta-card__desc {
   max-width: 540px;
   margin: 0 auto var(--sp-5);

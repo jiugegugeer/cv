@@ -59,15 +59,29 @@ i18n: {
   hero: {
     intent: '2026 届本科 · 主攻 Monash AM2D Hub 碳基储能全奖博士',
     title: '安全工程学士（2026 届） · 碳基储能器件材料热安全评估',
-    tagline: '以 Thermakin 材料热解动力学表征为入口、FDS 器件级热场模拟为核心、QRA 安全间距判据为出口，为石墨烯超级电容器（M-rGO）与锂硫电池建立从材料级电化学性能到器件级热失控边界的完整评价链条——可直接服务 Monash AM2D Hub 2D 材料先进制造的工程化与认证需求。',
-    keywords: ['超级电容器热安全', 'M-rGO 材料热解', '本质安全设计', 'Li-S 电池热边界', 'AM2D 2D 材料制造安全评估'],
+    // Hero Tagline Rule：≤20 词 / ≤4 行 / 1 句完成
+    tagline: 'M-rGO / Li–S 三级评估链（Thermakin→FDS→QRA），直接对接 Ionic Industries 产线热安全认证。',
+    keywords: ['M-rGO 热解表征', '超级电容器热场', 'Li–S 边界判据', '本质安全设计', 'Ionic 产线认证'],
     affiliation: '福州大学 · 安全工程',
-    // 可入学时间：填入后首屏以 chip 形式展示（如 '2026.07 可入学'），不填则不显示
     availability: '2026.07 可入学',
-    extras: ['莫纳什大学硕士录取（已缴留位费，熟悉该校生态）', '全国大赛一等奖 2 项（连续两年队长兼第一作者）', '校级优秀本科毕业论文（热解建模独立完成）', 'PTE Academic 60（Monash 工程博士 PTE≥58 已达标）'],
+    // ★ 3×3 Hero 关键参数面板（stat 9 格；单值 ≤8 字，note ≤12 字，accent 高亮 ≤3 卡）
+    stats: [
+      { label: '申请目标', value: 'Monash PhD (Full-Fund)', note: 'AM2D Hub / Majumder', accent: true },
+      { label: '目标课题', value: 'M-rGO / Li–S',            note: '碳基储能器件热安全' },
+      { label: '方法链',     value: 'Thermakin·FDS·QRA',      note: '端到端验证（毕设级）' },
+      { label: 'Monash',    value: '硕士 Offer',             note: '已缴留位费（熟悉生态）', accent: true },
+      { label: '语言达标',   value: 'PTE 60',                 note: 'PhD 门槛 PTE 58 ✅' },
+      { label: '本科院校',   value: '211 / 双一流',           note: '福州大学 · 安全工程' },
+      { label: '第一作者',   value: '3 项 IP',                note: '专利 1 + 软著 2' },
+      { label: '国家级奖',   value: '2× 一等奖',              note: '队长 + 第一作者（连 2 年）' },
+      { label: '方法验证',   value: '毕业论文 校级优秀',       note: '独立实验+建模完整链', accent: true }
+    ],
+    // extras → 改为 hero contact 下方 chip 排列；维持 4 项（不显示在 hero stack 主区内部，避免 >4 text elements）
+    extras: ['已缴 Monash 硕士留位费', '国家级一等奖 2 项（队长一作）', '优秀毕业论文（独立）', 'PTE 60（≥ Monash 58 门槛）'],
     actions: [
-      { text: '下载定向学术 CV', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
-      { text: '查看 Monash 对接点', action: 'link', href: '#targets', primary: false }
+      // CTA ONE-label RULE：同一 intent 全站同一文案（申请对接 intent = 唯一 primary）
+      { text: '申请对接（下载 CV）', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
+      { text: '查看 Monash 契合点',  action: 'link',     href: '#targets', primary: false }
     ]
   },
 
@@ -416,17 +430,30 @@ i18n: {
 en: {
 
       hero: {
-        intent: 'Class of 2026 · Targeting fully-funded PhD at Monash AM2D Hub (Carbon-Based Energy Storage)',
-        title: 'B.Eng. (2026) in Safety Engineering · Thermal Safety of Carbon-Based Energy Storage Devices',
-        tagline: 'Building a complete assessment chain for graphene supercapacitors (M-rGO) and Li–S batteries — from material-level electrochemical performance to device-level thermal-runaway boundaries — using Thermakin pyrolysis-kinetic characterisation as the entry point, FDS device-scale thermal-field simulation as the core engine, and QRA safety-spacing criteria as the decision-ready output. This chain can directly serve the engineering qualification and certification needs of Monash\'s AM2D Hub advanced 2D-material manufacturing.',
-        keywords: ['Supercapacitor thermal safety', 'M-rGO material pyrolysis', 'Inherent safety design', 'Li-S battery thermal boundary', 'AM2D 2D-material manufacturing safety'],
+        intent: 'Class of 2026 · Targeting fully-funded PhD, Monash AM2D Hub (carbon storage thermal safety)',
+        title: 'B.Eng. Safety Engineering (2026) · Thermal Safety of Carbon-Based Energy Storage Devices',
+        // Hero tagline rule: ≤20 words, ≤4 lines, single-sentence
+        tagline: '3-stage M-rGO / Li–S assessment chain (Thermakin → FDS → QRA) — qualified to dock Ionic Industries manufacturing safety certification.',
+        keywords: ['M-rGO pyrolysis', 'Supercapacitor thermal field', 'Li–S safety criteria', 'Inherent safety design', 'Ionic production-line cert'],
         affiliation: 'Fuzhou University · Safety Engineering',
-        // Availability: shown as a chip when filled (e.g. 'Available from Jul 2026'); empty = hidden
         availability: 'Available from Jul 2026',
-        extras: ['Monash Master\'s offer held (deposit paid; Monash ecosystem familiar)', '2× First Prize, national undergraduate competition (Team leader & first author, 2 consecutive editions)', 'Outstanding Undergraduate Thesis (pyrolysis modelling, sole author)', 'PTE Academic 60 — meets Monash Engineering PhD threshold of 58'],
+        // 3×3 Snapshot panel (9 cells; accent ≤3 for visual hierarchy)
+        stats: [
+          { label: 'Target',        value: 'Monash PhD (Funded)', note: 'AM2D Hub / Majumder',  accent: true },
+          { label: 'Topic',         value: 'M-rGO / Li–S',         note: 'Carbon storage thermal safety' },
+          { label: 'Method chain',  value: 'Thermakin · FDS · QRA', note: 'Thesis-level end-to-end' },
+          { label: 'Monash',        value: 'Master offer held',    note: 'Deposit paid · ecosystem OK', accent: true },
+          { label: 'English',       value: 'PTE 60',               note: '≥ Monash Eng PhD 58 ✅' },
+          { label: 'Institution',   value: '211 / Double First',   note: 'Fuzhou U · Safety Eng' },
+          { label: '1st author IP', value: '3 pieces',             note: '1 patent + 2 copyright' },
+          { label: 'National prize',value: '2× 1st place',         note: 'Team leader & 1st author × 2y' },
+          { label: 'Validation',    value: 'Outstanding Thesis',   note: 'Sole-author experiment+model', accent: true }
+        ],
+        extras: ['Monash Master offer (deposit paid)', '2× national 1st prize (leader + 1st author)', 'Outstanding undergrad thesis (sole author)', 'PTE 60 — meets Monash Eng PhD threshold'],
         actions: [
-          { text: 'Download tailored CV', action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
-          { text: 'View Monash fit', action: 'link', href: '#targets', primary: false }
+          // CTA ONE-label rule: same label per intent across the whole page
+          { text: 'Open CV (PDF) — Apply',   action: 'download', href: 'assets/files/resume-en.pdf', primary: true },
+          { text: 'Monash fit & research hook', action: 'link', href: '#targets', primary: false }
         ]
       },
 
