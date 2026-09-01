@@ -3,51 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="徐其胜 · 福州大学安全工程学士（2026 届），碳基储能器件（M-rGO 超级电容器 / 锂硫电池）热安全评估。直申 Monash AM2D Hub 全奖 PhD。">
-<meta name="keywords" content="学术简历,安全工程,碳基储能,热安全,M-rGO,锂硫电池,超级电容器,Monash,AM2D,Mainak Majumder,Thermakin,FDS,QRA">
+<meta name="description" content="Qisheng Xu · Fuzhou University Safety Engineering (2026). Device-level thermal safety of M-rGO supercapacitors and Li–S batteries. PhD proposal for Prof. Mainak Majumder, Monash AM2D Hub.">
+<meta name="keywords" content="Qisheng Xu,PhD application,Monash,AM2D,Mainak Majumder,M-rGO,Li–S battery,supercapacitor thermal safety,Thermakin,FDS,QRA,Safety Engineering">
 <meta name="author" content="Qisheng Xu">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#006FBA">
 <meta name="color-scheme" content="light dark">
-<title>Qisheng Xu · Thermal Safety of Carbon-Based Energy Storage — PhD for Monash AM2D</title>
+<title>Qisheng Xu · PhD Proposal for Prof. Majumder — Thermal Safety of Carbon Storage Devices</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/files/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/files/favicon.svg">
-<!-- PWA：可安装、离线可读 -->
 <link rel="manifest" href="assets/files/manifest.webmanifest">
-<!-- 社交分享卡（Open Graph / Twitter Card）：静态兜底 -->
+<!-- IBM Plex 三件套：Google Fonts（Monash 官方网站使用同款 Serif 风格体系，比 jsdelivr 稳定）。
+     若用户浏览器在中国大陆访问 Google Fonts 失败，则退回系统字体栈（Geist/PingFang/Times）。 -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<!-- OG / Twitter（教授不会点过来，但如果 email 里被转发会出现缩略卡） -->
 <meta property="og:type" content="profile">
-<meta property="og:site_name" content="Qisheng Xu · Academic CV">
-<meta property="og:title" content="Qisheng Xu — Thermal Safety of Carbon-Based Energy Storage">
-<meta property="og:description" content="直申 Monash AM2D Hub 全奖 PhD · M-rGO supercapacitors / Li–S batteries · Thermakin + FDS + QRA 方法链可直接对接 Ionic Industries 商业化产线。">
+<meta property="og:site_name" content="Qisheng Xu · PhD Application">
+<meta property="og:title" content="Qisheng Xu — PhD Proposal for Prof. Majumder (Monash AM2D)">
+<meta property="og:description" content="Device-level thermal safety of M-rGO supercapacitors & Li–S batteries. Thermakin + FDS + QRA validated via sole-author thesis. Prepared for Monash AM2D Hub.">
 <meta property="og:image" content="assets/files/og-banner.png">
-<meta property="og:image:alt" content="Qisheng Xu · Monash AM2D PhD Candidate · Thermal Safety of Carbon-Based Energy Storage">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Qisheng Xu — Thermal Safety PhD, Monash AM2D Hub">
-<meta name="twitter:description" content="M-rGO 超级电容器 / 锂硫电池 器件级热安全评估 · Thermakin+FDS+QRA 端到端验证">
+<meta name="twitter:title" content="Qisheng Xu · PhD (Monash AM2D · Majumder)">
+<meta name="twitter:description" content="Proposing the missing device-level thermal boundary in your 2025 Nat Comms M-rGO work.">
 <meta name="twitter:image" content="assets/files/og-banner.png">
-<!-- 字体：Geist Sans + Geist Mono（Vercel Font Source CDN，font-display:swap，符合 taste-skill 3.A self-host/预载不依赖 Google <link>） -->
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<style>
-  /* Geist Sans (Vercel —— 走 unpkg CDN mirror @font-face，font-display:swap，离线回退到系统 sans） */
-  @font-face {
-    font-family: "Geist";
-    font-display: swap;
-    font-weight: 100 900;
-    src: url("https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Geist Mono";
-    font-display: swap;
-    font-weight: 100 900;
-    src: url("https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-mono/GeistMono-Variable.woff2") format("woff2");
-  }
-</style>
-<!-- 主题预设脚本：在页面渲染前确定深色/浅色与语言，避免首屏闪烁 -->
 <script>
   (function () {
     try {
@@ -57,10 +39,10 @@
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
 
       var savedLang = localStorage.getItem('cv-lang');
-      document.documentElement.setAttribute('data-lang', savedLang === 'en' ? 'en' : 'zh');
+      document.documentElement.setAttribute('data-lang', savedLang === 'zh' ? 'zh' : 'en');
     } catch (e) {
       document.documentElement.setAttribute('data-theme', 'light');
-      document.documentElement.setAttribute('data-lang', 'zh');
+      document.documentElement.setAttribute('data-lang', 'en');
     }
   })();
 </script>
@@ -68,26 +50,17 @@
 
 <body>
 
-<!-- 键盘用户可跳过导航直达正文（无障碍要求） -->
 <a class="skip-link" href="#main">跳转到主要内容</a>
 
-<!-- 屏幕阅读器公告区：语言/主题切换等状态变化通过此处朗读 -->
 <div id="srStatus" class="sr-only" role="status" aria-live="polite"></div>
 
-<!-- 顶部阅读进度条 -->
-<div class="scroll-progress" aria-hidden="true">
-  <div class="scroll-progress__bar" id="scrollProgressBar"></div>
-</div>
-
-<!-- ===================== 顶部导航 ===================== -->
+<!-- ===== 顶部导航（学术 header：64px，不装饰，不提供 dark toggle，不做 scroll progress） ===== -->
 <header class="site-header" id="siteHeader">
   <div class="container site-header__inner">
-    <a class="brand" href="#top">
-      <span class="brand__avatar" id="brandAvatar" aria-hidden="true"></span>
-      <span class="brand__name" id="brandName">简历</span>
+    <a class="brand" href="#top" aria-label="Qisheng Xu · PhD Application, Monash AM2D">
+      <span class="brand__mark" id="brandMark" aria-hidden="true">QX · PhD APPLICATION</span>
     </a>
 
-    <!-- 移动端菜单开关 -->
     <button class="nav-toggle" id="navToggle" type="button"
             aria-expanded="false" aria-controls="navMenu" aria-label="打开导航菜单">
       <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"></use></svg>
@@ -102,98 +75,77 @@
           <span class="lang-toggle__sep" aria-hidden="true">/</span>
           <span class="lang-toggle__en">EN</span>
         </button>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换深色模式">
-          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"></use></svg>
-          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"></use></svg>
-        </button>
       </div>
     </nav>
 
-    <!-- 移动端菜单的遮罩层 -->
     <div class="nav-overlay" id="navOverlay" hidden></div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ===================== 首屏头部 ===================== -->
+  <!-- Screen 1 · Hero（80/20 split，≤ 80vh，CTAs visible no scroll） -->
   <section class="hero" id="top" data-section="hero" aria-labelledby="hero-name">
     <div class="container" data-slot="hero"></div>
   </section>
 
-  <!-- ===================== 学术概览（无导航项） ===================== -->
-  <section class="overview" data-section="overview" aria-label="学术概览">
-    <div class="container" data-slot="overview"></div>
+  <!-- Screen 2 · Research Fit with Prof. Majumder / AM2D Hub（新节，Research+Targets 合并） -->
+  <section class="section section--muted" id="fit" data-section="fit" aria-labelledby="fit-heading">
+    <div class="container" data-slot="fit"></div>
   </section>
 
-  <!-- ===================== 教育背景 ===================== -->
-  <section class="section" id="education" data-section="education" aria-labelledby="education-heading">
-    <div class="container" data-slot="education"></div>
+  <!-- Screen 3 · Thesis Validation（新增，方法链可行性证明 → 3 quantitative metrics） -->
+  <section class="section" id="validation" data-section="validation" aria-labelledby="validation-heading">
+    <div class="container" data-slot="validation"></div>
   </section>
 
-  <!-- ===================== 研究兴趣 ===================== -->
-  <section class="section section--muted" id="research" data-section="research" aria-labelledby="research-heading">
-    <div class="container" data-slot="research"></div>
-  </section>
-
-  <!-- ===================== 学术成果（论文 + 专利 / 软著） ===================== -->
-  <section class="section" id="publications" data-section="publications" aria-labelledby="publications-heading">
-    <div class="container" data-slot="publications"></div>
-  </section>
-
-  <!-- ===================== 科研经历 ===================== -->
-  <section class="section section--muted" id="experience" data-section="experience" aria-labelledby="experience-heading">
-    <div class="container" data-slot="experience"></div>
-  </section>
-
-  <!-- ===================== 荣誉奖项 ===================== -->
-  <section class="section" id="awards" data-section="awards" aria-labelledby="awards-heading">
-    <div class="container" data-slot="awards"></div>
-  </section>
-
-  <!-- ===================== 研究计划 ===================== -->
+  <!-- Screen 4 · PhD Proposal（4-block linear：RQ · Method · Milestones table · AM2D Alignment） -->
   <section class="section section--muted" id="proposal" data-section="proposal" aria-labelledby="proposal-heading">
     <div class="container" data-slot="proposal"></div>
   </section>
 
-  <!-- ===================== 目标导师与研究契合 ===================== -->
-  <section class="section" id="targets" data-section="targets" aria-labelledby="targets-heading">
-    <div class="container" data-slot="targets"></div>
+  <!-- Background: Education（福州大学 ONLY，Monash Master 移到 footer admin note） -->
+  <section class="section" id="education" data-section="education" aria-labelledby="education-heading">
+    <div class="container" data-slot="education"></div>
   </section>
 
-  <!-- ===================== 科普传播与社会影响 ===================== -->
-  <section class="section" id="outreach" data-section="outreach" aria-labelledby="outreach-heading">
-    <div class="container" data-slot="outreach"></div>
+  <!-- Outputs: Thesis + 1st-author IP（砍掉 2/4th 作者挂名） -->
+  <section class="section" id="publications" data-section="publications" aria-labelledby="publications-heading">
+    <div class="container" data-slot="publications"></div>
   </section>
 
-  <!-- ===================== 学术技能 ===================== -->
+  <!-- Selected Awards（≤3，全部量化：年份 / 名称 / 级别+获奖率 / 奖金 CNY） -->
+  <section class="section" id="awards" data-section="awards" aria-labelledby="awards-heading">
+    <div class="container" data-slot="awards"></div>
+  </section>
+
+  <!-- Method Matrix（删除 self-rate 条：Method / Software / Used in / Deliverable） -->
   <section class="section section--muted" id="skills" data-section="skills" aria-labelledby="skills-heading">
     <div class="container" data-slot="skills"></div>
   </section>
 
-  <!-- ===================== 研究自述 ===================== -->
+  <!-- Research Statement（删除 quote：4 编号段 Mot/Gap/Appr/Monash 共 ≤800 chars） -->
   <section class="section" id="statement" data-section="statement" aria-labelledby="statement-heading">
     <div class="container" data-slot="statement"></div>
   </section>
 
-  <!-- ===================== 推荐人 ===================== -->
-  <section class="section section--muted" id="referees" data-section="referees" aria-labelledby="referees-heading">
+  <!-- Referees（2 列 非 card，姓名/职位/合作成果/Email/ORCID） -->
+  <section class="section" id="referees" data-section="referees" aria-labelledby="referees-heading">
     <div class="container" data-slot="referees"></div>
   </section>
 
-  <!-- ===================== CV 下载 ===================== -->
+  <!-- CV 下载（Monash Blue solid bar，高度 120px） -->
   <section class="section section--cta" id="resume" data-section="resume" aria-labelledby="resume-heading">
     <div class="container" data-slot="resume"></div>
   </section>
 
 </main>
 
-<!-- ===================== 页脚 ===================== -->
+<!-- Footer：2 行 admin notes（第 1 行 = Monash Master admin note；第 2 行 = ORCID / Email / © / Last updated） -->
 <footer class="site-footer">
   <div class="container" data-slot="footer"></div>
 </footer>
 
-<!-- 返回顶部 -->
 <button class="to-top" id="toTop" type="button" aria-label="返回顶部" hidden>
   <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
 </button>

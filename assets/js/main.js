@@ -15,31 +15,35 @@
    * eyebrow 统一使用英文小标签，中英文版本共用
    * ======================================================================== */
   var SECTION_COPY = {
+    // eyebrow 统一英文小写标签，严格对齐 Prof. 30 秒阅读漏斗：Hero → Fit → Validation → Proposal → Edu → Outputs → Awards → Skills → Statement → Referees
+    fit:          { eyebrow: 'Research Fit' },        // NEW: Research + Targets 合并成 3 行对齐表
+    validation:   { eyebrow: 'Thesis Validation' },   // NEW: 方法链可落地性证明（3 个量化指标）
+    proposal:     { eyebrow: 'PhD Proposal' },
     education:    { eyebrow: 'Education' },
-    research:     { eyebrow: 'Research Interests' },
-    publications: { eyebrow: 'Publications' },
-    experience:   { eyebrow: 'Research Experience' },
-    awards:       { eyebrow: 'Honors & Awards' },
-    proposal:     { eyebrow: 'Research Plan' },
-    outreach:     { eyebrow: 'Outreach & Impact' },
-    skills:       { eyebrow: 'Skills' },
+    publications: { eyebrow: 'Thesis & Outputs' },    // 本科毕设 thesis + 1st-author IP（砍掉 2/4 作者）
+    awards:       { eyebrow: 'Selected Awards' },
+    skills:       { eyebrow: 'Method Matrix' },
     statement:    { eyebrow: 'Research Statement' },
     referees:     { eyebrow: 'Referees' },
-    targets:      { eyebrow: 'Target Supervisors' },
-    resume:       { eyebrow: 'Download CV' }
+    resume:       { eyebrow: 'Curriculum Vitae' }
   };
 
   var UI = {
     zh: {
       sectionTitles: {
-        education: '教育背景', research: '研究兴趣', publications: '学术成果',
-        experience: '科研经历', awards: '荣誉奖项', proposal: '研究计划',
-        outreach: '科普传播与社会影响', skills: '学术技能',
-        statement: '研究自述', referees: '推荐人', targets: '目标导师', resume: '下载 CV'
+        fit: '与 Majumder 教授 / AM2D Hub 的研究契合',
+        validation: '方法链可行性证明（本科毕设）',
+        proposal: 'Monash PhD 研究计划',
+        education: '教育背景',
+        publications: '论文与知识产权（第一作者/独立）',
+        awards: '代表性荣誉与奖励',
+        skills: '方法矩阵',
+        statement: '研究自述',
+        referees: '推荐人',
+        resume: '申请材料对接'
       },
       stat_papers: '期刊论文', stat_patents: '专利', stat_software: '软件著作权',
       stat_awards: '国家级奖项',
-      overviewLabel: '学术概览',
       papersBlock: '期刊论文', ipBlock: '专利与软件著作权',
       status: { published: '已发表', 'in-press': '已接收待出版', 'under-review': '外审中', preprint: '预印本', 'in-prep': '撰写中' },
       type: { patent: '专利', software: '软著' },
@@ -49,22 +53,27 @@
       thesis: '本科毕业论文', thesisAdvisor: '指导教师',
       total: '共', items: '项',
       download: '下载学术 CV（PDF）', print: '打印 / 另存为 PDF',
-      toTop: '返回顶部', skip: '跳转到主要内容', themeToDark: '切换到深色模式', themeToLight: '切换到浅色模式',
+      toTop: '返回顶部', skip: '跳转到主要内容',
       langToEn: 'Switch to English', langToZh: '切换为中文',
       openMenu: '打开导航菜单', closeMenu: '关闭导航菜单',
       buildInfo: '本站为纯静态站点，使用 HTML / CSS / JavaScript 构建，未依赖任何第三方库',
-      copyright: '· 学术简历'
+      copyright: '· PhD Proposal · Monash AM2D'
     },
     en: {
       sectionTitles: {
-        education: 'Education', research: 'Research Interests', publications: 'Publications',
-        experience: 'Research Experience', awards: 'Honors & Awards', proposal: 'Research Plan',
-        outreach: 'Outreach & Societal Impact', skills: 'Skills',
-        statement: 'Research Statement', referees: 'Referees', targets: 'Target Supervisors', resume: 'Download CV'
+        fit: 'Research Fit with Prof. Majumder / AM2D Hub',
+        validation: 'Thesis Validation — Method Chain Feasibility',
+        proposal: 'PhD Proposal — Monash AM2D',
+        education: 'Education',
+        publications: 'Thesis & Outputs (1st-Author / Sole Author)',
+        awards: 'Selected Awards & Honors',
+        skills: 'Method Matrix',
+        statement: 'Research Statement',
+        referees: 'Referees',
+        resume: 'Application Documents'
       },
       stat_papers: 'Journal Articles', stat_patents: 'Patents', stat_software: 'Software Copyrights',
       stat_awards: 'National Awards',
-      overviewLabel: 'At a Glance',
       papersBlock: 'Journal Articles', ipBlock: 'Patents & Software Copyrights',
       status: { published: 'Published', 'in-press': 'In Press', 'under-review': 'Under Review', preprint: 'Preprint', 'in-prep': 'In Preparation' },
       type: { patent: 'Patent', software: 'Software' },
@@ -74,11 +83,11 @@
       thesis: 'Undergraduate Thesis', thesisAdvisor: 'Supervisor',
       total: '', items: '',
       download: 'Download CV (PDF)', print: 'Print / Save as PDF',
-      toTop: 'Back to top', skip: 'Skip to main content', themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode',
+      toTop: 'Back to top', skip: 'Skip to main content',
       langToEn: 'Switch to English', langToZh: 'Switch to Chinese',
       openMenu: 'Open navigation menu', closeMenu: 'Close navigation menu',
       buildInfo: 'A fully static site built with HTML / CSS / JavaScript — no third-party libraries',
-      copyright: '· Academic CV'
+      copyright: '· PhD Proposal · Monash AM2D'
     }
   };
 
@@ -345,14 +354,10 @@
     if (!el) return;
 
     var name = p.name || '';
-    var brandName = document.getElementById('brandName');
-    var brandAvatar = document.getElementById('brandAvatar');
-    if (brandName) brandName.textContent = name;
-    if (brandAvatar) {
-      brandAvatar.innerHTML = p.avatar
-        ? '<img src="' + esc(p.avatar) + '" alt="" loading="eager" decoding="async">'
-        : esc(name.charAt(0));
-    }
+    // 新 brand 显示："QX · PhD APPLICATION"（index.html 中已写死静态文字）
+    // 不再用 avatar+name；如 meta 给了 brandMark 就替换
+    var brandMark = document.getElementById('brandMark');
+    if (brandMark && DATA.meta && DATA.meta.brandMark) brandMark.textContent = DATA.meta.brandMark;
 
     var contacts = (p.contacts || []).filter(function (c) {
       // 英文 CV 不显示微信，因为国际导师不会使用微信联系
@@ -446,6 +451,72 @@
         '<div class="hero__body">' + body + '</div>' +
         aside +
       '</div>';
+  }
+
+  /* ==========================================================================
+   * 渲染：Research Fit（3 行 × 4 列 学术对齐表。列：Dimension · Majumder's Work · My Contribution · Alignment）
+   * ======================================================================== */
+  function renderFit() {
+    var d = cur().fit || {};
+    var el = slot('fit');
+    if (!el) return;
+    if (!isOn(d) || !(d.rows || []).length) { disableSection('fit'); return; }
+
+    var hDim   = LANG === 'en' ? 'Dimension' : '维度';
+    var hMaj   = LANG === 'en' ? "Prof. Majumder / AM2D (Baseline)" : 'Majumder 教授 / AM2D（基线工作）';
+    var hCont  = LANG === 'en' ? 'My Contribution' : '我的贡献';
+    var hAli   = LANG === 'en' ? 'Fit & Closing the Gap' : '契合点 · 补齐缺口';
+
+    var rows = d.rows.map(function (r) {
+      return '' +
+        '<tr>' +
+          '<th class="col-dim" scope="row">' + esc(r.dimension || '') + '</th>' +
+          '<td class="col-maj">' + esc(r.majumder || '') + '</td>' +
+          '<td class="col-cont">' + esc(r.contribution || '') + '</td>' +
+          '<td class="col-ali"><strong>' + esc(r.alignment || '') + '</strong></td>' +
+        '</tr>';
+    }).join('');
+
+    el.innerHTML = sectionHead('fit') +
+      (d.intro ? '<p class="section__intro">' + esc(d.intro) + '</p>' : '') +
+      '<div class="fit-table-wrap reveal">' +
+        '<table class="fit-table" aria-label="' + esc(T('sectionTitles').fit || '') + '">' +
+          '<thead><tr>' +
+            '<th scope="col" class="col-dim">'  + esc(hDim)  + '</th>' +
+            '<th scope="col" class="col-maj">'  + esc(hMaj)  + '</th>' +
+            '<th scope="col" class="col-cont">' + esc(hCont) + '</th>' +
+            '<th scope="col" class="col-ali">'  + esc(hAli)  + '</th>' +
+          '</tr></thead>' +
+          '<tbody>' + rows + '</tbody>' +
+        '</table>' +
+      '</div>';
+  }
+
+  /* ==========================================================================
+   * 渲染：Thesis Validation（3 个定量指标 Box。不用卡片，用 hairline-bordered 三栏）
+   * ======================================================================== */
+  function renderValidation() {
+    var d = cur().validation || {};
+    var el = slot('validation');
+    if (!el) return;
+    if (!isOn(d) || !(d.metrics || []).length) { disableSection('validation'); return; }
+
+    var items = d.metrics.slice(0, 3).map(function (m, i) {
+      return '' +
+        '<article class="validation-box reveal">' +
+          '<header class="validation-box__head">' +
+            '<span class="validation-box__idx" aria-hidden="true">0' + (i + 1) + '</span>' +
+            '<span class="validation-box__value">' + esc(m.value || '') + '</span>' +
+            (m.unit ? '<span class="validation-box__unit">' + esc(m.unit) + '</span>' : '') +
+          '</header>' +
+          (m.label ? '<p class="validation-box__label">' + esc(m.label) + '</p>' : '') +
+          (m.desc  ? '<p class="validation-box__desc">'  + esc(m.desc)  + '</p>' : '') +
+        '</article>';
+    }).join('');
+
+    el.innerHTML = sectionHead('validation') +
+      (d.intro ? '<p class="section__intro">' + esc(d.intro) + '</p>' : '') +
+      '<div class="validation-grid">' + items + '</div>';
   }
 
   /* ==========================================================================
@@ -601,7 +672,7 @@
   }
 
   /* ==========================================================================
-   * 渲染：学术成果（论文 + 专利 / 软著）
+   * 渲染：学术成果（论文 + 专利 / 软著）—— 仅保留第一作者（其余挂名 Phase B 已从 data 删除）
    * ======================================================================== */
   function renderPublications() {
     var d = cur().publications || {};
@@ -614,12 +685,12 @@
 
     var blocks = '';
 
-    /* —— 期刊论文 —— */
+    /* —— 期刊论文 / 毕业论文 —— */
     if (papers.length) {
       var list = papers.map(function (p) {
         var statusKey = p.status || 'published';
         var statusText = (T('status') || {})[statusKey] || statusKey;
-        var badgeClass = statusKey === 'in-press' || statusKey === 'published' ? 'chip--gold' : 'chip--outline';
+        var badgeClass = 'chip--accent';
 
         var tokens = [];
         if (p.journal) tokens.push(p.journal);
@@ -630,7 +701,7 @@
 
         var meta = '<p class="meta-row pub__meta">' + tokens.map(function (t) {
           return '<span class="meta-row__item">' + esc(t) + '</span>';
-        }).join('') + (p.doi ? '<span class="meta-row__item">' + esc(T('doi')) + ': <code>' + esc(p.doi) + '</code></span>' : '') + '</p>';
+        }).join('') + (p.doi ? '<span class="meta-row__item">' + esc(T('doi')) + ': <code class="mono">' + esc(p.doi) + '</code></span>' : '') + '</p>';
 
         var link = (p.link || (p.doi ? 'https://doi.org/' + p.doi : ''))
           ? '<p class="pub__link"><a class="chip chip--accent" href="' +
@@ -639,14 +710,14 @@
           : '';
 
         return '' +
-          '<li><article class="card pub reveal">' +
+          '<li><article class="pub reveal">' +
             '<div class="pub__head">' +
               '<span class="chip ' + badgeClass + '">' + esc(statusText) + '</span>' +
               (p.index ? '<span class="chip chip--accent">' + esc(p.index) + '</span>' : '') +
             '</div>' +
             (p.title ? '<h3 class="pub__title">' + esc(p.title) + '</h3>' : '') +
             (p.authors ? '<p class="pub__authors">' + boldSelf(p.authors) +
-              (p.authorNote ? ' <span class="pub__note">（' + esc(p.authorNote) + '）</span>' : '') + '</p>' : '') +
+              (p.authorNote ? ' <span class="pub__note">' + esc(p.authorNote) + '</span>' : '') + '</p>' : '') +
             '<p class="pub__journal">' + esc(p.journal || '') + '</p>' +
             meta + link +
           '</article></li>';
@@ -661,20 +732,17 @@
         '</div>';
     }
 
-    /* —— 专利与软件著作权 —— */
+    /* —— 专利与软件著作权（V2：全为第一作者）—— */
     if (patents.length) {
       var typeMap = T('type') || {};
       var firstCount = patents.filter(function (p) { return /第一|first/i.test(p.role || ''); }).length;
 
       var rows = patents.map(function (p) {
-        var isFirst = /第一|first/i.test(p.role || '');
         return '' +
-          '<li class="card ip reveal' + (isFirst ? ' ip--first' : '') + '">' +
+          '<li class="ip reveal ip--first">' +
             '<div class="ip__head">' +
-              '<span class="chip ' + (p.type === 'patent' ? 'chip--gold' : 'chip--accent') + '">' +
-                esc(typeMap[p.type] || p.type) + '</span>' +
+              '<span class="chip chip--accent">' + esc(typeMap[p.type] || p.type) + '</span>' +
               '<span class="ip__name">' + esc(p.name) + '</span>' +
-              // 金色专用于奖项，作者位次统一用描边样式；未填写时不外露空标签
               (p.role ? '<span class="chip chip--outline ip__role">' + esc(p.role) + '</span>' : '') +
             '</div>' +
             '<p class="ip__meta">' +
@@ -698,43 +766,8 @@
   }
 
   /* ==========================================================================
-   * 渲染：科研经历
-   * ======================================================================== */
-  function renderExperience() {
-    var d = cur().experience || {};
-    var el = slot('experience');
-    if (!el) return;
-    if (!isOn(d) || !(d.items || []).length) { disableSection('experience'); return; }
-
-    var items = d.items.map(function (j) {
-      var points = (j.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('');
-      var methods = (j.methods || []).map(function (m) {
-        return '<li class="chip">' + esc(m) + '</li>';
-      }).join('');
-
-      return '' +
-        '<li class="timeline__item reveal">' +
-          '<article class="card job">' +
-            '<header class="job__head">' +
-              '<h3 class="job__name">' + esc(j.name) + '</h3>' +
-              (j.role ? '<span class="job__role">' + esc(j.role) + '</span>' : '') +
-              '<span class="job__period">' + esc(j.period || '') + '</span>' +
-            '</header>' +
-            (j.org ? '<p class="job__org">' + esc(j.org) + '</p>' : '') +
-            (j.description ? '<p class="job__desc">' + esc(j.description) + '</p>' : '') +
-            (points ? '<ul class="job__points">' + points + '</ul>' : '') +
-            (methods
-              ? '<div class="job__methods"><ul class="tag-list">' + methods + '</ul></div>'
-              : '') +
-          '</article>' +
-        '</li>';
-    }).join('');
-
-    el.innerHTML = sectionHead('experience') + '<ol class="timeline">' + items + '</ol>';
-  }
-
-  /* ==========================================================================
-   * 渲染：荣誉奖项
+   * 渲染：荣誉奖项（V2 —— 学术表格 4 列：Date · Name · Selectivity · Amount CNY。
+   * 删除旧的 5 卡片样式。金额右对齐，千分位。无 elevation，仅 hairline。）
    * ======================================================================== */
   function renderAwards() {
     var d = cur().awards || {};
@@ -742,52 +775,107 @@
     if (!el) return;
     if (!isOn(d) || !(d.items || []).length) { disableSection('awards'); return; }
 
-    var items = d.items.map(function (a) {
+    function fmtCNY(n) {
+      if (n == null || n === '') return '';
+      var num = Number(n);
+      if (!isFinite(num)) return '';
+      return '¥ ' + num.toLocaleString('zh-CN');
+    }
+    var hDate = LANG === 'en' ? 'Year' : '年份';
+    var hName  = LANG === 'en' ? 'Award / Work' : '奖项 / 作品';
+    var hSel   = LANG === 'en' ? 'Selectivity & Role' : '级别 / 获奖率 / 角色';
+    var hAmt   = LANG === 'en' ? 'Amount (CNY)' : '奖金（元）';
+
+    var rows = d.items.map(function (a) {
       return '' +
-        '<li class="card award reveal' + (a.highlight ? ' award--highlight' : '') + '">' +
-          '<div class="award__head">' +
-            '<span class="award__name">' + esc(a.name) + '</span>' +
-            (a.level ? '<span class="chip ' + (a.highlight ? 'chip--gold' : 'chip--outline') + '">' + esc(a.level) + '</span>' : '') +
-            (a.date ? '<span class="award__date">' + esc(fmtDate(a.date)) + '</span>' : '') +
-          '</div>' +
-          '<p class="award__meta">' +
-            (a.role ? '<span class="award__role">' + esc(a.role) + '</span>' : '') +
-            (a.work ? '<span class="award__work">' + esc(a.work) + '</span>' : '') +
-          '</p>' +
-          (a.desc ? '<p class="award__desc">' + esc(a.desc) + '</p>' : '') +
-        '</li>';
+        '<tr>' +
+          '<td class="col-date">' + esc(fmtDate(a.date)) + '</td>' +
+          '<td class="col-name">' +
+            '<p class="award-tbl__name">' + esc(a.name) + '</p>' +
+            (a.desc ? '<p class="award-tbl__desc">' + esc(a.desc) + '</p>' : '') +
+          '</td>' +
+          '<td class="col-sel">' + esc(a.level || '') + '</td>' +
+          '<td class="col-amt">' + fmtCNY(a.amount) + '</td>' +
+        '</tr>';
     }).join('');
 
-    el.innerHTML = sectionHead('awards') + '<ul class="awards">' + items + '</ul>';
+    var total = d.items.reduce(function (s, a) { return s + (Number(a.amount) || 0); }, 0);
+    var totalRow = LANG === 'en'
+      ? ('<tfoot><tr><th colspan="3" scope="row">Total prize amount</th><td class="col-amt">' + fmtCNY(total) + '</td></tr></tfoot>')
+      : ('<tfoot><tr><th colspan="3" scope="row">累计奖金金额</th><td class="col-amt">' + fmtCNY(total) + '</td></tr></tfoot>');
+
+    el.innerHTML = sectionHead('awards') +
+      '<div class="awards-table-wrap reveal">' +
+        '<table class="awards-table" aria-label="' + esc(T('sectionTitles').awards || '') + '">' +
+          '<thead>' +
+            '<tr>' +
+              '<th scope="col" class="col-date">' + esc(hDate) + '</th>' +
+              '<th scope="col" class="col-name">' + esc(hName) + '</th>' +
+              '<th scope="col" class="col-sel">' + esc(hSel) + '</th>' +
+              '<th scope="col" class="col-amt">' + esc(hAmt) + '</th>' +
+            '</tr>' +
+          '</thead>' +
+          '<tbody>' + rows + '</tbody>' +
+          totalRow +
+        '</table>' +
+      '</div>';
   }
 
   /* ==========================================================================
-   * 渲染：研究计划
+   * 渲染：研究计划（V2 —— ① 4 Block 线性 · RQ / Method / Alignment / Deliverables
+   *                          ② 3 学年 × 2 学期 = 6 行 Milestones 时间表（hairline table））
    * ======================================================================== */
   function renderProposal() {
     var d = cur().proposal || {};
     var el = slot('proposal');
     if (!el) return;
-    if (!isOn(d) || !(d.items || []).length) { disableSection('proposal'); return; }
+    if (!isOn(d) || (!((d.blocks || []).length || (d.milestones || []).length))) { disableSection('proposal'); return; }
 
-    var items = d.items.map(function (p, i) {
-      var tags = (p.tags || []).map(function (t) {
+    var blocks = (d.blocks || []).map(function (b) {
+      var tags = (b.tags || []).map(function (t) {
         return '<li class="chip chip--accent">' + esc(t) + '</li>';
       }).join('');
       return '' +
-        '<li><article class="card proposal-item reveal">' +
-          '<header class="proposal-item__head">' +
-            '<span class="proposal-item__index">' + (i + 1) + '</span>' +
-            '<h3 class="proposal-item__title">' + esc(p.title) + '</h3>' +
-          '</header>' +
-          (p.desc ? '<p class="proposal-item__desc">' + esc(p.desc) + '</p>' : '') +
-          (tags ? '<ul class="tag-list proposal-item__tags">' + tags + '</ul>' : '') +
-        '</article></li>';
+        '<article class="proposal-block reveal">' +
+          (b.title ? '<h3 class="proposal-block__title">' + esc(b.title) + '</h3>' : '') +
+          (b.desc ? '<div class="proposal-block__desc">' + esc(b.desc) + '</div>' : '') +
+          (tags ? '<ul class="tag-list proposal-block__tags">' + tags + '</ul>' : '') +
+        '</article>';
     }).join('');
+
+    var msTable = '';
+    if ((d.milestones || []).length) {
+      var hP = LANG === 'en' ? 'Period' : '阶段';
+      var hA = LANG === 'en' ? 'Activity' : '工作内容';
+      var hO = LANG === 'en' ? 'Output' : '交付物';
+      var mRows = d.milestones.map(function (m) {
+        return '' +
+          '<tr>' +
+            '<td class="col-period">' + esc(m.period) + '</td>' +
+            '<td class="col-activity">' + esc(m.activity || '') + '</td>' +
+            '<td class="col-output">' + esc(m.output || '') + '</td>' +
+          '</tr>';
+      }).join('');
+      msTable =
+        '<div class="milestones-wrap reveal">' +
+          '<h3 class="milestones__heading">' +
+            (LANG === 'en' ? 'Three-Year Research Milestones' : '三年研究时间表 / Milestones') +
+          '</h3>' +
+          '<table class="milestones-table">' +
+            '<thead><tr>' +
+              '<th scope="col" class="col-period">' + esc(hP) + '</th>' +
+              '<th scope="col" class="col-activity">' + esc(hA) + '</th>' +
+              '<th scope="col" class="col-output">' + esc(hO) + '</th>' +
+            '</tr></thead>' +
+            '<tbody>' + mRows + '</tbody>' +
+          '</table>' +
+        '</div>';
+    }
 
     el.innerHTML = sectionHead('proposal') +
       (d.intro ? '<p class="section__note">' + esc(d.intro) + '</p>' : '') +
-      '<ol class="proposal">' + items + '</ol>';
+      '<div class="proposal-blocks">' + blocks + '</div>' +
+      msTable;
   }
 
   /* ==========================================================================
@@ -830,56 +918,43 @@
   /* ==========================================================================
    * 渲染：学术技能
    * ======================================================================== */
+  /* ==========================================================================
+   * 渲染：Method Matrix（4 列 × N 行 纯表格。删除旧 self-rate 进度条）
+   *   列：Method / Software / Used in / Deliverable
+   * ======================================================================== */
   function renderSkills() {
     var d = cur().skills || {};
     var el = slot('skills');
     if (!el) return;
-    if (!isOn(d) || !(d.categories || []).length) { disableSection('skills'); return; }
+    if (!isOn(d) || !(d.rows || []).length) { disableSection('skills'); return; }
 
-    var groups = d.categories.map(function (g) {
-      var list = (g.items || []).map(function (s) {
-        var lv = parseInt(s.level, 10);
-        if (!lv || lv < 1) {
-          return '<li class="skill skill--plain"><span class="skill__name">' + esc(s.name) + '</span></li>';
-        }
-        var pct = Math.round((Math.min(lv, 5) / 5) * 100);
-        return '' +
-          '<li class="skill">' +
-            '<div class="skill__head">' +
-              '<span class="skill__name">' + esc(s.name) + '</span>' +
-            '</div>' +
-            '<div class="skill__bar" role="meter" aria-valuemin="0" aria-valuemax="100" ' +
-              'aria-valuenow="' + pct + '" aria-label="' + esc(s.name) + '">' +
-              '<span class="skill__bar-fill" data-pct="' + pct + '"></span>' +
-            '</div>' +
-          '</li>';
-      }).join('');
+    var hM = LANG === 'en' ? 'Method' : '方法';
+    var hS = LANG === 'en' ? 'Software / Instrument' : '软件 / 仪器';
+    var hU = LANG === 'en' ? 'Validated In' : '已在以下项目验证';
+    var hD = LANG === 'en' ? 'Deliverable' : '交付物';
 
+    var rows = d.rows.map(function (r) {
       return '' +
-        '<section class="card skill-group reveal" aria-label="' + esc(g.name) + '">' +
-          '<h3 class="skill-group__name">' + esc(g.name) + '</h3>' +
-          '<ul class="skill-list">' + list + '</ul>' +
-        '</section>';
+        '<tr>' +
+          '<th class="col-method" scope="row">' + esc(r.method || '') + '</th>' +
+          '<td class="col-software">' + esc(r.software || '') + '</td>' +
+          '<td class="col-used">'    + esc(r.used_in  || '') + '</td>' +
+          '<td class="col-deliver">' + esc(r.deliverable || '') + '</td>' +
+        '</tr>';
     }).join('');
-
-    var extras = (d.extras || []).map(function (e) {
-      return '<li class="skill-extra"><span class="skill-extra__name">' + esc(e.name) + '</span>' +
-             '<span class="skill-extra__desc">' + esc(e.desc) + '</span></li>';
-    }).join('');
-
-    var legend = d.showLegend === false ? '' :
-      '<ul class="skill-legend">' +
-        '<li><b>5</b> ' + esc(LANG === 'en' ? 'Expert' : '精通') + '</li>' +
-        '<li><b>4</b> ' + esc(LANG === 'en' ? 'Proficient' : '熟练') + '</li>' +
-        '<li><b>3</b> ' + esc(LANG === 'en' ? 'Competent' : '掌握') + '</li>' +
-        '<li><b>2</b> ' + esc(LANG === 'en' ? 'Familiar' : '了解') + '</li>' +
-        '<li><b>1</b> ' + esc(LANG === 'en' ? 'Beginner' : '入门') + '</li>' +
-      '</ul>';
 
     el.innerHTML = sectionHead('skills') +
-      '<div class="skills">' + groups + '</div>' +
-      (extras ? '<ul class="skill-extras reveal">' + extras + '</ul>' : '') +
-      legend;
+      '<div class="matrix-table-wrap reveal">' +
+        '<table class="matrix-table" aria-label="' + esc(T('sectionTitles').skills || '') + '">' +
+          '<thead><tr>' +
+            '<th scope="col" class="col-method">'  + esc(hM) + '</th>' +
+            '<th scope="col" class="col-software">' + esc(hS) + '</th>' +
+            '<th scope="col" class="col-used">'    + esc(hU) + '</th>' +
+            '<th scope="col" class="col-deliver">' + esc(hD) + '</th>' +
+          '</tr></thead>' +
+          '<tbody>' + rows + '</tbody>' +
+        '</table>' +
+      '</div>';
   }
 
   /* ==========================================================================
@@ -975,23 +1050,37 @@
     if (!el) return;
     if (!isOn(d)) { disableSection('resume'); return; }
 
-    var download = d.pdfUrl
-      ? '<a class="btn btn--primary" href="' + esc(d.pdfUrl) + '" download="' +
-        esc(d.pdfFileName || 'cv.pdf') + '">' + icon('i-download') + esc(T('download')) + '</a>'
-      : '';
+    // 证据链材料：按教授查看顺序排列
+    //   CV → Academic Transcript → Ranking Cert → PTE Report
+    var docs = [
+      { key: 'pdfUrl',       label: T('download'), iconKey: 'i-download' },
+      { key: 'transcriptUrl', label: (LANG === 'en' ? 'Academic Transcript' : '官方成绩单'),   iconKey: 'i-school' },
+      { key: 'rankingUrl',   label: (LANG === 'en' ? 'Ranking Certificate (1/52 · Top 2%)' : '排名证明 · 1/52 Top 2%'), iconKey: 'i-trending' },
+      { key: 'pteUrl',       label: (LANG === 'en' ? 'PTE Academic Score Report' : 'PTE 语言成绩报告'), iconKey: 'i-certificate' }
+    ];
+    var actions = docs.map(function (doc) {
+      var url = d[doc.key];
+      if (!url) return '';
+      var fname = d[doc.key + 'Name'] || '';
+      return '' +
+        '<a class="btn btn--primary" href="' + esc(url) + '"' +
+          (fname ? ' download="' + esc(fname) + '"' : '') + '>' +
+          icon(doc.iconKey) + esc(doc.label) +
+        '</a>';
+    }).filter(Boolean).join('');
+
+    // Print fallback
+    actions += '<button class="btn btn--ghost" type="button" data-print>' +
+               icon('i-printer') + esc(T('print')) + '</button>';
 
     el.innerHTML = '' +
-      '<div class="cta-card reveal">' +
-        '<span class="cta-card__icon">' + icon('i-download') + '</span>' +
-        '<h2 class="cta-card__title" id="resume-heading">' + esc(d.title || T('download')) + '</h2>' +
-        (d.description ? '<p class="cta-card__desc">' + esc(d.description) + '</p>' : '') +
-        '<div class="btn-row cta-card__actions" style="justify-content:center">' +
-          download +
-          '<button class="btn' + (download ? '' : ' btn--primary') + '" type="button" data-print>' +
-            icon('i-printer') + esc(T('print')) +
-          '</button>' +
+      '<div class="cta-bar reveal" aria-labelledby="resume-heading">' +
+        '<div class="cta-bar__text">' +
+          '<h2 class="cta-bar__title" id="resume-heading">' + esc(d.title || T('download')) + '</h2>' +
+          (d.description ? '<p class="cta-bar__desc">' + esc(d.description) + '</p>' : '') +
         '</div>' +
-        (d.footnote ? '<p class="cta-card__foot">' + esc(d.footnote) + '</p>' : '') +
+        '<div class="btn-row cta-bar__actions">' + actions + '</div>' +
+        (d.footnote ? '<p class="cta-bar__foot">' + esc(d.footnote) + '</p>' : '') +
       '</div>';
   }
 
@@ -1039,25 +1128,42 @@
     var el = slot('footer');
     if (!el) return;
 
+    var d = cur().footer || {};
     var meta = DATA.meta || {};
-    var year = new Date().getFullYear();
-    var name = (typeof meta.footerName === 'string')
-      ? meta.footerName
-      : ((meta.footerName || {})[LANG] || (DATA.profile && DATA.profile.name) || '');
+    var p = DATA.profile || {};
 
-    var links = ((DATA.profile && DATA.profile.contacts) || [])
-      .filter(function (c) { return c.href && /^https?:/i.test(c.href); })
-      .slice(0, 4)
-      .map(function (c) {
-        var m = CONTACT_META[c.type] || CONTACT_META.custom;
-        return '<li><a href="' + esc(c.href) + '" target="_blank" rel="noopener noreferrer">' +
-               esc(m[LANG] || m.zh) + '</a></li>';
-      }).join('');
+    // Admin Note（第 1 行：Monash Master 留位费 admin status）
+    var adminRow = d.adminNote
+      ? '<p class="site-footer__admin">' + icon('i-certificate') + esc(d.adminNote) + '</p>'
+      : '';
 
-    el.innerHTML =
-      (links ? '<ul class="site-footer__links">' + links + '</ul>' : '') +
-      '<p>&copy; ' + year + ' ' + esc(name) + ' ' + esc(T('copyright')) + '</p>' +
-      (meta.showBuildInfo !== false ? '<p class="site-footer__note">' + esc(T('buildInfo')) + '</p>' : '');
+    // 联系信息行（第 2 行：ORCID 可点 · Email mailto · © · Last updated）
+    var orcidC = (p.contacts || []).find(function (c) { return c.type === 'orcid'; });
+    var mailC  = (p.contacts || []).find(function (c) { return c.type === 'email'; });
+    var orcid = orcidC && orcidC.href
+      ? '<a href="' + esc(orcidC.href) + '" target="_blank" rel="noopener noreferrer">' + icon('i-orcid') + esc(orcidC.value) + '</a>'
+      : (orcidC ? '<span>' + icon('i-orcid') + esc(orcidC.value) + '</span>' : '');
+    var mail = mailC && mailC.href
+      ? '<a href="' + esc(mailC.href) + '">' + icon('i-mail') + esc(mailC.value) + '</a>'
+      : (mailC ? '<span>' + icon('i-mail') + esc(mailC.value) + '</span>' : '');
+
+    var copyrightText = d.contactLine || '';
+    if (!copyrightText) {
+      var name = (typeof meta.footerName === 'string')
+        ? meta.footerName
+        : ((meta.footerName || {})[LANG] || p.name || '');
+      copyrightText = '\u00A9 ' + new Date().getFullYear() + ' ' + name;
+    }
+
+    var sep = '<span class="site-footer__sep" aria-hidden="true"> · </span>';
+    var contactRow = '' +
+      '<p class="site-footer__contact">' +
+        [orcid, mail].filter(Boolean).join(sep) +
+        (orcid || mail ? sep : '') +
+        esc(copyrightText) +
+      '</p>';
+
+    el.innerHTML = adminRow + contactRow;
   }
 
   /* ==========================================================================
@@ -1069,15 +1175,14 @@
 
     renderMeta();
     renderHero();
-    renderOverview();
-    renderEducation();
-    renderResearch();
-    renderPublications();
-    renderExperience();
-    renderAwards();
+    // Hero 之后：Fit(2) → Validation(3) → Proposal(4) 是 Prof. 30 秒决策漏斗
+    renderFit();
+    renderValidation();
     renderProposal();
-    renderTargets();
-    renderOutreach();
+    // 之后按 Background/Outputs/Support 的顺序
+    renderEducation();
+    renderPublications();
+    renderAwards();
     renderSkills();
     renderStatement();
     renderReferees();
@@ -1116,7 +1221,7 @@
       document.documentElement.setAttribute('data-lang', LANG);
       try { localStorage.setItem('cv-lang', LANG); } catch (e) {}
       renderAll();
-      initTheme();      // 语言变了，主题按钮的提示文字也要跟着变
+      // （主题切换功能已移除，不再需要 initTheme）
       // 维持滚动位置，避免切换语言后页面跳回顶部
       if (keepScroll) window.scrollTo(0, keepScroll);
       // 维持焦点：语言按钮在 header 中未被重新渲染，焦点本就保留；此处兜底
@@ -1193,69 +1298,32 @@
   }
 
   /* ==========================================================================
-   * 交互：主题切换
-   * ======================================================================== */
-  function initTheme() {
-    var btn = document.getElementById('themeToggle');
-    if (!btn) return;
-
-    function sync() {
-      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.setAttribute('aria-pressed', String(dark));
-      btn.setAttribute('aria-label', dark ? T('themeToLight') : T('themeToDark'));
-      btn.title = dark ? T('themeToLight') : T('themeToDark');
-    }
-
-    if (!btn.dataset.bound) {
-      btn.addEventListener('click', function () {
-        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        try { localStorage.setItem('cv-theme', next); } catch (e) {}
-        sync();
-        announce(next === 'dark'
-          ? (LANG === 'en' ? 'Switched to dark mode' : '已切换到深色模式')
-          : (LANG === 'en' ? 'Switched to light mode' : '已切换到浅色模式'));
-      });
-      btn.dataset.bound = '1';
-    }
-    sync();
-  }
-
-  /* ==========================================================================
-   * 交互：键盘快捷键（? 切语言 · t 切主题）
+   * 交互：键盘快捷键（? 切语言；删除 t 主题切换（V2 无 theme toggle 按钮））
    * ======================================================================== */
   function initKeys() {
     document.addEventListener('keydown', function (e) {
       var t = e.target;
       var tag = (t && t.tagName) || '';
-      // 输入控件或可编辑区域聚焦时，让按键回到正常输入语义
       if (/INPUT|TEXTAREA|SELECT/.test(tag) || (t && t.isContentEditable)) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
 
       if (e.key === '?') {
         var langBtn = document.getElementById('langToggle');
         if (langBtn) { e.preventDefault(); langBtn.click(); }
-      } else if (e.key === 't' || e.key === 'T') {
-        var themeBtn = document.getElementById('themeToggle');
-        if (themeBtn) { e.preventDefault(); themeBtn.click(); }
       }
     });
   }
 
   /* ==========================================================================
-   * 交互：滚动进度、吸顶、返回顶部
+   * 交互：吸顶 header / 返回顶部（V2 删除 scroll progress bar）
    * ======================================================================== */
   function initScrollUi() {
-    var bar = document.getElementById('scrollProgressBar');
     var header = document.getElementById('siteHeader');
     var toTop = document.getElementById('toTop');
     var ticking = false;
 
     function update() {
-      var doc = document.documentElement;
-      var max = doc.scrollHeight - window.innerHeight;
-      var y = window.scrollY || doc.scrollTop || 0;
-      if (bar) bar.style.width = (max > 0 ? Math.min(100, (y / max) * 100) : 0) + '%';
+      var y = window.scrollY || document.documentElement.scrollTop || 0;
       if (header) header.classList.toggle('is-stuck', y > 8);
       if (toTop) toTop.hidden = y < 400;
       ticking = false;
@@ -1372,8 +1440,9 @@
   function init() {
     try {
       var saved = localStorage.getItem('cv-lang');
-      LANG = saved === 'en' ? 'en' : 'zh';
-    } catch (e) { LANG = 'zh'; }
+      // 教授视角：首次访问默认 EN；仅当用户显式切换过（saved）才读取
+      LANG = (saved === 'en' || saved === 'zh') ? saved : 'en';
+    } catch (e) { LANG = 'en'; }
     document.documentElement.setAttribute('data-lang', LANG);
 
     var main = document.getElementById('main');
@@ -1383,7 +1452,6 @@
 
     initLang();
     initMenu();
-    initTheme();
     initKeys();
     initScrollUi();
     initPrint();
@@ -1399,7 +1467,7 @@
     if (!/^https?:/i.test(location.protocol)) return;
     // 避免重复注册
     if (navigator.serviceWorker.controller) return;
-    navigator.serviceWorker.register('assets/files/sw.js').catch(function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {
       // 静默失败：离线能力是增强项，不应影响简历正常浏览
     });
   }

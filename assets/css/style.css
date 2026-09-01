@@ -7,102 +7,111 @@
  *      8.页脚 9.响应式 10.打印
  * ========================================================================== */
 
-/* =========================== 1. 设计令牌（taste-skill v2 · 冷奢华 Zinc + Burnt Orange 单强调 · 科研出版级） =========================== */
+/* =========================== 1. 设计令牌（V2 · Monash Engineering 院士级学术 CV）
+ *   · Accent: Monash Blue #006FBA（brand familiarity， subliminal trust）
+ *   · Neutral: Slate（Elsevier / Springer PDF 正文色系）
+ *   · Fonts: IBM Plex Serif (Display) / Sans (Body) / Mono (Data/DOI/Citations)
+ *   · Shape: ALL radius=2px sharp（paper/corner sharp for academic tables）
+ *   · Shadows: NONE（学术 paper 没有 elevation，只有 hairline dividers）
+ *   · Max width: 960px = A4 Letter width（NOT 1400 landing page wide）
+ *   · Dials: VARIANCE 4 / MOTION 1 / DENSITY 6（trust-first/regulated preset）
+ * =========================== */
 :root {
-  /* —— 字体（Geist Sans + Geist Mono 变量字重；中文用 PingFang/Noto Sans CJK 作为 Geist 未覆盖的回退；全局禁用 serif 默认）—— */
-  --font-display: "Geist", "PingFang SC", "Hiragino Sans GB",
+  /* —— 字体（学术论文三件套：Display Serif / Body Sans / Data Mono。
+          Display Serif: justified by academic brand/paper PDF identity（Monash letterhead / Springer PDF / Nature Comms PDF）
+          非 creative-brief 默认 serif，完全满足 taste-skill 4.1 override 第 1 条 —— */
+  --font-display: "IBM Plex Serif", "PingFang SC", "Noto Serif CJK SC",
+                  Georgia, "Times New Roman", serif;
+  --font-sans:    "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB",
                   "Noto Sans CJK SC", "Microsoft YaHei",
                   -apple-system, BlinkMacSystemFont, "Segoe UI",
                   Roboto, Helvetica, Arial, sans-serif;
-  --font-sans:    "Geist", "PingFang SC", "Hiragino Sans GB",
-                  "Noto Sans CJK SC", "Microsoft YaHei",
-                  -apple-system, BlinkMacSystemFont, "Segoe UI",
-                  Roboto, Helvetica, Arial, sans-serif;
-  --font-mono:    "Geist Mono", ui-monospace, SFMono-Regular, Menlo,
+  --font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo,
                   Consolas, "Liberation Mono", monospace;
 
-  /* —— 配色（冷奢华 Zinc 系，BANNED: warm beige(#fcfbf9…)、brass/ochre、墨蓝/紫蓝渐变 glowing）
-        唯一强调色 Burnt Orange #c2410c —— 象征 M-rGO 700℃ 退火温度边界 & thermal-runaway onset 热失控语义 —— */
-  --c-bg:            #fafafa;    /* zinc-50  冷白纸；非 warm paper */
-  --c-bg-muted:      #f4f4f5;    /* zinc-100 微调冷灰；非暖米 */
-  --c-surface:       #ffffff;    /* zinc-white surface */
-  --c-surface-hover: #f7f7f8;    /* hover state */
-  --c-border:        #e4e4e7;    /* zinc-200 */
-  --c-border-strong: #d4d4d8;    /* zinc-300 */
-  --c-rule:          #e4e4e7;
-  --c-text:          #18181b;    /* zinc-900  对比度 16.2:1 */
-  --c-text-soft:     #52525b;    /* zinc-600  对比度  8.1:1 */
-  --c-text-muted:    #71717a;    /* zinc-500  对比度  5.3:1 */
+  /* —— 中性色：Slate 家族（Elsevier/Springer PDF 默认色板）
+        Monochrome discipline：只有 bg-white / bg-muted (Slate-50→#F7F8FA) 两种背景 —— */
+  --c-bg:            #FFFFFF;   /* 纯白 = 期刊 PDF 纸面（原 Zinc-50 像 app） */
+  --c-bg-muted:      #F7F8FA;   /* 冷微灰 section muted 背景（非暖米/cream） */
+  --c-surface:       #FFFFFF;
+  --c-surface-hover: #F1F5F9;
+  --c-border:        #E5E7EB;   /* Slate-200 hairline（表格/分隔线） */
+  --c-border-strong: #CBD5E1;   /* Slate-300 表头粗边 */
+  --c-rule:          #E5E7EB;
+  --c-text:          #111827;   /* Slate-900  正文（Elsevier PDF） 对比度 15.9:1 */
+  --c-text-soft:     #475569;   /* Slate-600  次级信息         对比度 7.2:1 */
+  --c-text-muted:    #64748B;   /* Slate-500  注释/辅助         对比度 4.5:1 WCAG AA */
 
-  --c-accent:        #c2410c;    /* Burnt Orange 700 —— 饱和 75%，单强调锁死  对比度  5.1:1 → 用于高亮/link/芯片/标签 */
-  --c-accent-strong: #9a3412;    /* 800 —— primary CTA bg  对比度  7.2:1 */
-  --c-accent-soft:   #fff7ed;    /* orange-50 —— surface 轻衬  */
-  --c-accent-text:   #9a3412;    /* accent label  */
-  --c-accent-ink:    #ffffff;    /* 主 CTA 按钮文字（白 vs #9a3412 = 8.7:1 ✅ WCAG AAA） */
+  /* —— 单一强调色锁（Color Consistency Lock · taste-skill 4.2）
+        MONASH BLUE #006FBA —— Monash University brand primary。
+        全站任何 accent/link/DOI/chip 只能用此色及其 shade/tint，不许其它彩色 —— */
+  --c-accent:        #006FBA;   /* Monash Blue（CTA/链接/accent-bar/DOI 链接） 对比度 5.5:1 ✅ */
+  --c-accent-strong: #003F73;   /* 60% shade · text accent（ORCID 链接/section eyebrow）对比度 10.4:1 ✅ */
+  --c-accent-soft:   #E6EFF9;   /* 8% tint · chip/pill 软背景  */
+  --c-accent-text:   #00498C;   /* accent label 色  对比度 8.3:1 */
+  --c-accent-ink:    #FFFFFF;   /* CTA 按钮文字（白 vs #006FBA = 5.5:1 ✅ WCAG AA） */
 
-  --c-highlight-chip: #fafafa;   /* 非金色；改用 zinc-border + 左 accent-stripe 实现 award highlight，避免 brass */
+  /* —— 排版尺度（学术论文 headings 较大、body 15px line 1.7）—— */
+  --fs-xs:   0.7rem;     /* 11.2px  caption/出处 */
+  --fs-sm:   0.8125rem;  /* 13px    table/muted text */
+  --fs-base: 0.9375rem;  /* 15px    body */
+  --fs-md:   1rem;       /* 16px    sub-head */
+  --fs-lg:   1.125rem;   /* 18px    section subheading */
+  --fs-xl:   1.3125rem;  /* 21px    education title */
+  --fs-2xl:  clamp(1.5rem, 1.18rem + 1.4vw, 2rem);     /* section heading */
+  --fs-3xl:  clamp(2rem,  1.4rem  + 2.6vw, 2.75rem);   /* Hero Name */
 
-  /* —— 排版尺度（clamp 流式）—— */
-  --fs-xs:   0.75rem;
-  --fs-sm:   0.8125rem;
-  --fs-base: 0.9375rem;
-  --fs-md:   1rem;
-  --fs-lg:   1.0625rem;
-  --fs-xl:   1.1875rem;
-  --fs-2xl:  clamp(1.5rem, 1.08rem + 1.76vw, 2.1rem);
-  --fs-3xl:  clamp(2.2rem, 1.52rem + 2.88vw, 3.6rem);
-
-  /* —— 间距（Apple 8pt 网格）—— */
+  /* —— 间距（8pt grid，密度 6 → 比 portfolio 更紧凑）—— */
   --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px;
   --sp-4: 16px; --sp-5: 20px;  --sp-6: 24px;
-  --sp-7: 32px; --sp-8: 40px;  --sp-9: 64px;  --sp-10: 80px;
+  --sp-7: 32px; --sp-8: 40px;  --sp-9: 56px;  --sp-10: 72px;
 
-  /* —— SHAPE CONSISTENCY LOCK：全项目唯一圆角 6px。不混用 pill/0/8/12。 —— */
-  --radius-sm: 6px;
-  --radius:    6px;
-  --radius-lg: 6px;
-  --radius-pill: 999px;   /* 仅用于极小 chips/标签；button/card 一律 radius=6 */
+  /* —— SHAPE CONSISTENCY LOCK：全项目 radius=2px（sharp corners for academic tables）。
+        NO pill / 8/12 混用。buttons / chips / inputs / cards / tables 全部 2px —— */
+  --radius-sm: 2px;
+  --radius:    2px;
+  --radius-lg: 2px;
+  --radius-pill: 2px;   /* NO pill；保留变量但值 = 2px */
 
-  /* —— 阴影（Zinc 背景冷色调 shadow：tinted 为 zinc-hue，禁止纯黑 drop shadow 投射浅色底）—— */
-  --shadow-sm: 0 1px 2px rgba(24, 24, 27, .04);
-  --shadow:    0 1px 3px rgba(24, 24, 27, .05), 0 8px 28px rgba(24, 24, 27, .045);
-  --shadow-header: 0 1px 12px rgba(24, 24, 27, .045),
-                   inset 0 -1px 0 rgba(24, 24, 27, .04);
+  /* —— 阴影：ACCADEMIC 禁用 elevation —— */
+  --shadow-sm: none;
+  --shadow:    none;
+  --shadow-header: none;
 
-  /* —— 动效曲线（ease-out-quart-ish）—— */
-  --ease: cubic-bezier(.22, .61, .36, 1);
+  /* —— 动效：MOTION 1 —— NO translate/lift/microinteraction。
+        只保留 hover 颜色过渡，时长 120ms —— */
+  --ease: cubic-bezier(.16, 1, .3, 1);
 
-  --header-h: 64px;   /* cap: ≤80px，默认 64 */
-  --max-w:    1180px; /* 撑满研究计划 Bento 5-cell 需要稍微加大（原 1140） */
-  --max-w-text: 720px;
-  --max-w-hero: 1180px;
+  --header-h: 64px;          /* cap ≤80px · 学术 header 紧凑 · brand + 7 nav ≤ 64 */
+  --max-w:    960px;         /* A4 Letter width（Monash letterhead / 论文 PDF print width） */
+  --max-w-text: 680px;       /* 正文 65ch */
+  --max-w-hero: 960px;
 }
 
-/* —— 深色：主题锁单一 Zinc dark，section 不反色；Burnt Orange 保持语义 —— */
+/* —— 深色：prefers-color-scheme 时自动切换（用户 UI 不提供 toggle，删除按钮）。
+        保持单一 theme（Slate dark + Monash Blue same hue），section 永不跨主题 flip —— */
 [data-theme="dark"] {
-  --c-bg:            #09090b;   /* zinc-950 */
-  --c-bg-muted:      #111114;   /* zinc-900 tint */
-  --c-surface:       #131316;   /* card surface */
-  --c-surface-hover: #1a1a1e;
-  --c-border:        #27272a;   /* zinc-800 */
-  --c-border-strong: #3f3f46;   /* zinc-700 */
-  --c-rule:          #27272a;
-  --c-text:          #fafafa;   /* zinc-50  对比度 16.2:1 */
-  --c-text-soft:     #c6c6cc;   /* 对比度  9.4:1 */
-  --c-text-muted:    #8f8f97;   /* 对比度  5.1:1 */
+  --c-bg:            #0B1220;   /* Slate-950 冷深蓝，非纯黑 */
+  --c-bg-muted:      #0F172A;   /* Slate-900 深海军蓝 */
+  --c-surface:       #111C31;
+  --c-surface-hover: #172238;
+  --c-border:        #1E293B;   /* Slate-800 */
+  --c-border-strong: #334155;   /* Slate-700 */
+  --c-rule:          #1E293B;
+  --c-text:          #F1F5F9;   /* Slate-100 对比度 13.4:1 */
+  --c-text-soft:     #94A3B8;   /* Slate-400 对比度  7.0:1 */
+  --c-text-muted:    #64748B;   /* Slate-500 对比度  4.5:1 */
 
-  --c-accent:        #fb923c;   /* orange-400 —— 深色下提亮，保持语义  对比度  7.3:1 */
-  --c-accent-strong: #f97316;   /* orange-500 CTA  对比度  8.6:1 */
-  --c-accent-soft:   #2a1300;   /* 深色轻衬 */
-  --c-accent-text:   #fdba74;
-  --c-accent-ink:    #09090b;   /* CTA 按钮文字：zinc-950 vs orange-500 = 10.1:1 ✅ */
+  /* 同一 accent 色深浅；保持 hue 不变（color consistency lock） */
+  --c-accent:        #3B82F6;   /* Blue-500  11.1:1 ✅ */
+  --c-accent-strong: #60A5FA;   /* Blue-400 */
+  --c-accent-soft:   #172554;   /* Blue-950 soft tint */
+  --c-accent-text:   #93C5FD;
+  --c-accent-ink:    #0B1220;
 
-  --c-highlight-chip: #131316;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35);
-  --shadow:    0 1px 3px rgba(0, 0, 0, .38), 0 10px 34px rgba(0, 0, 0, .28);
-  --shadow-header: 0 1px 12px rgba(0, 0, 0, .45),
-                   inset 0 -1px 0 rgba(255, 255, 255, .03);
+  --shadow-sm: none;
+  --shadow:    none;
+  --shadow-header: none;
   color-scheme: dark;
 }
 
@@ -265,17 +274,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border-radius: var(--radius-sm);
   background: var(--c-surface);
   color: var(--c-text);
-  transition: background .18s var(--ease), border-color .18s var(--ease),
-              transform .18s var(--ease), box-shadow .18s var(--ease);
+  transition: background .18s var(--ease), border-color .18s var(--ease);
 }
 .btn:hover {
   background: var(--c-surface-hover);
   border-color: var(--c-accent);
   color: var(--c-text);
   text-decoration: none;
-  transform: translateY(-1px);
 }
-.btn:active { transform: translateY(0); }
 .btn--primary {
   background: var(--c-accent-strong);
   border-color: var(--c-accent-strong);
@@ -285,7 +291,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: var(--c-accent);
   border-color: var(--c-accent);
   color: var(--c-accent-ink);
-  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--c-accent-strong) 55%, transparent);
 }
 .btn--ghost { background: transparent; border-color: var(--c-border-strong); }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
@@ -343,20 +348,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 /* =========================== 5. 导航 =========================== */
-.scroll-progress {
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 2px;
-  z-index: 90;
-  pointer-events: none;
-}
-.scroll-progress__bar {
-  height: 100%;
-  width: 0;
-  background: var(--c-accent);
-  transition: width .1s linear;
-}
-
 .site-header {
   position: sticky;
   top: 0;
@@ -497,23 +488,6 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
 [data-lang="zh"] .lang-toggle__zh { color: var(--c-accent); }
 [data-lang="en"] .lang-toggle__en { color: var(--c-accent); }
 
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;   /* 触控目标 ≥44px */
-  min-height: 44px;
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-sm);
-  color: var(--c-text-soft);
-}
-.theme-toggle:hover { background: var(--c-surface-hover); color: var(--c-text); }
-[data-theme="dark"] .theme-toggle__sun  { display: block; }
-[data-theme="dark"] .theme-toggle__moon { display: none; }
-[data-theme="light"] .theme-toggle__sun  { display: none; }
-[data-theme="light"] .theme-toggle__moon { display: block; }
-
 /* =========================== 6. 首屏：taste-skill ANTI-CENTER BIAS（VARIANCE 6 → 非对称 6.5:4.5 分栏） =========================== */
 .hero {
   position: relative;
@@ -522,14 +496,6 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-rule);
   scroll-margin-top: var(--header-h);
-}
-.hero::before {
-  /* 左边缘 1 条 22% 高的 Burnt Orange 细竖线 —— 科研出版级左对齐锚（非居中对齐强化符号）*/
-  content: "";
-  position: absolute; left: 0; top: 18%; height: 22%;
-  width: 2px;
-  background: var(--c-accent);
-  opacity: .8;
 }
 /* === 非对称 6.5 : 4.5 双栏（Desktop ≥1024）：左正文，右参数面板 + 肖像 === */
 .hero__inner {
@@ -581,13 +547,6 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   background: var(--c-accent-soft);
   border: 1px solid color-mix(in srgb, var(--c-accent) 22%, transparent);
   border-radius: var(--radius);
-}
-.hero__intent::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--c-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 16%, transparent);
 }
 
 .hero__name {
@@ -668,13 +627,12 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  transition: border-color .18s var(--ease), color .18s var(--ease), transform .18s var(--ease);
+  transition: border-color .18s var(--ease), color .18s var(--ease);
 }
 a.hero__contact:hover {
   border-color: var(--c-accent);
   color: var(--c-accent-text);
   text-decoration: none;
-  transform: translateY(-1px);
 }
 .hero__contact .icon { color: var(--c-accent); }
 
@@ -696,40 +654,27 @@ a.hero__contact:hover {
   .hero__aside { order: -1; max-width: 420px; }
 }
 .hero__portrait-wrap { position: relative; }
-.hero__portrait-wrap::after {
-  /* 肖像右下角 24% Burnt Orange 色块 → 视觉重量与 accent 锁死（禁 gold/brass 徽章） */
-  content: "";
-  position: absolute;
-  right: -10px; bottom: -10px;
-  width: 28%; height: 28%;
-  background: var(--c-accent-strong);
-  border-radius: var(--radius);
-  z-index: -1;
-  opacity: .9;
-}
 
-/* 3×3 参数网格：3 列 auto-fit，≥md 2–3 列，参数名 mono + 值 display 加粗，数值 tabular */
+/* 3×3 参数网格：2 列桌面 / 2 列移动，数值 tabular 更突出 */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
-@media (min-width: 420px) { .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .hero-stat {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 4px;
-  padding: 14px 14px 16px;
+  padding: 12px 14px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  min-height: 86px;
-  transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+  min-height: 76px;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
 }
 .hero-stat:hover {
-  transform: translateY(-2px);
   border-color: var(--c-accent);
   background: color-mix(in srgb, var(--c-accent-soft) 45%, var(--c-surface));
 }
@@ -739,18 +684,18 @@ a.hero__contact:hover {
 }
 .hero-stat__label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: .08em;
+  font-size: 11px;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--c-text-muted);
 }
 .hero-stat__value {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   line-height: 1.2;
   font-weight: 600;
   color: var(--c-text);
-  letter-spacing: -0.005em;
+  letter-spacing: -0.015em;
   font-variant-numeric: tabular-nums;
 }
 .hero-stat__note {
@@ -836,10 +781,12 @@ a.hero__contact:hover {
   margin-top: var(--sp-4);
   padding: .35rem .8rem;
   font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--c-gold);
-  background: var(--c-gold-soft);
+  font-weight: 650;
+  color: var(--c-accent-text);
+  background: var(--c-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--c-accent) 24%, transparent);
   border-radius: var(--radius-sm);
+  font-variant-numeric: tabular-nums;
 }
 
 .edu__subtitle {
@@ -1089,137 +1036,82 @@ a.hero__contact:hover {
 }
 .job__methods { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid var(--c-rule); }
 
-/* 7.6 荣誉奖项：2-col card grid（非 zigzag；card 不做左条，仅 highlight 卡配 1 条左侧 accent 带 + accent surface 轻度染色，禁 gold/brass） */
-.awards {
-  display: grid;
-  gap: var(--sp-4);
-  list-style: none;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 720px) { .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.award {
-  display: grid;
-  gap: var(--sp-2);
-  padding: var(--sp-5);
-  background: var(--c-surface);
+/* —— 荣誉奖励：纯 hairline 学术表格 4 列（Date · Name · Selectivity · Amount）—— */
+.awards-table-wrap {
+  overflow-x: auto;
   border: 1px solid var(--c-border);
-  border-left: 3px solid transparent;
   border-radius: var(--radius);
-  transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+  background: var(--c-surface);
 }
-.award:hover {
-  transform: translateY(-2px);
-  border-color: var(--c-border-strong);
-  box-shadow: var(--shadow-sm);
-}
-.award--highlight {
-  border-left-color: var(--c-accent-strong);
-  background: color-mix(in srgb, var(--c-accent-soft) 55%, var(--c-surface));
-  border-top-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
-  border-right-color: color-mix(in srgb, var(--c-accent) 16%, transparent);
-  border-bottom-color: color-mix(in srgb, var(--c-accent) 16%, transparent);
-}
-.award__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--sp-2) var(--sp-3);
-}
-.award__name { font-weight: 650; font-family: var(--font-display); color: var(--c-text); font-size: var(--fs-md); }
-.award__date {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--c-text-muted);
-  font-variant-numeric: tabular-nums;
-}
-.award__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--sp-1) var(--sp-3);
+.awards-table {
+  width: 100%;
+  border-collapse: collapse;
   font-size: var(--fs-sm);
-  color: var(--c-text-soft);
+  min-width: 640px;
 }
-.award__role { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--c-accent-text); font-weight: 600; }
-.award__work { font-family: var(--font-display); color: var(--c-text); font-weight: 600; font-size: var(--fs-sm); }
-.award__desc { font-size: var(--fs-sm); color: var(--c-text-muted); line-height: 1.6; }
-
-/* 7.7 研究计划：5-Cell Bento Grid（BENTO CELL COUNT RULE：5 items → 5 cells，无空格占位；diversity ≥3 不同尺寸） */
-.proposal {
-  display: grid;
-  list-style: none;
-  counter-reset: proposal;
-  /* gap 14 = sp-3 + 2 */
-  gap: 14px;
-  grid-auto-flow: dense;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: minmax(160px, auto);
+.awards-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--c-bg-muted);
+  color: var(--c-accent-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--c-border-strong);
+  letter-spacing: .02em;
+  white-space: nowrap;
 }
-/* ≤768px：退回 1 列，每个 cell 全宽 */
-@media (max-width: 767px) {
-  .proposal {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
+.awards-table tbody td {
+  padding: 16px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-border);
+  line-height: 1.65;
 }
-.proposal-item {
-  padding: var(--sp-5);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius);
-  transition: transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
-  position: relative;
+.awards-table tbody tr:last-child td { border-bottom: 0; }
+.awards-table tbody tr:hover td { background: var(--c-surface-hover); }
+.awards-table tfoot th {
+  background: var(--c-bg-muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: right;
+  padding: 12px 16px;
+  border-top: 2px solid var(--c-border-strong);
+  color: var(--c-accent-text);
 }
-.proposal-item:hover {
-  transform: translateY(-2px);
-  border-color: var(--c-border-strong);
-  box-shadow: var(--shadow-sm);
-}
-/* — BENTO 尺寸分配（3 种不同大小：12 col / 8 col / 4 col）— */
-.proposal-item:nth-child(1) { grid-column: span 6;          grid-row: span 1; background: color-mix(in srgb, var(--c-accent-soft) 45%, var(--c-surface)); border-color: color-mix(in srgb, var(--c-accent) 20%, transparent); }
-.proposal-item:nth-child(2) { grid-column: span 4;          grid-row: span 2; }
-.proposal-item:nth-child(3) { grid-column: span 2;          grid-row: span 2; background: var(--c-bg-muted); }
-.proposal-item:nth-child(4) { grid-column: span 3;          grid-row: span 2; }
-.proposal-item:nth-child(5) { grid-column: span 3;          grid-row: span 2; background: var(--c-bg-muted); }
-/* ≤md：所有 cell span 1 列 1 行 */
-@media (max-width: 767px) {
-  .proposal-item,
-  .proposal-item:nth-child(n) { grid-column: span 1; grid-row: auto; }
-}
-.proposal-item__head {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-}
-.proposal-item__index {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 30px; height: 30px;
+.awards-table .col-date {
+  width: 110px;
+  min-width: 110px;
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
-  color: var(--c-accent-ink);
-  background: var(--c-accent-strong);
-  border-radius: var(--radius);
+  color: var(--c-text-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
-.proposal-item:nth-child(1) .proposal-item__index { background: var(--c-accent); }
-.proposal-item__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: var(--c-text);
+.awards-table .col-name { min-width: 260px; }
+.award-tbl__name { font-weight: 650; color: var(--c-text); margin: 0 0 6px; font-family: var(--font-display); }
+.award-tbl__desc { margin: 0; color: var(--c-text-soft); font-size: var(--fs-xs); line-height: 1.7; }
+.awards-table .col-sel {
+  width: 210px;
+  min-width: 200px;
+  font-size: 12px;
+  color: var(--c-text-soft);
 }
-.proposal-item__desc { color: var(--c-text-soft); line-height: 1.68; font-size: var(--fs-sm); }
-.proposal-item__tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
-/* 旧下箭头 → 移除（Bento 网格用尺寸与背景区分信息等级，避免全局同一方向箭头读成线性 flow）*/
-.proposal-item:not(:last-child)::after { display: none; }
+.awards-table .col-amt {
+  width: 130px;
+  min-width: 110px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--c-accent-text);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.awards-table tfoot .col-amt { text-align: right; }
+
+/* （旧 5-Cell Bento Grid 已删除；Proposal 现为线性 4 Block + Milestones 表，见 proposal-block 与 milestones-table 定义） */
 
 /* 7.8 科普传播 */
 .outreach { display: grid; gap: var(--sp-4); list-style: none; }
@@ -1266,29 +1158,7 @@ a.hero__contact:hover {
   border-bottom: 1px solid var(--c-rule);
 }
 .skill-list { display: grid; gap: var(--sp-4); list-style: none; }
-.skill__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--sp-3);
-  margin-bottom: var(--sp-2);
-}
-.skill__name { font-size: var(--fs-sm); }
-.skill__level-text { font-size: var(--fs-xs); color: var(--c-text-muted); }
-.skill__bar {
-  height: 4px;
-  background: var(--c-chip);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
-}
-.skill__bar-fill {
-  display: block;
-  height: 100%;
-  width: 0;
-  border-radius: var(--radius-pill);
-  background: var(--c-accent);
-  transition: width .9s var(--ease);
-}
+/* （旧进度条已删除；Skills 现为 Method Matrix 纯表格，见 .matrix-table 定义） */
 .skill--plain {
   display: flex;
   align-items: baseline;
@@ -1436,7 +1306,6 @@ a.hero__contact:hover {
   pointer-events: none;
 }
 .target:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow);
   border-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
 }
@@ -1476,34 +1345,7 @@ a.hero__contact:hover {
 /* hero 可入学时间 chip */
 .hero__availability { margin-top: var(--sp-3); }
 
-/* 7.12 CV 下载 */
-.cta-card {
-  max-width: 720px;
-  margin-inline: auto;
-  padding: var(--sp-8) var(--sp-5);
-  text-align: center;
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-.cta-card__icon {
-  display: grid;
-  place-items: center;
-  width: 50px; height: 50px;
-  margin: 0 auto var(--sp-4);
-  color: var(--c-accent-text);
-  background: var(--c-accent-soft);
-  border-radius: var(--radius);
-}
-.cta-card__icon .icon { width: 24px; height: 24px; }
-.cta-card__title { font-family: var(--font-display); font-size: var(--fs-xl); margin-bottom: var(--sp-3); }
-.cta-card__desc {
-  max-width: 540px;
-  margin: 0 auto var(--sp-5);
-  color: var(--c-text-muted);
-}
-.cta-card__foot { margin-top: var(--sp-4); font-size: var(--fs-xs); color: var(--c-text-muted); }
+/* （旧 cta-card 已删除；Resume 现改为 Blue Solid CTA Bar，见 .cta-bar 定义） */
 
 /* =========================== 8. 页脚 =========================== */
 .to-top {
@@ -1519,9 +1361,9 @@ a.hero__contact:hover {
   border-radius: 50%;
   box-shadow: var(--shadow);
   color: var(--c-text-soft);
-  transition: transform .2s var(--ease), color .2s var(--ease);
+  transition: color .2s var(--ease);
 }
-.to-top:hover { color: var(--c-accent-text); transform: translateY(-2px); }
+.to-top:hover { color: var(--c-accent-text); }
 .to-top .icon { width: 18px; height: 18px; }
 
 .site-footer {
@@ -1541,6 +1383,418 @@ a.hero__contact:hover {
   list-style: none;
 }
 .site-footer__note { font-size: var(--fs-xs); opacity: .85; }
+
+/* —— Research Fit 对齐表（4 列）—— */
+.fit-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+.fit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  min-width: 820px;
+}
+.fit-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--c-accent-strong);
+  color: var(--c-accent-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-align: left;
+  padding: 14px 18px;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  border: 0;
+}
+.fit-table tbody td,
+.fit-table tbody th {
+  padding: 16px 18px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-border);
+  line-height: 1.7;
+}
+.fit-table tbody tr:last-child td,
+.fit-table tbody tr:last-child th { border-bottom: 0; }
+.fit-table tbody tr:nth-child(odd) td,
+.fit-table tbody tr:nth-child(odd) th { background: var(--c-surface); }
+.fit-table tbody tr:nth-child(even) td,
+.fit-table tbody tr:nth-child(even) th { background: var(--c-bg-muted); }
+.fit-table tbody tr:hover td,
+.fit-table tbody tr:hover th { background: color-mix(in srgb, var(--c-accent-soft) 50%, var(--c-surface)); }
+.fit-table .col-dim {
+  width: 120px;
+  min-width: 120px;
+  max-width: 140px;
+  background: var(--c-bg-muted) !important;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-accent-text);
+  border-right: 2px solid var(--c-border-strong);
+  text-align: left;
+}
+.fit-table .col-maj { min-width: 240px; }
+.fit-table .col-cont { min-width: 220px; }
+.fit-table .col-ali {
+  width: 230px;
+  min-width: 220px;
+  color: var(--c-accent-text);
+  border-left: 1px dashed var(--c-border-strong);
+  background: color-mix(in srgb, var(--c-accent-soft) 35%, var(--c-surface));
+}
+
+.section__intro {
+  max-width: var(--max-w-text);
+  margin: calc(var(--sp-7) * -0.5) 0 var(--sp-6);
+  color: var(--c-text-soft);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+}
+.section__note { color: var(--c-text-muted); font-size: var(--fs-sm); }
+
+/* —— Thesis Validation 3 定量盒子（无 elevation，hairline border）—— */
+.validation-grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .validation-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.validation-box {
+  position: relative;
+  padding: 22px 22px 24px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-top: 3px solid var(--c-accent-strong);
+  border-radius: var(--radius);
+}
+.validation-box__head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: baseline;
+  gap: 4px 14px;
+  margin-bottom: 14px;
+}
+.validation-box__idx {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--c-accent-text);
+  opacity: .55;
+  align-self: start;
+  padding-top: 4px;
+}
+.validation-box__value {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 650;
+  color: var(--c-accent-strong);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.validation-box__unit {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+.validation-box__label {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.4;
+}
+.validation-box__desc {
+  margin: 0;
+  color: var(--c-text-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+
+/* —— PhD Proposal 4 blocks（非 Bento，线性 4 段编号块 + Milestones 表格）—— */
+.proposal-blocks {
+  display: grid;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-8);
+}
+.proposal-block {
+  padding: var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-accent-strong);
+  border-radius: var(--radius);
+  position: relative;
+}
+.proposal-block__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--c-text);
+  margin: 0 0 var(--sp-3);
+  letter-spacing: -0.005em;
+}
+.proposal-block__desc {
+  color: var(--c-text-soft);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+}
+.proposal-block__desc p { margin: 0 0 var(--sp-4); }
+.proposal-block__desc p:last-child { margin-bottom: 0; }
+.proposal-block__tags { margin-top: var(--sp-5); }
+
+/* Milestones 时间表 */
+.milestones-wrap { padding: 0; }
+.milestones__heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 650;
+  margin: 0 0 var(--sp-4);
+  padding-bottom: var(--sp-2);
+  border-bottom: 2px solid var(--c-border-strong);
+  color: var(--c-text);
+}
+.milestones-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  min-width: 640px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+.milestones-table thead th {
+  background: var(--c-bg-muted);
+  color: var(--c-accent-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--c-border-strong);
+  letter-spacing: .02em;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+.milestones-table td {
+  padding: 14px 16px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-border);
+  line-height: 1.7;
+}
+.milestones-table tbody tr:last-child td { border-bottom: 0; }
+.milestones-table tbody tr:hover td { background: var(--c-surface-hover); }
+.milestones-table .col-period {
+  width: 180px;
+  min-width: 160px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--c-text-muted);
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  border-right: 1px solid var(--c-border);
+  vertical-align: middle;
+}
+.milestones-table .col-output { color: var(--c-accent-text); }
+
+/* —— Method Matrix 纯表格（4 列：Method · Software · Used in · Deliverable）—— */
+.matrix-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  min-width: 720px;
+}
+.matrix-table thead th {
+  background: var(--c-bg-muted);
+  color: var(--c-accent-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--c-border-strong);
+  letter-spacing: .02em;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+.matrix-table tbody td,
+.matrix-table tbody th {
+  padding: 14px 18px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-border);
+  line-height: 1.7;
+}
+.matrix-table tbody tr:last-child td,
+.matrix-table tbody tr:last-child th { border-bottom: 0; }
+.matrix-table tbody tr:hover td,
+.matrix-table tbody tr:hover th { background: var(--c-surface-hover); }
+.matrix-table .col-method {
+  width: 200px;
+  min-width: 180px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  background: var(--c-bg-muted);
+  border-right: 1px solid var(--c-border);
+}
+.matrix-table .col-software {
+  width: 210px;
+  min-width: 200px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--c-text-soft);
+}
+.matrix-table .col-used {
+  width: 210px;
+  min-width: 200px;
+  color: var(--c-text-soft);
+}
+.matrix-table .col-deliver { color: var(--c-accent-text); font-weight: 500; }
+
+/* —— Resume / CTA：Blue Solid Bar（左文本右按钮，删除大卡片 + 圆图标）—— */
+.cta-bar {
+  background: var(--c-accent-strong);
+  color: var(--c-accent-ink);
+  border-radius: var(--radius);
+  padding: var(--sp-7) var(--sp-6);
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 860px) {
+  .cta-bar {
+    grid-template-columns: 1.4fr 1fr;
+    padding: var(--sp-7) var(--sp-8);
+  }
+}
+.cta-bar__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 650;
+  color: var(--c-accent-ink);
+  line-height: 1.3;
+  margin: 0 0 var(--sp-2);
+  letter-spacing: -0.01em;
+}
+.cta-bar__desc {
+  color: color-mix(in srgb, var(--c-accent-ink) 85%, var(--c-accent-strong));
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 60ch;
+}
+.cta-bar__actions { justify-content: flex-start; }
+@media (min-width: 860px) { .cta-bar__actions { justify-content: flex-end; } }
+.cta-bar__actions .btn {
+  background: var(--c-accent-ink);
+  color: var(--c-accent-strong);
+  border-color: var(--c-accent-ink);
+  min-width: 180px;
+}
+.cta-bar__actions .btn:hover {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  border-color: var(--c-accent-ink);
+}
+.cta-bar__actions .btn--ghost {
+  background: transparent;
+  color: var(--c-accent-ink);
+  border-color: color-mix(in srgb, var(--c-accent-ink) 50%, var(--c-accent-strong));
+}
+.cta-bar__actions .btn--ghost:hover {
+  background: color-mix(in srgb, var(--c-accent-ink) 12%, var(--c-accent-strong));
+  color: var(--c-accent-ink);
+}
+.cta-bar__foot {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: var(--sp-4);
+  border-top: 1px solid color-mix(in srgb, var(--c-accent-ink) 20%, var(--c-accent-strong));
+  color: color-mix(in srgb, var(--c-accent-ink) 75%, var(--c-accent-strong));
+  font-size: var(--fs-xs);
+  text-align: right;
+}
+
+/* —— Brand 升级：删除圆形 Q 头像；改为 monospace 一行锁 square shape —— */
+.brand__avatar {
+  border-radius: var(--radius-sm);  /* 删除圆形，改 square */
+  background: var(--c-accent-strong);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  font-weight: 600;
+  width: 34px;
+  height: 24px;
+}
+.brand__avatar img { border-radius: 1px; }
+
+/* —— Footer 升级：两行结构，Admin 上 Contact 下，分隔符清晰 —— */
+.site-footer { text-align: left; padding-block: var(--sp-8) var(--sp-7); }
+.site-footer .container { max-width: var(--max-w); margin-inline: auto; }
+.site-footer__admin {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--c-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--c-accent) 20%, transparent);
+  border-radius: var(--radius);
+  color: var(--c-accent-text);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  margin: 0 0 var(--sp-4);
+}
+.site-footer__admin svg.icon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--c-accent);
+}
+.site-footer__contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--c-text-muted);
+  letter-spacing: .02em;
+}
+.site-footer__contact a {
+  color: var(--c-accent-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-footer__contact a:hover { color: var(--c-accent); }
+.site-footer__contact .icon { color: var(--c-accent); }
+.site-footer__sep { opacity: .4; font-size: 10px; }
 
 /* =========================== 9. 响应式 =========================== */
 
@@ -1625,7 +1879,6 @@ a.hero__contact:hover {
     gap: var(--sp-2);
   }
   .lang-toggle { flex: none; min-height: 44px; padding: 0 var(--sp-3); }
-  .theme-toggle { width: 44px; min-height: 44px; border-radius: var(--radius-sm); }
 
   .hero { padding-block: var(--sp-10) var(--sp-9); }
   .hero__inner {
@@ -1679,7 +1932,6 @@ a.hero__contact:hover {
     --c-border: #d4d4d4; --c-border-strong: #b4b4b4; --c-rule: #dcdcdc;
     --c-text: #000; --c-text-soft: #1f1f1f; --c-text-muted: #3f3f3f;
     --c-accent: #000; --c-accent-soft: #f2f2f2; --c-accent-text: #000;
-    --c-gold: #000; --c-gold-soft: #f2f2f2; --c-chip: #eee;
     --shadow-sm: none; --shadow: none;
     --header-h: 0px;
     --sp-9: 18pt;
@@ -1690,9 +1942,9 @@ a.hero__contact:hover {
 
   @page { margin: 14mm; }
 
-  .site-header, .scroll-progress, .to-top, .skip-link, .nav-overlay,
-  .hero__actions, .cta-card__actions, .site-footer__note,
-  .theme-toggle, .lang-toggle, .nav-toggle { display: none !important; }
+  .site-header, .to-top, .skip-link, .nav-overlay,
+  .hero__actions, .cta-bar__actions, .site-footer__note,
+  .lang-toggle, .nav-toggle { display: none !important; }
 
   .section, .section--muted, .section--cta, .hero, .overview {
     padding-block: 0 12pt !important;
@@ -1705,7 +1957,7 @@ a.hero__contact:hover {
   .container { max-width: 100%; padding: 0; }
 
   .card, .edu, .interest, .pub, .ip, .job, .award, .proposal-item,
-  .outreach-item, .skill-group, .ref, .cta-card {
+  .outreach-item, .skill-group, .ref {
     border-color: #d4d4d4 !important;
     box-shadow: none !important;
     break-inside: avoid;
@@ -1726,7 +1978,6 @@ a.hero__contact:hover {
     color: #444;
   }
   .stat__value, .metric__value { font-size: 14pt; }
-  .cta-card { text-align: left; }
 
   /* 打印回到浮动布局：grid 两列在 A4 上会把正文挤得过窄 */
   .hero__inner { display: block; max-width: 100%; }
