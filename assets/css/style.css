@@ -2023,13 +2023,22 @@ a.hero__contact:hover {
   .container { max-width: 100%; padding: 0; }
 
   .card, .edu, .interest, .pub, .ip, .job, .award, .proposal-item,
-  .outreach-item, .skill-group, .ref {
+  .outreach-item, .skill-group, .ref,
+  .validation-box, .hero-stat, .target, .proposal-block {
     border-color: #d4d4d4 !important;
     box-shadow: none !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
+  /* 表格行不在打印时跨页断裂 */
+  .matrix-table tr, .fit-table tr, .awards-table tr, .milestones-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
   .award--highlight { background: #f7f7f7 !important; }
+  /* 打印时 tint 压成淡灰（省墨 + B/W 打印机可读） */
+  .validation-box--mid { background-color: #f7f7f7 !important; }
+  .matrix-table .col-deliver { background-color: #f7f7f7 !important; }
 
   .reveal { opacity: 1 !important; transform: none !important; }
   [hidden] { display: none !important; }
