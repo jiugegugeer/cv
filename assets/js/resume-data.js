@@ -61,7 +61,7 @@ hero: {
   availability: '2026.07 可入组（Monash 硕士留位费已缴，可随时转为 PhD）',
   stats: [
     { label: '申请目标', value: 'Monash PhD (Full)', note: 'AM2D / Majumder', accent: true },
-    { label: '方法链',   value: 'Thermakin·FDS·QRA', note: '毕设独立验证通过' },
+    { label: '方法链',   value: 'Thermakin / FDS / QRA', note: '毕设独立验证通过' },
     { label: '语言达标', value: 'PTE 60（单项 ≥ 58）', note: '符合 Monash PhD 要求' },
     { label: '方法验证', value: '校级优秀毕设',       note: '独立：实验→建模→判据', accent: true }
   ],
@@ -350,7 +350,7 @@ hero: {
   availability: 'Available Jul 2026 · Monash Master deposit paid (can switch to PhD admin at any time)',
   stats: [
     { label: 'Target',       value: 'Monash PhD (Funded)', note: 'AM2D / Prof. Majumder', accent: true },
-    { label: 'Method chain', value: 'Thermakin·FDS·QRA',   note: 'Sole-author thesis validated' },
+    { label: 'Method chain', value: 'Thermakin / FDS / QRA',   note: 'Sole-author thesis validated' },
     { label: 'English',      value: 'PTE 60 (Skills ≥ 58)', note: 'Meets Monash PhD requirement' },
     { label: 'Validation',   value: 'Outstanding Thesis',  note: 'Expt→Model→Criteria (solo)', accent: true }
   ],

@@ -115,7 +115,7 @@ h1, h2, h3, h4 {
   font-weight: 650;
   color: var(--c-text);
 }
-p { margin: 0 0 var(--sp-4); }
+p { margin: 0 0 var(--sp-4); overflow-wrap: anywhere; word-break: break-word; }
 p:last-child { margin-bottom: 0; }
 ul, ol { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
@@ -220,6 +220,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-weight: 650;
   letter-spacing: -0.01em;       /* Geist 更适合负字距 display 语义 */
   line-height: 1.12;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .section-head__desc {
   max-width: var(--max-w-text);
@@ -227,6 +229,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--c-text-muted);
   font-size: var(--fs-base);
   line-height: 1.75;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* =========================== 4. 通用组件 =========================== */
@@ -276,7 +280,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--c-text-soft);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: var(--radius);   /* SHAPE LOCK radius=6 */
+  border-radius: var(--radius);   /* SHAPE LOCK radius=2px */
   white-space: nowrap;
   transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease);
 }
@@ -525,6 +529,8 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   letter-spacing: -0.02em;   /* Geist display 负字距收紧，学术 display 更有分量 */
   line-height: 1.04;
   color: var(--c-text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .hero__name-en {
   margin-top: var(--sp-2);
@@ -534,6 +540,7 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--c-text-muted);
+  overflow-wrap: anywhere;
 }
 .hero__title {
   margin-top: var(--sp-5);
@@ -542,6 +549,8 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   font-weight: 650;
   line-height: 1.3;
   color: var(--c-text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .hero__tagline {
   /* 严格 ≤ 20 words / ≤ 4 lines；Hero 溢出 H1 失败。 */
@@ -550,6 +559,8 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
   font-size: var(--fs-md);
   line-height: 1.75;
   color: var(--c-text-soft);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 /* 研究关键词 → 仅 mono chip，放在 tagline 下 */
 .hero__keywords {
@@ -624,7 +635,8 @@ a.hero__contact:hover {
 }
 .hero__portrait-wrap { position: relative; }
 
-/* 3×3 参数网格：2 列桌面 / 2 列移动，数值 tabular 更突出 */
+/* 3×3 参数网格：2 列桌面 / 2 列移动，数值 tabular 更突出
+   · 防御性：min-width:0 在 grid + flex child 双层防溢出 —— */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -641,6 +653,8 @@ a.hero__contact:hover {
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
   min-height: 76px;
+  min-width: 0;                           /* grid child 防溢出 */
+  overflow: hidden;                       /* 防御性：文字绝不溢出卡片 */
   transition: border-color .2s var(--ease), background .2s var(--ease);
 }
 .hero-stat:hover {
@@ -657,23 +671,28 @@ a.hero__contact:hover {
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--c-text-muted);
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .hero-stat__value {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.2rem;                      /* 从 1.25rem 微降到 1.2rem 防御 */
   line-height: 1.25;
   font-weight: 650;
   color: var(--c-text);
   letter-spacing: -0.015em;
   font-variant-numeric: tabular-nums;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;               /* 标准溢出防护（替代非标 word-break:break-word） */
+  word-break: break-word;                 /* CJK 回退 */
+  min-width: 0;
 }
 .hero-stat__note {
   margin-top: 2px;
   font-size: 11px;
   line-height: 1.35;
   color: var(--c-text-muted);
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 
 /* =========================== 7. 内容模块 =========================== */
@@ -782,6 +801,8 @@ a.hero__contact:hover {
   font-weight: 650;
   line-height: 1.6;
   color: var(--c-text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .edu__thesis-meta {
   display: flex;
@@ -858,8 +879,10 @@ a.hero__contact:hover {
   font-size: var(--fs-lg);
   font-weight: 650;
   margin-bottom: var(--sp-2);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
-.interest__desc { color: var(--c-text-soft); font-size: var(--fs-base); }
+.interest__desc { color: var(--c-text-soft); font-size: var(--fs-base); overflow-wrap: anywhere; word-break: break-word; }
 .interest__tags { margin-top: var(--sp-3); }
 
 /* 7.3 学术成果 —— 论文 */
@@ -912,6 +935,8 @@ a.hero__contact:hover {
   font-size: var(--fs-md);
   font-weight: 650;
   line-height: 1.55;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .pub__authors { font-size: var(--fs-sm); color: var(--c-text-soft); }
 .pub__authors strong { color: var(--c-text); font-weight: 700; }
@@ -927,6 +952,8 @@ a.hero__contact:hover {
   font-size: var(--fs-md);
   font-style: italic;
   color: var(--c-accent-text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .pub__meta { margin-top: var(--sp-2); }
 .pub__meta code {
@@ -1031,7 +1058,9 @@ a.hero__contact:hover {
   padding: 14px 16px;
   border-bottom: 2px solid var(--c-border-strong);
   letter-spacing: .02em;
-  white-space: nowrap;
+  white-space: normal;                  /* 去 nowrap 防溢出 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .awards-table tbody td {
   padding: 14px 16px;
@@ -1063,8 +1092,8 @@ a.hero__contact:hover {
   font-variant-numeric: tabular-nums;
 }
 .awards-table .col-name { width: 40%; }
-.award-tbl__name { font-weight: 650; color: var(--c-text); margin: 0 0 6px; font-family: var(--font-display); }
-.award-tbl__desc { margin: 0; color: var(--c-text-soft); font-size: var(--fs-xs); line-height: 1.7; }
+.award-tbl__name { font-weight: 650; color: var(--c-text); margin: 0 0 6px; font-family: var(--font-display); overflow-wrap: anywhere; word-break: break-word; }
+.award-tbl__desc { margin: 0; color: var(--c-text-soft); font-size: var(--fs-xs); line-height: 1.7; overflow-wrap: anywhere; word-break: break-word; }
 .awards-table .col-sel {
   width: 28%;
   font-size: 12px;
@@ -1191,6 +1220,8 @@ a.hero__contact:hover {
   padding-left: 18px;
   border-left: 2px solid var(--c-border-strong);
   transition: border-color .2s var(--ease);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .statement__text p:hover { border-left-color: var(--c-accent); }
 .statement__text p:last-child { margin-bottom: 0; }
@@ -1204,6 +1235,8 @@ a.hero__contact:hover {
   font-size: var(--fs-lg);
   color: var(--c-accent-text);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .statement__tags { margin-top: var(--sp-5); }
 
@@ -1264,9 +1297,11 @@ a.hero__contact:hover {
   padding: var(--sp-6) var(--sp-6);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-left: 4px solid var(--c-accent-strong);   /* 左 Burnt Orange stripe（不是 brass gold 色块） */
+  border-left: 4px solid var(--c-accent-strong);   /* 左 Monash Blue stripe（学术身份锚点 + 专属感） */
   border-radius: var(--radius);
   position: relative;
+  overflow: hidden;
+  min-width: 0;
   transition: transform .24s var(--ease), border-color .24s var(--ease), box-shadow .24s var(--ease);
 }
 .target::before {
@@ -1294,6 +1329,8 @@ a.hero__contact:hover {
   letter-spacing: -0.01em;
   color: var(--c-text);
   padding-right: 64px;        /* 避让 M 水印 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .target__lab {
   margin-top: var(--sp-2);
@@ -1303,6 +1340,7 @@ a.hero__contact:hover {
   letter-spacing: .04em;
   color: var(--c-accent-text);
   padding-right: 64px;
+  overflow-wrap: anywhere;
 }
 .target__focus {
   margin-top: var(--sp-3);
@@ -1310,6 +1348,8 @@ a.hero__contact:hover {
   color: var(--c-text-soft);
   line-height: 1.68;
   padding-right: 64px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .target__fit {
   margin-top: var(--sp-5);
@@ -1318,6 +1358,8 @@ a.hero__contact:hover {
   font-size: var(--fs-sm);
   color: var(--c-text-soft);
   line-height: 1.75;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* hero 可入学时间 chip */
@@ -1386,7 +1428,9 @@ a.hero__contact:hover {
   text-align: left;
   padding: 14px 18px;
   letter-spacing: .02em;
-  white-space: nowrap;
+  white-space: normal;                    /* 去 nowrap 防溢出 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
   border: 0;
 }
 .fit-table tbody td,
@@ -1433,10 +1477,14 @@ a.hero__contact:hover {
   color: var(--c-text-soft);
   font-size: var(--fs-base);
   line-height: 1.75;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .section__note { color: var(--c-text-muted); font-size: var(--fs-sm); }
 
-/* —— Thesis Validation 3 定量盒子（无 elevation，hairline border）—— */
+/* —— Thesis Validation 3 定量盒子（无 elevation，hairline border + 视觉层次）——
+   · taste-skill Bento Background Diversity：3 盒不能全白同款，用 idx 色阶递进做层次
+   · 防御性 overflow：所有文本元素 min-width:0 + overflow-wrap:anywhere 杜绝溢出 —— */
 .validation-grid {
   display: grid;
   gap: var(--sp-4);
@@ -1450,14 +1498,21 @@ a.hero__contact:hover {
   border: 1px solid var(--c-border);
   border-top: 3px solid var(--c-accent);
   border-radius: var(--radius);
+  overflow: hidden;                        /* 防御性：绝不让文字溢出盒子 */
+  min-width: 0;                            /* grid child 防溢出 */
+}
+/* 第 2 盒微 tint 打破单调（Bento Background Diversity）—— 不用全 accent 怕抢数字 */
+.validation-box:nth-child(2) {
+  background: color-mix(in srgb, var(--c-accent-soft) 40%, var(--c-surface));
 }
 .validation-box__head {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);  /* minmax(0,1fr) 防 grid blowout */
   grid-template-rows: auto auto;
   align-items: baseline;
   gap: 4px 14px;
   margin-bottom: 14px;
+  min-width: 0;
 }
 .validation-box__idx {
   grid-column: 1;
@@ -1475,12 +1530,15 @@ a.hero__contact:hover {
   grid-column: 2;
   grid-row: 1;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;                       /* 从 2rem 降到 1.75rem，防御性缩字号 */
   font-weight: 650;
   color: var(--c-accent-strong);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.15;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;                  /* 标准溢出防护 */
+  word-break: break-word;                   /* CJK 回退 */
+  min-width: 0;
 }
 .validation-box__unit {
   grid-column: 2;
@@ -1490,6 +1548,8 @@ a.hero__contact:hover {
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--c-text-muted);
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .validation-box__label {
   margin: 0 0 8px;
@@ -1498,12 +1558,16 @@ a.hero__contact:hover {
   font-weight: 650;
   color: var(--c-text);
   line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .validation-box__desc {
   margin: 0;
   color: var(--c-text-soft);
   font-size: var(--fs-sm);
   line-height: 1.7;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* —— PhD Proposal 4 blocks（非 Bento，线性 4 段编号块 + Milestones 表格）—— */
@@ -1519,6 +1583,8 @@ a.hero__contact:hover {
   border-left: 4px solid var(--c-accent-strong);
   border-radius: var(--radius);
   position: relative;
+  overflow: hidden;
+  min-width: 0;
 }
 .proposal-block__title {
   font-family: var(--font-display);
@@ -1528,11 +1594,15 @@ a.hero__contact:hover {
   color: var(--c-text);
   margin: 0 0 var(--sp-3);
   letter-spacing: -0.005em;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .proposal-block__desc {
   color: var(--c-text-soft);
   font-size: var(--fs-base);
   line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .proposal-block__desc p { margin: 0 0 var(--sp-4); }
 .proposal-block__desc p:last-child { margin-bottom: 0; }
@@ -1568,7 +1638,9 @@ a.hero__contact:hover {
   border-bottom: 2px solid var(--c-border-strong);
   letter-spacing: .02em;
   font-size: var(--fs-sm);
-  white-space: nowrap;
+  white-space: normal;                  /* 去 nowrap 防溢出 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .milestones-table td {
   padding: 14px 16px;
@@ -1616,7 +1688,9 @@ a.hero__contact:hover {
   border-bottom: 2px solid var(--c-border-strong);
   letter-spacing: .02em;
   font-size: var(--fs-sm);
-  white-space: nowrap;
+  white-space: normal;                    /* 去掉 nowrap 防表头溢出，允许换行 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .matrix-table tbody td,
 .matrix-table tbody th {
@@ -1659,6 +1733,8 @@ a.hero__contact:hover {
   width: 30%;
   color: var(--c-accent-text);
   font-weight: 500;
+  background: color-mix(in srgb, var(--c-accent-soft) 30%, var(--c-surface));  /* Deliverable 列微 tint 突出产出 */
+  border-left: 1px dashed var(--c-border-strong);
 }
 
 /* —— Resume / CTA：Blue Solid Bar（左文本右按钮，删除大卡片 + 圆图标）—— */
@@ -1686,6 +1762,8 @@ a.hero__contact:hover {
   line-height: 1.3;
   margin: 0 0 var(--sp-2);
   letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .cta-bar__desc {
   color: color-mix(in srgb, var(--c-accent-ink) 85%, var(--c-accent-strong));
@@ -1693,6 +1771,8 @@ a.hero__contact:hover {
   line-height: 1.7;
   margin: 0;
   max-width: 60ch;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .cta-bar__actions { justify-content: flex-start; }
 @media (min-width: 860px) { .cta-bar__actions { justify-content: flex-end; } }
