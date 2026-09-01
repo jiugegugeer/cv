@@ -20,7 +20,7 @@ meta: {
   },
   description: {
     zh: '福州大学安全工程 2026 届本科，独立毕设验证 Thermakin→FDS→QRA 热安全评估链；本页仅为 Monash University AM2D Hub 的 Mainak Majumder 教授定制：补上 M-rGO 超级电容器（2025 Nat Comms）、快充锂硫电池（2024 Adv Energy Mater）与 LiS-UC 混合器件量产所缺失的器件级热安全边界判据。',
-    en: 'B.Eng. Safety Engineering (2026), Fuzhou University. Sole-author undergraduate thesis validates the Thermakin → FDS → QRA device-level thermal-safety chain. This page is prepared exclusively for Prof. Mainak Majumder at the Monash University ARC Research Hub for Advanced Manufacturing with 2D Materials (AM2D) — proposing the quantified device/module thermal-boundary criteria that are still missing between the 2025 Nature Communications M-rGO supercapacitor, 2024 Advanced Energy Materials fast-charging Li–S battery, and scalable Ionic Industries manufacturing certification.'
+    en: 'B.Eng. Safety Engineering (2026), Fuzhou University. Sole-author undergraduate thesis validates the Thermakin → FDS → QRA device-level thermal-safety chain. This page is prepared for Prof. Mainak Majumder at the Monash University ARC Research Hub for Advanced Manufacturing with 2D Materials (AM2D) — proposing the quantified device/module thermal-boundary criteria that are still missing between the 2025 Nature Communications M-rGO supercapacitor, 2024 Advanced Energy Materials fast-charging Li–S battery, and scalable Ionic Industries manufacturing certification.'
   },
   keywords: 'Qisheng Xu, Monash PhD, AM2D, Mainak Majumder, M-rGO supercapacitor, Li–S battery, thermal safety, Thermakin, FDS, QRA, device-level thermal boundary, Ionic Industries, Safety Engineering, ORCID 0009-0006-1858-0287',
   footerName: { zh: '徐其胜', en: 'Qisheng Xu' },
@@ -92,9 +92,9 @@ fit: {
     },
     {
       dimension:  '系统层 · System',
-      majumder:   '2024 Adv Energy Mater：快充 Li–S 电池突破性能衰减瓶颈；主页「LiS Battery and Ultracapacitor Hybrid Device」未启动项目',
+      majumder:   '2024 Adv Energy Mater：快充 Li–S 电池突破性能衰减瓶颈；主页「LiS Battery and Ultracapacitor Hybrid Device」规划中项目',
       contribution: 'FDS 构建单体/模组级热场模型，刻画 Li–S 多硫化物穿梭与热响应耦合，并扩展到 LiS-UC 混合器件',
-      alignment:  '补上 Li–S「穿梭效应 × 热失控耦合」边界条件，承接未启动 Hybrid 热安全模块'
+      alignment:  '补上 Li–S「穿梭效应 × 热失控耦合」边界条件，贡献 Hybrid 热安全模块'
     },
     {
       dimension:  '工程层 · Impact',
@@ -136,7 +136,7 @@ proposal: {
     {
       title: '① 研究问题 · Research Question',
       desc:  'Majumder 教授 2025 年 Nature Communications 证明：M-rGO 多尺度弯曲石墨烯通过 700℃ 两步快速热退火 + e-IE 层间膨胀，实现 99.5 Wh/L 体积能量密度、50,000 次循环保持率 91%、库仑效率 99.7%；2024 年 Advanced Energy Materials 给出快充 Li–S 解决方案。但两篇工作均聚焦材料级电化学性能，以下 4 项工程化边界未量化：① M-rGO 电极最大可承受工作温升；② e-IE 工艺过程中材料热稳定性如何演变；③ Li–S 多硫化物穿梭效应耦合热失控的触发条件；④ 未来 LiS-UC 混合器件的模组级安全间距。这 4 项判据恰恰是 Ionic Industries 从澳大利亚石墨资源 → AM2D 产线 → 可扩展量产过程中必须具备的安全认证前置数据。',
-      tags:  ['M-rGO 700℃ 两步退火', 'e-IE 层间膨胀', 'Li–S 穿梭×热耦合', 'LiS-UC Hybrid 未启动', 'Ionic 产线认证']
+      tags:  ['M-rGO 700℃ 两步退火', 'e-IE 层间膨胀', 'Li–S 穿梭×热耦合', 'LiS-UC Hybrid 规划中', 'Ionic 产线认证']
     },
     {
       title: '② 方法与路径 · Method & Approach',
@@ -385,9 +385,9 @@ fit: {
     },
     {
       dimension:  'System',
-      majumder:   '2024 Adv Energy Materials — fast-charging Li–S solving rapid fade; homepage lists "LiS Battery and Ultracapacitor Hybrid Device" as a not-yet-started project.',
+      majumder:   '2024 Adv Energy Materials — fast-charging Li–S solving rapid fade; homepage lists "LiS Battery and Ultracapacitor Hybrid Device" as an upcoming project.',
       contribution: 'FDS builds cell/module thermal-field models capturing polysulfide-shuttle × thermal coupling; extensible to the LiS-UC hybrid device.',
-      alignment:  'Closes the Li–S "shuttle × thermal runaway" coupling condition; hosts the thermal module for the not-yet-started Hybrid.'
+      alignment:  'Closes the Li–S "shuttle × thermal runaway" coupling condition; contributes the thermal module for the Hybrid project.'
     },
     {
       dimension:  'Impact',
