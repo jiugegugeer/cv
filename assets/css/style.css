@@ -210,8 +210,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   height: 1px;
   background: var(--c-accent);
 }
-/* ↓ 仅 #research 与 #proposal 的 eyebrow 允许渲染（ceil(7/3)=2，不超上限） */
-#research  .section-head__eyebrow,
+/* ↓ 仅 #fit 与 #proposal 的 eyebrow 允许渲染（ceil(10/3)=4，控制在 2 个不超上限） */
+#fit       .section-head__eyebrow,
 #proposal  .section-head__eyebrow { display: inline-flex; }
 
 .section-head__title {
@@ -1185,16 +1185,23 @@ a.hero__contact:hover {
   background: var(--c-accent);
 }
 .statement__text { color: var(--c-text-soft); }
-.statement__text p { margin-bottom: var(--sp-4); }
+.statement__text p {
+  margin-bottom: var(--sp-5);
+  padding-left: 18px;
+  border-left: 2px solid var(--c-border-strong);
+  transition: border-color .2s var(--ease);
+}
+.statement__text p:hover { border-left-color: var(--c-accent); }
+.statement__text p:last-child { margin-bottom: 0; }
 /* 金句独立成段：博士申请的研究立场宣言 */
 .statement__highlight {
-  margin: var(--sp-5) 0 0;
-  padding: var(--sp-3) var(--sp-4);
+  margin: var(--sp-6) 0 0;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--c-accent-soft);
+  border-left: 3px solid var(--c-accent);
   font-family: var(--font-display);
   font-size: var(--fs-lg);
   color: var(--c-accent-text);
-  border-left: 3px solid var(--c-accent);
-  background: var(--c-accent-soft);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 .statement__tags { margin-top: var(--sp-5); }
