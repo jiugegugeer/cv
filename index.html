@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,7 +8,7 @@
 <meta name="author" content="Qisheng Xu">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#006FBA">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Qisheng Xu · PhD Proposal for Prof. Majumder — Thermal Safety of Carbon Storage Devices</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/files/favicon.svg" type="image/svg+xml">
@@ -33,15 +33,9 @@
 <script>
   (function () {
     try {
-      var savedTheme = localStorage.getItem('cv-theme');
-      var dark = savedTheme ? savedTheme === 'dark'
-        : window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-
       var savedLang = localStorage.getItem('cv-lang');
       document.documentElement.setAttribute('data-lang', savedLang === 'zh' ? 'zh' : 'en');
     } catch (e) {
-      document.documentElement.setAttribute('data-theme', 'light');
       document.documentElement.setAttribute('data-lang', 'en');
     }
   })();
@@ -50,7 +44,7 @@
 
 <body>
 
-<a class="skip-link" href="#main">跳转到主要内容</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <div id="srStatus" class="sr-only" role="status" aria-live="polite"></div>
 
@@ -62,15 +56,15 @@
     </a>
 
     <button class="nav-toggle" id="navToggle" type="button"
-            aria-expanded="false" aria-controls="navMenu" aria-label="打开导航菜单">
+            aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu">
       <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"></use></svg>
       <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"></use></svg>
     </button>
 
-    <nav class="nav" id="navMenu" aria-label="主导航">
+    <nav class="nav" id="navMenu" aria-label="Main navigation">
       <ul class="nav__list" id="navList"></ul>
       <div class="nav__tools">
-        <button class="lang-toggle" id="langToggle" type="button" aria-label="切换英文版本">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
           <span class="lang-toggle__zh">中</span>
           <span class="lang-toggle__sep" aria-hidden="true">/</span>
           <span class="lang-toggle__en">EN</span>
@@ -146,13 +140,13 @@
   <div class="container" data-slot="footer"></div>
 </footer>
 
-<button class="to-top" id="toTop" type="button" aria-label="返回顶部" hidden>
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
   <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
 </button>
 
 <noscript>
   <div class="noscript-tip">
-    本页面的简历内容由 JavaScript 驱动渲染，请在浏览器中启用 JavaScript 后查看。
+    This CV is rendered by JavaScript. Please enable JavaScript to view the full content.
   </div>
 </noscript>
 

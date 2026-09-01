@@ -62,16 +62,12 @@ hero: {
   stats: [
     { label: '申请目标', value: 'Monash PhD (Full)', note: 'AM2D / Majumder', accent: true },
     { label: '方法链',   value: 'Thermakin·FDS·QRA', note: '毕设独立验证通过' },
-    { label: '语言达标', value: 'PTE 60（单项 ≥ 58 · 符合 Monash PhD 要求）', note: '≥ Monash Eng 58 ✅' },
-    { label: 'Monash',   value: '硕士 Offer 已缴费', note: '熟悉 Monash 生态', accent: true },
-    { label: '第一作者', value: '3 项 IP',           note: '1 专利 + 2 软著' },
-    { label: '方法验证', value: '校级优秀毕设',       note: '独立：实验→建模→判据', accent: true }
+    { label: '语言达标', value: 'PTE 60（单项 ≥ 58）', note: '符合 Monash Eng 博士要求' },
+    { label: '方法验证', value: '校级优秀毕设',       note: '独立：实验 → 建模 → 判据', accent: true }
   ],
   extras: [
     '独立完成 Thermakin + FDS 端到端对标（HRR 峰偏差 ≤ 8%）',
-    '连续两年全国安全学科竞赛队长 + 第一作者（一等奖 + 二等奖）',
-    'M-rGO 2025 Nat Comms 全文精读 · 识别 4 项器件级热边界空白',
-    '仅投递 Majumder 教授 · 非泛申 · 可承接 LiS-UC Hybrid 未启动课题'
+    'M-rGO 2025 Nat Comms 全文精读 · 识别 4 项器件级热边界空白'
   ],
   actions: [
     { text: '申请对接 · 下载 CV（PDF）', action: 'download', href: 'assets/files/resume-zh.pdf', primary: true },
@@ -355,16 +351,12 @@ hero: {
   stats: [
     { label: 'Target',       value: 'Monash PhD (Funded)', note: 'AM2D / Prof. Majumder', accent: true },
     { label: 'Method chain', value: 'Thermakin·FDS·QRA',   note: 'Sole-author thesis validated' },
-    { label: 'English',      value: 'PTE 60 (Skills ≥ 58 · Meets Monash PhD)', note: '≥ Monash Eng PhD 58 ✅' },
-    { label: 'Monash',       value: 'Master deposit paid', note: 'Monash ecosystem familiar', accent: true },
-    { label: '1st-author IP', value: '3 pieces',           note: '1 patent + 2 copyright' },
-    { label: 'Validation',   value: 'Outstanding Thesis',  note: 'Expt→Model→Criteria (solo)', accent: true }
+    { label: 'English',      value: 'PTE 60 (Skills ≥ 58)', note: 'Meets Monash Eng PhD 58' },
+    { label: 'Validation',   value: 'Outstanding Thesis',  note: 'Expt → Model → Criteria (solo)', accent: true }
   ],
   extras: [
     'Sole-author Thermakin + FDS benchmarked (HRR peak deviation ≤ 8%)',
-    'Team leader + first author, 2× consecutive national safety-competition awards (1st & 2nd)',
-    'Line-by-line reading of M-rGO 2025 Nat Comms; 4 device-level thermal gaps identified',
-    'Not mass-applying — dedicated to Prof. Majumder; ready to host the LiS-UC Hybrid thermal module'
+    'Line-by-line reading of M-rGO 2025 Nat Comms; 4 device-level thermal gaps identified'
   ],
   actions: [
     { text: 'Open CV (PDF) · Apply',     action: 'download', href: 'assets/files/resume-en.pdf', primary: true },

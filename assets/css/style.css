@@ -88,46 +88,19 @@
   --max-w-hero: 960px;
 }
 
-/* —— 深色：prefers-color-scheme 时自动切换（用户 UI 不提供 toggle，删除按钮）。
-        保持单一 theme（Slate dark + Monash Blue same hue），section 永不跨主题 flip —— */
-[data-theme="dark"] {
-  --c-bg:            #0B1220;   /* Slate-950 冷深蓝，非纯黑 */
-  --c-bg-muted:      #0F172A;   /* Slate-900 深海军蓝 */
-  --c-surface:       #111C31;
-  --c-surface-hover: #172238;
-  --c-border:        #1E293B;   /* Slate-800 */
-  --c-border-strong: #334155;   /* Slate-700 */
-  --c-rule:          #1E293B;
-  --c-text:          #F1F5F9;   /* Slate-100 对比度 13.4:1 */
-  --c-text-soft:     #94A3B8;   /* Slate-400 对比度  7.0:1 */
-  --c-text-muted:    #64748B;   /* Slate-500 对比度  4.5:1 */
-
-  /* 同一 accent 色深浅；保持 hue 不变（color consistency lock） */
-  --c-accent:        #3B82F6;   /* Blue-500  11.1:1 ✅ */
-  --c-accent-strong: #60A5FA;   /* Blue-400 */
-  --c-accent-soft:   #172554;   /* Blue-950 soft tint */
-  --c-accent-text:   #93C5FD;
-  --c-accent-ink:    #0B1220;
-
-  --shadow-sm: none;
-  --shadow:    none;
-  --shadow-header: none;
-  color-scheme: dark;
-}
-
 /* =========================== 2. 基础重置 =========================== */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--fs-base);
-  line-height: 1.78;
+  line-height: 1.65;
   color: var(--c-text);
   background: var(--c-bg);
   -webkit-font-smoothing: antialiased;
@@ -139,7 +112,7 @@ body.nav-open { overflow: hidden; }
 h1, h2, h3, h4 {
   margin: 0;
   line-height: 1.4;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--c-text);
 }
 p { margin: 0 0 var(--sp-4); }
@@ -200,15 +173,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 .section {
-  padding-block: var(--sp-9);
+  padding-block: var(--sp-8);
   scroll-margin-top: var(--header-h);
 }
 .section--muted { background: var(--c-bg-muted); }
 .section--cta   { background: var(--c-accent-soft); }
-[data-theme="dark"] .section--cta {
-  background: var(--c-bg-muted);
-  background: color-mix(in srgb, var(--c-accent) 10%, var(--c-bg));
-}
 
 .noscript-tip {
   margin: var(--sp-6) auto;
@@ -222,7 +191,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* —— 模块标题：taste-skill EYEBROW RESTRAINT —— 全局最多 2 节允许 eyebrow（Research、Proposal）。
       其他所有节默认隐藏 eyebrow，只保留大标题（anti templated-rhythm）。 —— */
-.section-head { margin-bottom: var(--sp-7); }
+.section-head { margin-bottom: var(--sp-6); }
 .section-head__eyebrow {
   display: none;                            /* 默认关，仅下面两个 section 特判打开 */
   align-items: center;
@@ -339,13 +308,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .meta-row__item { display: inline-flex; align-items: center; gap: .4rem; }
 
-/* 滚动出现动画 */
-.reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .55s var(--ease), transform .55s var(--ease);
-}
-.reveal.is-visible { opacity: 1; transform: none; }
+/* 学术 CV：内容直接呈现，不使用淡入动画 */
+.reveal { opacity: 1; transform: none; }
 
 /* =========================== 5. 导航 =========================== */
 .site-header {
@@ -492,7 +456,7 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
 .hero {
   position: relative;
   /* 严禁 AI 默认紫蓝/墨蓝径向 mesh blob；仅用 1 条底部细线划分 hero 与 overview，干净出版级 */
-  padding-block: var(--sp-9) var(--sp-9);
+  padding-block: var(--sp-8) var(--sp-8);
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-rule);
   scroll-margin-top: var(--header-h);
@@ -618,11 +582,11 @@ body.nav-open .nav { opacity: 1; transform: none; visibility: visible; }
 .hero__contact {
   display: inline-flex;
   align-items: center;
-  gap: .45rem;
-  min-height: 38px;
-  padding: .3rem .75rem;
+  gap: .4rem;
+  min-height: 36px;
+  padding: .25rem .65rem;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--c-text-soft);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
@@ -642,7 +606,7 @@ a.hero__contact:hover {
   flex-wrap: wrap;
   gap: var(--sp-3);
 }
-.hero__actions .btn { min-width: 180px; justify-content: center; }
+.hero__actions .btn { min-width: 160px; justify-content: center; }
 
 /* --- RIGHT COLUMN（≥1024 生效）：肖像 + 3×3 科研参数面板（Hero 视觉锚） --- */
 .hero__aside {
@@ -666,21 +630,16 @@ a.hero__contact:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4px;
-  padding: 12px 14px;
+  gap: 3px;
+  padding: 10px 12px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  min-height: 76px;
-  transition: border-color .2s var(--ease), background .2s var(--ease);
-}
-.hero-stat:hover {
-  border-color: var(--c-accent);
-  background: color-mix(in srgb, var(--c-accent-soft) 45%, var(--c-surface));
+  min-height: 68px;
 }
 .hero-stat--accent {
   background: var(--c-accent-soft);
-  border-color: color-mix(in srgb, var(--c-accent) 22%, transparent);
+  border-color: color-mix(in srgb, var(--c-accent) 18%, transparent);
 }
 .hero-stat__label {
   font-family: var(--font-mono);
@@ -713,7 +672,6 @@ a.hero__contact:hover {
   background: var(--c-bg-muted);
   border-block: 1px solid var(--c-rule);
 }
-[data-theme="dark"] .overview { border-color: var(--c-border); }
 .overview__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -781,7 +739,7 @@ a.hero__contact:hover {
   margin-top: var(--sp-4);
   padding: .35rem .8rem;
   font-size: var(--fs-sm);
-  font-weight: 650;
+  font-weight: 600;
   color: var(--c-accent-text);
   background: var(--c-accent-soft);
   border: 1px solid color-mix(in srgb, var(--c-accent) 24%, transparent);
@@ -797,7 +755,7 @@ a.hero__contact:hover {
   padding-top: var(--sp-4);
   border-top: 1px solid var(--c-rule);
   font-size: var(--fs-sm);
-  font-weight: 650;
+  font-weight: 600;
   color: var(--c-text);
 }
 .edu__subtitle .icon { color: var(--c-accent); }
@@ -940,7 +898,7 @@ a.hero__contact:hover {
 }
 .pub__title {
   font-size: var(--fs-md);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.55;
 }
 .pub__authors { font-size: var(--fs-sm); color: var(--c-text-soft); }
@@ -1053,32 +1011,35 @@ a.hero__contact:hover {
   position: sticky;
   top: 0;
   background: var(--c-bg-muted);
-  color: var(--c-accent-text);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11.5px;
   text-align: left;
-  padding: 14px 16px;
+  padding: 12px 16px;
   border-bottom: 2px solid var(--c-border-strong);
-  letter-spacing: .02em;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 .awards-table tbody td {
-  padding: 16px;
+  padding: 12px 16px;
   vertical-align: top;
   border-bottom: 1px solid var(--c-border);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 .awards-table tbody tr:last-child td { border-bottom: 0; }
-.awards-table tbody tr:hover td { background: var(--c-surface-hover); }
 .awards-table tfoot th {
   background: var(--c-bg-muted);
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-weight: 500;
   text-align: right;
-  padding: 12px 16px;
+  padding: 10px 16px;
   border-top: 2px solid var(--c-border-strong);
-  color: var(--c-accent-text);
+  color: var(--c-text-soft);
+  font-size: 11.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 .awards-table .col-date {
   width: 110px;
@@ -1400,32 +1361,28 @@ a.hero__contact:hover {
 .fit-table thead th {
   position: sticky;
   top: 0;
-  background: var(--c-accent-strong);
-  color: var(--c-accent-ink);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--fs-sm);
+  background: var(--c-bg-muted);
+  color: var(--c-text-soft);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11.5px;
   text-align: left;
-  padding: 14px 18px;
-  letter-spacing: .02em;
+  padding: 12px 16px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   white-space: nowrap;
   border: 0;
+  border-bottom: 2px solid var(--c-border-strong);
 }
 .fit-table tbody td,
 .fit-table tbody th {
-  padding: 16px 18px;
+  padding: 14px 16px;
   vertical-align: top;
   border-bottom: 1px solid var(--c-border);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .fit-table tbody tr:last-child td,
 .fit-table tbody tr:last-child th { border-bottom: 0; }
-.fit-table tbody tr:nth-child(odd) td,
-.fit-table tbody tr:nth-child(odd) th { background: var(--c-surface); }
-.fit-table tbody tr:nth-child(even) td,
-.fit-table tbody tr:nth-child(even) th { background: var(--c-bg-muted); }
-.fit-table tbody tr:hover td,
-.fit-table tbody tr:hover th { background: color-mix(in srgb, var(--c-accent-soft) 50%, var(--c-surface)); }
 .fit-table .col-dim {
   width: 120px;
   min-width: 120px;
@@ -1468,10 +1425,10 @@ a.hero__contact:hover {
 @media (min-width: 720px) { .validation-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .validation-box {
   position: relative;
-  padding: 22px 22px 24px;
+  padding: 20px 20px 22px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-top: 3px solid var(--c-accent-strong);
+  border-top: 2px solid var(--c-accent);
   border-radius: var(--radius);
 }
 .validation-box__head {
@@ -1499,7 +1456,7 @@ a.hero__contact:hover {
   grid-row: 1;
   font-family: var(--font-display);
   font-size: 1.7rem;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--c-accent-strong);
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1546,7 +1503,7 @@ a.hero__contact:hover {
 .proposal-block__title {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.3;
   color: var(--c-text);
   margin: 0 0 var(--sp-3);
@@ -1566,7 +1523,7 @@ a.hero__contact:hover {
 .milestones__heading {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
-  font-weight: 650;
+  font-weight: 600;
   margin: 0 0 var(--sp-4);
   padding-bottom: var(--sp-2);
   border-bottom: 2px solid var(--c-border-strong);
@@ -1630,27 +1587,26 @@ a.hero__contact:hover {
 }
 .matrix-table thead th {
   background: var(--c-bg-muted);
-  color: var(--c-accent-text);
-  font-family: var(--font-display);
-  font-weight: 600;
+  color: var(--c-text-soft);
+  font-family: var(--font-mono);
+  font-weight: 500;
   text-align: left;
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-bottom: 2px solid var(--c-border-strong);
-  letter-spacing: .02em;
-  font-size: var(--fs-sm);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: 11.5px;
   white-space: nowrap;
 }
 .matrix-table tbody td,
 .matrix-table tbody th {
-  padding: 14px 18px;
+  padding: 12px 16px;
   vertical-align: top;
   border-bottom: 1px solid var(--c-border);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .matrix-table tbody tr:last-child td,
 .matrix-table tbody tr:last-child th { border-bottom: 0; }
-.matrix-table tbody tr:hover td,
-.matrix-table tbody tr:hover th { background: var(--c-surface-hover); }
 .matrix-table .col-method {
   width: 200px;
   min-width: 180px;
@@ -1696,7 +1652,7 @@ a.hero__contact:hover {
 .cta-bar__title {
   font-family: var(--font-display);
   font-size: var(--fs-xl);
-  font-weight: 650;
+  font-weight: 600;
   color: var(--c-accent-ink);
   line-height: 1.3;
   margin: 0 0 var(--sp-2);
