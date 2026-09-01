@@ -502,8 +502,9 @@
     if (!isOn(d) || !(d.metrics || []).length) { disableSection('validation'); return; }
 
     var items = d.metrics.slice(0, 3).map(function (m, i) {
+      var mod = i === 1 ? ' validation-box--mid' : '';  /* 第2盒显式 modifier，不依赖 :nth-child */
       return '' +
-        '<article class="validation-box reveal">' +
+        '<article class="validation-box reveal' + mod + '">' +
           '<header class="validation-box__head">' +
             '<span class="validation-box__idx" aria-hidden="true">0' + (i + 1) + '</span>' +
             '<span class="validation-box__value">' + esc(m.value || '') + '</span>' +
